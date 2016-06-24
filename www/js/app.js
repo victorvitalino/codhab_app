@@ -92,6 +92,54 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
+    .state('app.habitacao',{
+      url: "/habitacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/habitacao/index.html"
+        }
+      }
+    })
+    .state('app.oquehabitacao',{
+      url: "/oque_habitacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/habitacao/oque_habitacao.html"
+        }
+      }
+    })
+    .state('app.listahabitacao',{
+      url: "/listahabitacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/habitacao/listahabitacao.html"
+        }
+      }
+    })
+    .state('app.regularizacao',{
+      url: "/regularizacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/regularizacao/index.html"
+        }
+      }
+    })
+    .state('app.oqueregularizacao',{
+      url: "/oque_regularizacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/regularizacao/oque_regularizacao.html"
+        }
+      }
+    })
+    .state('app.listaregularizacao',{
+      url: "/listaregularizacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/regularizacao/listaregularizacao.html"
+        }
+      }
+    })
     // .state('app.message',{
     //   url: "/message/:id",
     //   views:{
@@ -145,6 +193,6 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
 
     //   $ionicConfigProvider.tabs.position('bottom')
 	// if none of the above states are matched, use this as the fallback
-	$urlRouterProvider.otherwise('/login');
+	$urlRouterProvider.otherwise('/app/home');
 
 });

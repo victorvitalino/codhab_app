@@ -5,22 +5,22 @@ var app = angular.module('codhab.controllers.login', []);
  * LoginCtrl
  *********************************************************************/
 
-app.controller('LoginCtrl',function($scope, $state, AuthService, $cordovaFacebook){
-    $scope.formData = {
-  		"email": "",
-  		"password": ""
-  	};
-    // Logar com form basico do Parse
-    $scope.login = function (form) {
-      if (form.$valid){
-      console.log("LoginCtrl::login");
-      AuthService.login($scope.formData.email, $scope.formData.password)
-      .then(function(){
-          $state.go("app.home")
-      });
-      }
-    };
-  });
+// app.controller('LoginCtrl',function($scope, $state, AuthService, $cordovaFacebook){
+//     $scope.formData = {
+//   		"email": "",
+//   		"password": ""
+//   	};
+//     // Logar com form basico do Parse
+//     $scope.login = function (form) {
+//       if (form.$valid){
+//       console.log("LoginCtrl::login");
+//       AuthService.login($scope.formData.email, $scope.formData.password)
+//       .then(function(){
+//           $state.go("app.home")
+//       });
+//       }
+//     };
+//   });
   /*********************************************************************
    * SignupCtrl
    *********************************************************************/
