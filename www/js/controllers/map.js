@@ -1,36 +1,73 @@
 var app = angular.module('codhab.controllers.map', []);
 app.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
 
-  console.log('oi');
-  var options = {timeout: 10000, enableHighAccuracy: true};
-
+    var options = {timeout: 10000, enableHighAccuracy: true};
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
 
+      //Seta latitude e longitude do mapa (inicio)
       var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
+      //opções do mapa
       var mapOptions = {
         center: latLng,
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
 
-      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
 
+      directionsDisplay = new google.maps.DirectionsRenderer(
+        {
+          suppressMarkers:true
+        }
+      );
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      directionsDisplay.setMap($scope.map);
       //Gerar marker após o load do mapa
       google.maps.event.addListenerOnce($scope.map, 'idle', function(){
 
         var marker = new google.maps.Marker({
             map: $scope.map,
             animation: google.maps.Animation.DROP,
-            position: latLng
+            position: latLng,
+            icon: 'img/m1.png'
         });
         var infoWindow = new google.maps.InfoWindow({
-     content: "Here I am!"
+          content: "Posto de atendimento"
         });
 
        google.maps.event.addListener(marker, 'click', function () {
            infoWindow.open($scope.map, marker);
        });
+       var start = "-15.878483,-48.016777";
+
+       var request = {
+          origin:start,
+          destination:latLng,
+          travelMode: google.maps.TravelMode.BICYCLING
+        };
+      var  markerB = new google.maps.MarkerImage('img/m2.png',
+            new google.maps.Size(24, 28),
+            new google.maps.Point(0, 0),
+            new google.maps.Point(12, 28));
+       //calc a rota
+       directionsService.route(request, function(result, status) {
+
+           if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay.setDirections(result);
+              var _route = result.routes[0].legs[0];
+              pinA = new google.maps.Marker({
+            	position: _route.start_location,
+            	map: $scope.map,
+            	icon: markerB
+            });
+           }
+
+         });
+
+
+
 
       });
 

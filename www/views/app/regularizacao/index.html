@@ -1,25 +1,53 @@
-<ion-view>
-  <ion-nav-buttons class="bar bar-header">
-    <div class="h1 title">Regularização</div>
-  </ion-nav-buttons>
-  <ion-content scroll="true" >
-    <div class="row">
-      <img src="img/codhab.png" alt="" style="width: 100%;height: 30%;"/>
-    </div>
-    <div class="row">
-        <div class="col col-50">
-          <button class="button btn-nav-codhab energized" ui-sref="app.oquehabitacao">
-            <span class="btn-codhab-icon ion-ios-help-outline "></span>
-            <span>O que é?</span>
-          </button>
-        </div>
-        <div class="col col-50">
-          <button class="button btn-nav-codhab energized" ui-sref="app.listahabitacao">
-            <span class="btn-codhab-icon ion-ios-list-outline "></span>
-            <span>Pesquisar CPF</span>
-          </button>
-        </div>
-    </div>
-   </ion-content>
+<ion-header-bar class="bar-dark">
+            <div data-ng-controller="AppCtrl">
+            <Button id="homebutton" class="button" data-ng-click="run2()">
+                <i class="icon ion-home"></i>
+            </Button>
+            <h1 class="title">
+                <img src="img/logo-white.png" alt="zyme" width="66" height="22" style="margin-top:13px;left:0px;">
+            </h1>
+            <Button id="navbutton" class="button" data-ng-click="nav1()">
+                <i class="icon ion-gear-b"></i>
+            </Button>
+            </div>
+    </ion-header-bar>
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 src="https://www.ofertasagricolas.com.br/classificados/alimentos-em-geral"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:14px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+        <!-- <ion-view>
+          <ion-nav-buttons class="bar bar-header">
+            <div class="h1 title">Regularização</div>
+          </ion-nav-buttons>
+          <ion-content scroll="true" >
+            <div class="row">
+              <img src="img/codhab.png" alt="" style="width: 100%;height: 30%;"/>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                  <button class="button btn-nav-codhab energized" ui-sref="app.oquehabitacao">
+                    <span class="btn-codhab-icon ion-ios-help-outline "></span>
+                    <span>O que é?</span>
+                  </button>
+                </div>
+                <div class="col col-50">
+                  <button class="button btn-nav-codhab energized" ui-sref="app.listahabitacao">
+                    <span class="btn-codhab-icon ion-ios-list-outline "></span>
+                    <span>Pesquisar CPF</span>
+                  </button>
+                </div>
+            </div>
+           </ion-content>
 
-</ion-view>
+        </ion-view> -->
