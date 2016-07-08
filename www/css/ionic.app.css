@@ -15,7 +15,7 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-@import url("http://fonts.googleapis.com/css?family=Domine:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,300");
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -3339,7 +3339,7 @@ body,
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Domine";
+  font-family: "Roboto";
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -3577,7 +3577,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Domine";
+  font-family: "Roboto";
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -6872,7 +6872,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Domine"; }
+  font-family: "Roboto"; }
 
 .item-input {
   display: -webkit-box;
@@ -12413,7 +12413,7 @@ body,
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Domine";
+  font-family: "Roboto";
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -12651,7 +12651,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Domine";
+  font-family: "Roboto";
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -15946,7 +15946,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Domine"; }
+  font-family: "Roboto"; }
 
 .item-input {
   display: -webkit-box;
@@ -18191,6 +18191,31 @@ form .form-errors {
 .item-card .category {
   color: lightgray; }
 
+.texto_interno_search {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(167, 170, 172, 0.8); }
+
+.badge_search {
+  font-size: 12px; }
+
+.marginz {
+  margin: 0px; }
+
+.logo_interna_search {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.logo_interna_search img {
+  width: 100%; }
+
+.captalize {
+  text-transform: capitalize; }
+
 .btn-nav-codhab {
   width: 100%;
   height: 175px; }
@@ -18210,6 +18235,9 @@ form .form-errors {
 #map {
   width: 100%;
   height: 100%; }
+
+.posting-msg {
+  padding: 20px !important; }
 
 .button-home {
   cursor: pointer;

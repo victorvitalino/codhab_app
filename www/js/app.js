@@ -11,6 +11,7 @@ var app = angular.module('codhab', ['ionic',
 'parse-angular.enhance',
 'codhab.controllers.app',
 'codhab.controllers.map',
+'codhab.controllers.search',
 'codhab.controllers.message',
 'codhab.controllers.login',
 'codhab.controllers.report',
@@ -112,7 +113,8 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       url: "/listahabitacao",
       views:{
         'home':{
-          templateUrl: "views/app/habitacao/listahabitacao.html"
+          templateUrl: "views/app/habitacao/listahabitacao.html",
+          controller: 'SearchCtrl'
         }
       }
     })

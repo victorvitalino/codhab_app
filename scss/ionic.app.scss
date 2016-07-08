@@ -15,8 +15,8 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-@import url('http://fonts.googleapis.com/css?family=Domine:400,700');
-$font-family-base: 'Domine';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,300');
+$font-family-base: 'Roboto';
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -30,6 +30,31 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 
 // Mod
+.texto_interno_search{
+	text-align: center;
+	font-size: 15px;
+	color: rgba(167,170,172,0.8);
+}
+.badge_search{
+	font-size: 12px;
+}
+.marginz{
+	margin:0px;
+}
+.logo_interna_search{
+	position:absolute;
+	left: 0;
+	right: 0;
+	margin:0 auto;
+	top:50%;
+	transform:translateY(-50%);
+}
+.logo_interna_search img{
+		width: 100%;
+}
+.captalize{
+	text-transform: capitalize;
+}
 .btn-nav-codhab{
 	width: 100%;
 	height: 175px;
@@ -53,7 +78,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 //asd
+.posting-msg{
+	padding:20px!important;
 
+}
 .button-home{
   cursor: pointer;
   text-align: center;

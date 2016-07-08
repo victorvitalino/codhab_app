@@ -31,7 +31,7 @@ app.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
             map: $scope.map,
             animation: google.maps.Animation.DROP,
             position: latLng,
-            icon: 'img/m1.png'
+            icon: 'img/postos.png'
         });
         var infoWindow = new google.maps.InfoWindow({
           content: "Posto de atendimento"
@@ -45,12 +45,9 @@ app.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
        var request = {
           origin:start,
           destination:latLng,
-          travelMode: google.maps.TravelMode.BICYCLING
+          travelMode: google.maps.TravelMode.DRIVING
         };
-      var  markerB = new google.maps.MarkerImage('img/m2.png',
-            new google.maps.Size(24, 28),
-            new google.maps.Point(0, 0),
-            new google.maps.Point(12, 28));
+      var  markerB = new google.maps.MarkerImage('img/carro.png');
        //calc a rota
        directionsService.route(request, function(result, status) {
 
