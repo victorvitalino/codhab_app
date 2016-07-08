@@ -1,13 +1,19 @@
-var app = angular.module('codhab.controllers.search', []);
+var app = angular.module('codhab.controllers.search',[]);
 app.controller('SearchCtrl', function($scope, $state, $ionicLoading, $http) {
+
 
 $scope.searchCPF = function (search) {
     console.log(search)
     $scope.result = "";
     $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/'+ search.cpf +'.json')
       .success(function(data, status, headers,config){
+        var old = moment().diff(moment(data.born), 'years');
+        if(old >= 60){
+          data.olds = "Idoso";
+        }else{
+          data.olds = "Não";
+        }
         console.log(data); // for browser console
-
         switch (data.civil_state_id) {
           case 1:
             data.civil_state_id = "Solteiro(a)";
@@ -31,6 +37,32 @@ $scope.searchCPF = function (search) {
             data.civil_state_id = "União Estável";
             break;
         }
+        switch (data.program_id) {
+          case 1:
+            data.program_id = "RII";
+            break;
+          case 2:
+            data.program_id = "RIE";
+            break;
+          case 3:
+            data.program_id = "REGULARIZAÇÃO";
+            break;
+          case 4:
+            data.program_id = "VULNERAVEIS";
+            break;
+          case 5:
+            data.program_id = "DEFICIENTES";
+            break;
+          case 6:
+            data.program_id = "CADASTRO ANTIGO";
+            break;
+          case 7:
+            data.program_id = "IDOSO";
+            break;
+          case 8:
+            data.program_id = "SEM VÍNCULO";
+            break;
+        }
 
         switch (data.special_condition_id) {
           case 1:
@@ -38,6 +70,9 @@ $scope.searchCPF = function (search) {
             break;
           case 2:
             data.special_condition_id = "Deficiente";
+            break;
+          case 4:
+            data.special_condition_id = "Idoso";
             break;
         }
 

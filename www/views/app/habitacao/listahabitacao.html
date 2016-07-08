@@ -46,7 +46,10 @@
           <strong>Chegada no DF: </strong>{{result.arrival_df | date:"dd/MM/yyyy" }}<br/>
         </div>
         <div class="item">
-          <strong>Idoso: </strong>{{result.Old}}<br/>
+          <strong>Nascido em: </strong>{{result.born_uf}}<br/>
+        </div>
+        <div class="item">
+          <strong>Idoso: </strong><span class="badge badge-positive badge_search">{{result.olds}}</span><br/>
         </div>
         <div class="item">
           <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.special_condition_id}}</span><br/>
@@ -64,7 +67,7 @@
           <strong>Situação: </strong><span class="badge badge-balanced">{{result.Situation}}</span><br/>
         </div>
         <div class="item">
-          <strong>Programa: </strong>{{result.Type}}<br/>
+          <strong>Programa: </strong><span class="badge badge-royal">{{result.program_id}}</span><br/>
         </div>
         <div class="item">
           <strong>Faixa: </strong>{{result.Zone}}<br/>
@@ -78,10 +81,10 @@
       </ion-list>
       <div ng-hide="result.cpf" class="logo_interna_search">
         <p class="texto_interno_search marginz">
-          Preencha com o CPF que deseja pesquisar.
+          Preencha com um CPF válido e cadastrado na CODHAB.
         </p>
         <p class="texto_interno_search marginz">
-          Os dados estão publicos também no site da CODHAB
+          Os dados estão disponíveis para consulta pública.
         </p>
         <img src="img/logo-app.png"  />
       </div>
