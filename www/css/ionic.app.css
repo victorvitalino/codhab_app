@@ -18191,6 +18191,9 @@ form .form-errors {
 .item-card .category {
   color: lightgray; }
 
+.list_button {
+  font-size: 40px; }
+
 .texto_interno_search {
   text-align: center;
   font-size: 15px;

@@ -15,8 +15,11 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.message',
 'codhab.controllers.login',
 'codhab.controllers.report',
+'codhab.controllers.postos',
+'codhab.controllers.assistencia',
 'codhab.services.auth',
 'codhab.services.ReportService',
+'codhab.services.PostosService',
 'codhab.services.MessageService'
 ])
 
@@ -109,6 +112,14 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
+    .state('app.agendamentohabitacao',{
+      url: "/agendamento",
+      views:{
+        'home':{
+          templateUrl: "views/app/habitacao/agendamento.html"
+        }
+      }
+    })
     .state('app.listahabitacao',{
       url: "/listahabitacao",
       views:{
@@ -176,6 +187,16 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
           controller: 'MapCtrl'
         }
       }
+    })
+    .state('assistencia',{
+      url: "/assistencia",
+      templateUrl: "views/app/assistencia/index.html",
+      controller: 'AssistenciaCtrl'
+    })
+    .state('postos',{
+      url:"/postos/:id",
+      templateUrl:"views/app/assistencia/single.html",
+      controller:'PostosCtrl'
     })
     .state('app.report',{
       url: "/report",

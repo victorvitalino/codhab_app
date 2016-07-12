@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">Postos de Assistência</div>
+  </ion-nav-buttons>
+  <ion-content scroll="true" >
+  <ion-list>
+    <ion-item class="item-avatar item-icon-right"
+              ng-repeat="posto in postos"
+              can-swipe="true" ui-sref="postos({id:posto.id})">
+      <h2>{{posto.nome}}</h2>
+      <h2>{{posto.id}}</h2>
+      <p>{{posto.endereco}}</p>
+      <i class="icon ion-ios-arrow-right"></i>
+      <ion-option-button class="button-royal" ng-click="edit(facility)"><span class="list_button ion-ios-telephone"></span></ion-option-button>
+      <ion-option-button class="button-calm" ng-click="share(facility)"><span class="list_button ion-android-car"></span></ion-option-button>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+  </ion-view>

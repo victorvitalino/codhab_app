@@ -5,7 +5,7 @@ app.controller('SearchCtrl', function($scope, $state, $ionicLoading, $http) {
 $scope.searchCPF = function (search) {
     console.log(search)
     $scope.result = "";
-    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/'+ search.cpf +'.json')
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'.json')
       .success(function(data, status, headers,config){
         var old = moment().diff(moment(data.born), 'years');
         if(old >= 60){
