@@ -188,15 +188,23 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('assistencia',{
+    .state('app.assistencia',{
       url: "/assistencia",
-      templateUrl: "views/app/assistencia/index.html",
-      controller: 'AssistenciaCtrl'
+      views:{
+        'home':{
+        templateUrl: "views/app/assistencia/index.html",
+        controller: 'AssistenciaCtrl'
+        }
+      }
     })
-    .state('postos',{
-      url:"/postos/:id",
-      templateUrl:"views/app/assistencia/single.html",
-      controller:'PostosCtrl'
+    .state('app.postos',{
+      url:"/postos/:id?nome&endereco",
+      views:{
+        'home':{
+          templateUrl:"views/app/assistencia/single.html",
+          controller:'PostosCtrl'
+        }
+      }
     })
     .state('app.report',{
       url: "/report",
