@@ -6,7 +6,7 @@
   <ion-list>
     <ion-item class="item-avatar item-icon-right"
               ng-repeat="posto in postos"
-              can-swipe="true" ui-sref="app.postos({id:posto.id,nome:posto.nome,endereco:posto.endereco})">
+              can-swipe="true" ui-sref="app.postos({id:posto.id,nome:posto.nome,endereco:posto.endereco,hora:posto.hora,coordenador:posto.coordenador,tel:posto.tel,email:posto.email,latitude:posto.latitude,longitude:posto.longitude})">
       <h2>{{posto.nome}}</h2>
       <p>{{posto.endereco}}</p>
       <p>

@@ -18191,6 +18191,18 @@ form .form-errors {
 .item-card .category {
   color: lightgray; }
 
+.fontsx {
+  color: #333 !important; }
+
+.avatar-nome {
+  text-align: center;
+  margin-top: 40px;
+  color: #333 !important; }
+
+.avatar-cargo {
+  text-align: center;
+  color: #333 !important; }
+
 .list_button {
   font-size: 40px; }
 
@@ -18212,6 +18224,30 @@ form .form-errors {
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%); }
+
+.avatar-coord {
+  position: absolute;
+  top: 15%;
+  margin: 0 auto;
+  right: 0;
+  width: 90px;
+  border-radius: 45px;
+  padding: 9px;
+  left: 0;
+  background-color: #fff; }
+
+.item-custom {
+  border: none !important; }
+
+.fundo-single {
+  overflow: hidden;
+  height: 150px; }
+
+.mask-single {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(52, 131, 222, 0.8); }
 
 .logo_interna_search img {
   width: 100%; }
@@ -18237,7 +18273,7 @@ form .form-errors {
 
 #map {
   width: 100%;
-  height: 100%; }
+  height: 50%; }
 
 .posting-msg {
   padding: 20px !important; }

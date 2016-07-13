@@ -1,10 +1,35 @@
-<ion-view title="posto">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div>
-            <p>{{posto.nome}}.</p>
-            <p>{{posto.id}}.</p>
-            <p>{{posto.endereco}}.</p>
-        
-        </div>
-    </ion-content>
-</ion-view>
+<ion-view>
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">{{posto.nome}}</div>
+  </ion-nav-buttons>
+  <ion-content scroll="true" class="fontsx" >
+    <div class="fundo-single">
+      <div class="mask-single"></div>
+      <img src="/img/fundo.jpg" />
+    </div>
+    <div class="">
+      <img class="avatar-coord"src="/img/ionic.png" />
+      <h2 class="avatar-nome">{{posto.coordenador}}</h2>
+      <h6 class="avatar-cargo">Coordenador(a)</h6>
+      <h3>{{posto.email}}</h3>
+    </div>
+    <!-- <div class="item item-avatar item-custom">
+      <img src="/img/ionic.png" />
+      <h2>{{posto.coordenador}}</h2>
+      <h3>{{posto.email}}</h3>
+    </div> -->
+    <div>
+      {{posto.nome}}
+    </div>
+    <div>
+      {{posto.endereco}}
+    </div>
+    <div>
+      {{posto.hora}}
+    </div>
+    <div>
+      {{posto.tel}}
+    </div>
+    <div id="map" data-tap-disabled="true"></div>
+  </ion-content>
+  </ion-view>

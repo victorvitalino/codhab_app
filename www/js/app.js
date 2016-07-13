@@ -198,7 +198,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       }
     })
     .state('app.postos',{
-      url:"/postos/:id?nome&endereco",
+      url:"/postos/:id?nome&endereco&hora&coordenador&tel&email&latitude&longitude",
       views:{
         'home':{
           templateUrl:"views/app/assistencia/single.html",
