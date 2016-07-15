@@ -5,31 +5,27 @@
   <ion-content scroll="true" class="fontsx" >
     <div class="fundo-single">
       <div class="mask-single"></div>
-      <img src="/img/fundo.jpg" />
+      <img src="img/fundo.jpg" />
     </div>
     <div class="">
-      <img class="avatar-coord"src="/img/ionic.png" />
-      <h2 class="avatar-nome">{{posto.coordenador}}</h2>
-      <h6 class="avatar-cargo">Coordenador(a)</h6>
-      <h3>{{posto.email}}</h3>
+      <img class="avatar-coord"src="img/ionic.png" />
+      <div class="avatar-nome avatar-info">{{posto.coordenador}}</div>
+      <div class="avatar-cargo avatar-info">Coordenador(a)</div>
+      <div class="bloco-avatar">
+        <div class="avatar-info avatar-data"><i class="ion-ios-location positive"></i>  {{posto.endereco}}</div>
+        <div class="avatar-info avatar-data"><i class="ion-ios-clock positive"></i>  {{posto.hora}}</div>
+        <div class="avatar-info avatar-data"><i class="ion-ios-email positive"></i>  {{posto.email}}</div>
+        <div class="avatar-info avatar-data"><i class="ion-ios-telephone positive"></i>  {{posto.tel}}</div>
+      </div>
     </div>
-    <!-- <div class="item item-avatar item-custom">
-      <img src="/img/ionic.png" />
-      <h2>{{posto.coordenador}}</h2>
-      <h3>{{posto.email}}</h3>
-    </div> -->
-    <div>
-      {{posto.nome}}
-    </div>
-    <div>
-      {{posto.endereco}}
-    </div>
-    <div>
-      {{posto.hora}}
-    </div>
-    <div>
-      {{posto.tel}}
-    </div>
+    <a class="button button-balanced button-avatar" href="tel:{{posto.tel}}">
+      <i class="ion-ios-telephone"></i>
+      Ligar
+    </a>
+    <a class="button button-positive button-avatar" href="mailto:{{posto.email}}">
+      <i class="ion-ios-email"></i>
+      Enviar email
+    </a>
     <div id="map" data-tap-disabled="true"></div>
   </ion-content>
   </ion-view>

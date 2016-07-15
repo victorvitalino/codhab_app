@@ -17,6 +17,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.report',
 'codhab.controllers.postos',
 'codhab.controllers.assistencia',
+'codhab.controllers.slider',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -62,6 +63,7 @@ app.run(function($ionicPlatform) {
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $cordovaFacebookProvider) {
+
 	$stateProvider
     .state('signup',{
       url: "/signup",
@@ -170,6 +172,11 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
             }
           }
         })
+        .state('teste',{
+          url: "/teste",
+          templateUrl:"views/app/teste.html",
+          controller: 'sliderCtrl'
+        })
     .state('app.new_message',{
       url: "/new_message",
       views:{
@@ -224,6 +231,9 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
 
    // $ionicConfigProvider.tabs.position('bottom')
 	// if none of the above states are matched, use this as the fallback
-	$urlRouterProvider.otherwise('/app/home');
-
+  if(window.localStorage['tutorial'] === "true") {
+	   $urlRouterProvider.otherwise('/app/home');
+  }else{
+    $urlRouterProvider.otherwise('/teste');
+  }
 });

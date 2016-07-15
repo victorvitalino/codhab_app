@@ -15,7 +15,7 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Lucélia Duda",
                 tel: "993266472",
                 email: "lucelia.duda@codhab.df.gov.br",
-                latitude: "-16.069636",
+                latitude: "-16.310914",
                 longitude: "-47.979569"
             },
             {
@@ -26,8 +26,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Isabela Gardês",
                 tel: "995574085",
                 email: "isabela.gardes@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-16.310914",
+                longitude: "-47.988281"
             },
             {
                 id:3,
