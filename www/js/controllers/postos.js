@@ -99,8 +99,10 @@ app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation,
 
     });
 
-  }, function(error){
-    console.log("Could not get location");
-  });
+  },
+  function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+    'message: ' + error.message + '\n');
+    });
 
 });
