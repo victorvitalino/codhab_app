@@ -12,6 +12,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.app',
 'codhab.controllers.map',
 'codhab.controllers.search',
+'codhab.controllers.searchreg',
 'codhab.controllers.message',
 'codhab.controllers.login',
 'codhab.controllers.report',
@@ -151,7 +152,16 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       url: "/listaregularizacao",
       views:{
         'home':{
-          templateUrl: "views/app/regularizacao/listaregularizacao.html"
+          templateUrl: "views/app/regularizacao/listaregularizacao.html",
+          controller: 'SearchRegCtrl'
+        }
+      }
+    })
+    .state('app.agendamentoregularizacao',{
+      url: "/agendamentoregularizacao",
+      views:{
+        'home':{
+          templateUrl: "views/app/regularizacao/agendamento.html"
         }
       }
     })

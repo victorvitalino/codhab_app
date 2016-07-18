@@ -27,9 +27,9 @@
         <div class="item">
           <strong>Estado Civil: </strong>{{result.civil_state_id}}<br/>
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <strong>Cidade: </strong>{{result.CityName}}<br/>
-        </div>
+        </div> -->
         <div class="item">
           <strong>Endereço: </strong>{{result.address}} {{result.address_complement}}<br/>
         </div>
@@ -60,23 +60,30 @@
         <div class="item">
           <strong>NIS: </strong>{{result.nis}}<br/>
         </div>
+      </ion-list>
+      <ion-list ng-show="result.cpf">
         <div class="item item-divider">
           Situação do Candidato
         </div>
-        <div class="item">
-          <strong>Situação: </strong><span class="badge badge-balanced">{{result.Situation}}</span><br/>
-        </div>
-        <div class="item">
-          <strong>Programa: </strong><span class="badge badge-royal">{{result.program_id}}</span><br/>
-        </div>
-        <div class="item">
-          <strong>Faixa: </strong>{{result.Zone}}<br/>
-        </div>
-        <div class="item">
-          <strong>Posição: </strong>{{result.Position}}<br/>
-        </div>
-        <div class="item">
-          <strong>Pontuação: </strong>{{result.Pontuacao}}<br/>
+        <div class="item" ng-repeat="i in results" >
+          <div ng-if="i.list == 'rii'">
+            <strong >Lista: </strong>RII<br/>
+          </div>
+          <div ng-if="i.list == 'rie'">
+            <strong >Lista: </strong>RIE<br/>
+          </div>
+          <div ng-if="i.list == 'special'">
+            <strong >Lista: </strong>Deficientes<br/>
+          </div>
+          <div ng-if="i.list == 'vulnerable'">
+            <strong >Lista: </strong>Vulneráveis<br/>
+          </div>
+          <div ng-if="i.position != null">
+            <strong>Posição: </strong>{{i.position}}<br/>
+          </div>
+          <strong>Pontuação: </strong>{{i.pontuation}}<br/>
+          <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
+          <span class="badge {{i.situation_status == 'ok' ? 'badge-balanced' : 'badge-energized'}}  badge_search">{{i.situation}}</span><br/>
         </div>
       </ion-list>
       <div ng-hide="result.cpf" class="logo_interna_search">

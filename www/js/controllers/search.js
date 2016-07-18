@@ -5,6 +5,7 @@ app.controller('SearchCtrl', function($scope, $state, $ionicLoading, $http) {
 $scope.searchCPF = function (search) {
     console.log(search)
     $scope.result = "";
+    $scope.results = "";
     $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'.json')
       .success(function(data, status, headers,config){
         var old = moment().diff(moment(data.born), 'years');
@@ -86,5 +87,21 @@ $scope.searchCPF = function (search) {
       .then(function(result){
         things = result.data;
       });
+
+
+      // Inicio do segundo search -- position
+      $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'/position.json')
+        .success(function(data2, status, headers,config){
+          console.log(data2);
+          $scope.results = data2;
+
+        })
+        .error(function(data, status, headers,config){
+          console.log('data error');
+        })
+        .then(function(results){
+          things = results.data2;
+        });
+
     }
 });
