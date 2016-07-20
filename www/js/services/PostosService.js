@@ -143,5 +143,5 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
         return deferred.promise;
 
     }
-};
+  };
 });

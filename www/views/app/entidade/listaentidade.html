@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">Pesquisar</div>
+  </ion-nav-buttons>
+    <ion-content scroll="true">
+    <form name="createForm" novalidate="novalidate" ng-submit="searchCPF(search)">
+      <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Nome ou Siglas da entidade" name="search" id="search" ng-model="search.cpf" ng-required="true">
+      </label>
+    </div>
+  </form>
+  <ion-list>
+    <ion-item class="item-avatar item-icon-right item-icon-left" ng-repeat="dados in result" ui-sref="app.listaentidades({id:dados.id})">
+      <i class="icon ion-ios-location cor-clara"></i>
+      <h2>{{dados.fantasy_name}}</h2>
+      <p><strong>CNPJ: </strong>{{dados.cnpj}}</p>
+    </ion-item>
+  </ion-list>
+      <div ng-hide="result.cpf" class="logo_interna_search">
+        <img src="img/search.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;"/>
+        <p class="texto_interno_search marginz">
+          Insira o nome ou sigla da entidade que deseja pesquisar.
+        </p>
+        <p class="texto_interno_search marginz">
+          Os dados estão disponíveis para consulta pública.
+        </p>
+      </div>
+    </ion-content>
+</ion-view>

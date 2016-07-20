@@ -31,10 +31,4 @@ app.controller('sliderCtrl', function ($scope,$state,$ionicSlideBoxDelegate) {
         $scope.startApp();
         window.localStorage['tutorial'] = true;
     }
-
-
-
-
-    // Called each time the slide changes
-
 });
