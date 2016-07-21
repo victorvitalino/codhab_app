@@ -251,11 +251,11 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       }
     })
     .state('app.entidade',{
-      url:"/entidade/:cnpj",
+      url:"/entidade/:cnpj?lat&long",
       views:{
         'home':{
           templateUrl:"views/app/entidade/single.html",
-          controller:'EntidadesCtrl'
+          controller:'EntidadeCtrl'
         }
       }
     })

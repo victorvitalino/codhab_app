@@ -12,7 +12,7 @@
     </div>
   </form>
   <ion-list>
-    <ion-item class="item-avatar item-icon-right item-icon-left" ng-repeat="dados in result" ui-sref="app.entidade({cnpj:dados.cnpj})">
+    <ion-item class="item-avatar item-icon-right item-icon-left" ng-repeat="dados in result" ui-sref="app.entidade({cnpj:dados.cnpj,lat:dados.lat,long:dados.long})">
       <i class="icon ion-ios-people-outline cor-clara"></i>
       <h2>{{dados.fantasy_name}}</h2>
       <p><strong>CNPJ: </strong>{{dados.cnpj}}</p>

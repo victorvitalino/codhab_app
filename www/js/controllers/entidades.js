@@ -6,19 +6,7 @@ app.controller('EntidadesCtrl', function($scope, $state, $stateParams, $ionicLoa
           console.log($scope.result)
           });
     }
-   $scope.singleEntidade = function (cnpj) {
-     $http.get('http://www.codhab.df.gov.br/entidades/entidades_anteriores.json?cnpj='+ $stateParams.cnpj +'&status=&name_entity=')
-       .success(function(data, status, headers,config){
-         $scope.resultado = data[0];
-         console.log($scope.resultado)
-       })
-       .error(function(data, status, headers,config){
-         console.log('data error');
-       })
-       .then(function(resultado){
-         things = resultado.data[0];
-       });
-   }
 
-   /* mapa TODO  */
+
+
 });
