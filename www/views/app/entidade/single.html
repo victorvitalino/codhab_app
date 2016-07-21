@@ -1,0 +1,33 @@
+<ion-view ng-init="singleEntidade()">
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">{{resultado.fantasy_name}}</div>
+  </ion-nav-buttons>
+  <ion-content scroll="true" class="fontsx" >
+    <ion-list>
+      <div class="item item-divider">
+        Dados da Empresa
+      </div>
+      <div class="item" style="text-overflow:clip; white-space: pre-line;">
+        <strong>Nome: </strong>{{resultado.name}}
+      </div>
+      <div class="item">
+        <strong>CNPJ: </strong>{{resultado.cnpj}}
+      </div>
+      <div class="item">
+        <strong>Cidade: </strong>{{resultado.city}}
+      </div>
+      <div class="item">
+        <strong>CEP: </strong>{{resultado.cep}}
+      </div>
+      <div class="item">
+        <strong>Situação: </strong>{{resultado.old}}
+      </div>
+      <div class="item">
+        <strong>Presidente: </strong>{{resultado.president_name}}
+      </div>
+    </ion-list>
+    <div ng-show="resultado.cep">
+      <div id="map" data-tap-disabled="true"></div>
+    </div>
+  </ion-content>
+</ion-view>

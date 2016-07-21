@@ -20,10 +20,12 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.assistencia',
 'codhab.controllers.slider',
 'codhab.controllers.entidades',
+'codhab.controllers.entidade',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
-'codhab.services.MessageService'
+'codhab.services.MessageService',
+'codhab.services.EntidadesService'
 ])
 
 app.run(function($ionicPlatform) {
@@ -245,6 +247,15 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       views:{
         'home':{
         templateUrl: "views/app/entidade/agendamento.html"
+        }
+      }
+    })
+    .state('app.entidade',{
+      url:"/entidade/:cnpj",
+      views:{
+        'home':{
+          templateUrl:"views/app/entidade/single.html",
+          controller:'EntidadesCtrl'
         }
       }
     })

@@ -1,23 +1,24 @@
 var app = angular.module('codhab.controllers.entidades',[]);
-app.controller('EntidadesCtrl', function($scope, $state, $ionicLoading, $http) {
-
-
-$scope.searchCPF = function (search) {
-    console.log(search)
-    $scope.result = "";
-    $http.get('http://codhab.localhost.df.gov.br:3000/entidades/entidades_anteriores.json?cnpj=&status=&name_entity='+ search.cpf)
-      .success(function(data, status, headers,config){
-        console.log(data);
-        $scope.result = data;
-      })
-      .error(function(data, status, headers,config){
-        console.log('data error');
-      })
-      .then(function(result){
-        things = result.data;
-      });
-
+app.controller('EntidadesCtrl', function($scope, $state, $stateParams, $ionicLoading, $cordovaGeolocation, $http, EntidadesService) {
+  $scope.searchCPF = function (search) {
+      EntidadesService.getEntidades(search).then(function(res) {
+          $scope.result = res;
+          console.log($scope.result)
+          });
     }
+   $scope.singleEntidade = function (cnpj) {
+     $http.get('http://www.codhab.df.gov.br/entidades/entidades_anteriores.json?cnpj='+ $stateParams.cnpj +'&status=&name_entity=')
+       .success(function(data, status, headers,config){
+         $scope.resultado = data[0];
+         console.log($scope.resultado)
+       })
+       .error(function(data, status, headers,config){
+         console.log('data error');
+       })
+       .then(function(resultado){
+         things = resultado.data[0];
+       });
+   }
 
-
+   /* mapa TODO  */
 });
