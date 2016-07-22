@@ -1,0 +1,38 @@
+<ion-view view-title="Intro">
+        <ion-nav-buttons side="left">
+          <button class="button button-positive button-clear no-animation"
+                  ng-click="previous(sliderIndex)" ng-show="slideIndex > 0">
+            Anterior
+          </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+          <button class="button button-positive button-clear no-animation"
+                  ng-click="next(sliderIndex)" ng-show="slideIndex != 2">
+            Prox
+          </button>
+          <button class="button button-positive button-clear no-animation"
+                  ng-click="startApp()" ng-show="slideIndex == 2">
+            Iniciar Aplicativo
+          </button>
+        </ion-nav-buttons>
+        <ion-slide-box on-slide-changed="slideChanged($index)">
+          <ion-slide>
+              <img src="img/tela1.jpg">
+          </ion-slide>
+          <ion-slide>
+              <img src="img/App-menu1.jpg">
+          </ion-slide>
+          <ion-slide>
+              <img src="img/App-menu2.jpg">
+          </ion-slide>
+          <ion-slide>
+              <img src="img/App-menu3.jpg">
+          </ion-slide>
+          <ion-slide>
+              <img src="img/App-Toque.jpg">
+          </ion-slide>
+          <ion-slide>
+              <img src="img/App-Arraste.jpg">
+          </ion-slide>
+        </ion-slide-box>
+      </ion-view>

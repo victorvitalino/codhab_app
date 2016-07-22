@@ -18,22 +18,22 @@
         <div class="item">
           <strong>Nome: </strong>{{result.name}}<br/>
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <strong>RG: </strong>{{result.rg}}<br/>
-        </div>
-        <div class="item">
+        </div> -->
+        <!-- <div class="item">
           <strong>Genero: </strong><span class="captalize">{{result.gender}}</span><br/>
-        </div>
+        </div> -->
         <div class="item">
           <strong>Estado Civil: </strong>{{result.civil_state_id}}<br/>
         </div>
         <!-- <div class="item">
           <strong>Cidade: </strong>{{result.CityName}}<br/>
         </div> -->
-        <div class="item">
+        <!-- <div class="item">
           <strong>Endereço: </strong>{{result.address}} {{result.address_complement}}<br/>
-        </div>
-        <div class="item">
+        </div> -->
+        <!-- <div class="item">
           <strong>Email: </strong>{{result.email ? result.email : "Não Informado"}}<br/>
         </div>
         <div class="item">
@@ -41,7 +41,7 @@
         </div>
         <div class="item">
           <strong>Celular: </strong>{{result.celphone}}<br/>
-        </div>
+        </div> -->
         <div class="item">
           <strong>Chegada no DF: </strong>{{result.arrival_df | date:"dd/MM/yyyy" }}<br/>
         </div>
@@ -55,10 +55,25 @@
           <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.special_condition_id}}</span><br/>
         </div>
         <div class="item">
-          <strong>CID: </strong>{{result.cid ? result.cid : "Não Informado"}}<br/>
+          <strong>CID: </strong>{{result.cid ? "Possui" : "Não Informado"}}<br/>
         </div>
         <div class="item">
-          <strong>NIS: </strong>{{result.nis}}<br/>
+          <strong>NIS: </strong>{{result.nis ? "Possui" : "Não Informado"}}<br/>
+        </div>
+      </ion-list>
+      <ion-list ng-show="result.cpf">
+        <div class="item item-divider">
+          Indicado ao empreendimento
+        </div>
+        <div class="item" ng-repeat="i in result_indication" >
+          <strong>Empreendimento: </strong>{{i.enterprise}}<br />
+          <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
+          <div ng-if="i.inactive === false || i.inactive === 'empty'">
+            <div><strong>Situação: </strong>Indicação Ativa</div>
+          </div>
+          <div ng-if="i.inactive === true">
+            <div><strong>Situação: </strong>Indicação Inativa</div><br/>
+          </div>
         </div>
       </ion-list>
       <ion-list ng-show="result.cpf">

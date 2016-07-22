@@ -185,9 +185,9 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
             }
           }
         })
-        .state('teste',{
-          url: "/teste",
-          templateUrl:"views/app/teste.html",
+        .state('intro',{
+          url: "/intro",
+          templateUrl:"views/app/intro.html",
           controller: 'sliderCtrl'
         })
     .state('app.new_message',{
@@ -289,6 +289,6 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
   if(window.localStorage['tutorial'] === "true") {
 	   $urlRouterProvider.otherwise('/app/home');
   }else{
-    $urlRouterProvider.otherwise('/teste');
+    $urlRouterProvider.otherwise('/intro');
   }
 });
