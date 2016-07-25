@@ -3,22 +3,7 @@
     <div class="h1 title">Bem Vindo</div>
   </ion-nav-buttons>
   <ion-slide-box on-slide-changed="slideChanged($index)">
-    <ion-slide>
-        <h1>Vamos começar?</h1>
-        <h5>Ajude a CODHAB a melhorar seus dados, preencha com seu CPF para iniciar o aplicativo.</h5>
-        <form name="myForm">
 
-          <input name="cpf" ng-model="cpf" ng-cpf ui-mask="999.999.999-99" />
-          myForm.cpf.$valid: {{ myForm.cpf.$valid }}
-
-          <input name="cnpj" ng-model="cnpj" ng-cnpj ui-mask="99.999.999/9999-99" />
-          myForm.cnpj.$valid: {{ myForm.cnpj.$valid }}
-
-        </form>
-        <button ng-click="startApp()"class="button button-outline button-energized">
-            Iniciar Aplicativo
-        </button>
-    </ion-slide>
     <ion-slide>
         <img src="img/tela1.jpg">
     </ion-slide>
@@ -38,5 +23,24 @@
         <img src="img/App-Arraste.jpg">
     </ion-slide>
 
+    <ion-slide>
+        <h1 class="start-color">Vamos começar?</h1>
+        <p>
+          <h5 class="startTitle start-color">Ajude a CODHAB a melhorar seus dados, preencha com seu CPF para iniciar o aplicativo.</h5>
+        </p>
+        <form name="startForm">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input class="start-color" name="cpf" ng-model="cpf" type="text" ng-cpf ui-mask="999.999.999-99" validate-cpf required  />
+            </label>
+          </div>
+        </form>
+        <p  class="start-color" ng-hide="startForm.cpf.$valid">
+          Preencha com um CPF válido
+        </p>
+        <button ng-click="startApp(cpf)"ng-model="cpf" style="font-weight:400"class="button button-outline button-energized start-button" ng-show="startForm.cpf.$valid">
+            INICIAR APLICATIVO
+        </button>
+    </ion-slide>
   </ion-slide-box>
 </ion-view>

@@ -6,6 +6,7 @@
     "facebook-connect-plugin": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js"
   },
   "dependencies": {
-    "ng-cpf-cnpj": "~0.0.5"
+    "ng-cpf-cnpj": "~0.0.5",
+    "angular-ui-utils": "~3.0.0"
   }
 }

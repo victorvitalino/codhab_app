@@ -7,6 +7,7 @@ var app = angular.module('codhab', ['ionic',
 'ngCordova',
 'ngMessages',
 'ngCpfCnpj',
+'ui.mask',
 'angularMoment',
 'parse-angular',
 'parse-angular.enhance',
@@ -183,6 +184,14 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
           views:{
             'home':{
               templateUrl: "views/app/terms.html"
+            }
+          }
+        })
+    .state('app.faq',{
+          url: "/faq",
+          views:{
+            'home':{
+              templateUrl: "views/app/faq.html"
             }
           }
         })

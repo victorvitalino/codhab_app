@@ -30,6 +30,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
 
+.startTitle{padding:5px;}
+.start-button{
+	margin-top: 65px;
+
+}
+.start-color{
+	color:#a7a9ac;
+	font-weight: 100!important;
+}
 .bloco-energized{
 	background-color:#ffc10e;
 }
