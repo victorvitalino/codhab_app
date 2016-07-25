@@ -6,6 +6,7 @@
 var app = angular.module('codhab', ['ionic',
 'ngCordova',
 'ngMessages',
+'ngCpfCnpj',
 'angularMoment',
 'parse-angular',
 'parse-angular.enhance',
