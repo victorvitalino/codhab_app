@@ -15,8 +15,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Lucélia Duda",
                 tel: "993266472",
                 email: "lucelia.duda@codhab.df.gov.br",
-                latitude: "-16.310914",
-                longitude: "-47.979569"
+                latitude: "-15.797598",
+                longitude: "-47.890676"
             },
             {
                 id:2,
@@ -26,8 +26,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Isabela Gardês",
                 tel: "995574085",
                 email: "isabela.gardes@codhab.df.gov.br",
-                latitude: "-16.310914",
-                longitude: "-47.988281"
+                latitude: "-15.836044311523438",
+                longitude: "-48.12946319580078"
             },
             {
                 id:3,
@@ -37,8 +37,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Fabiana Lemos",
                 tel: "992264672",
                 email: "fabiana.rajao@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.8054504",
+                longitude: "-48.1575298"
             },
             {
                 id:4,
@@ -48,8 +48,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Paulo Cavalcante",
                 tel: "993266472",
                 email: "frederico.barboza@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.8749524",
+                longitude: "-47.9606197"
             },
             {
                 id:5,
@@ -59,8 +59,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Isabel Alencar",
                 tel: "992277458",
                 email: "isabel.alencar@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.7775872",
+                longitude: "-47.9875296"
             },
             {
                 id:6,
@@ -70,8 +70,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Erick Mendonça",
                 tel: "982792994",
                 email: "erick.welson@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.6606957",
+                longitude: "-48.1980764"
             },
             {
                 id:7,
@@ -81,8 +81,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Mariana Bontempo",
                 tel: "995433401",
                 email: "mariana.bontempo@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-16.035266",
+                longitude: "-48.021197"
             },
             {
                 id:8,
@@ -92,8 +92,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Sandra Marinho",
                 tel: "993265569",
                 email: "sandra.marinho@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.9097939",
+                longitude: "-47.7692961"
             },
             {
                 id:9,
@@ -103,8 +103,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Jéssica Costa",
                 tel: "992189330",
                 email: "jessica.costa@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.6491212",
+                longitude: "-47.8279804"
             },
             {
                 id:10,
@@ -114,8 +114,8 @@ app.service("PostosService", function ($q,$cordovaGeolocation) {
                 coordenador: "Jéssica Costa",
                 tel: "992189330",
                 email: "jessica.costa@codhab.df.gov.br",
-                latitude: "-16.069636",
-                longitude: "-47.979569"
+                latitude: "-15.601094",
+                longitude: "-47.8702421"
             }
 
         ];
