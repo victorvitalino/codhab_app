@@ -5,7 +5,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
     $scope.result = "";
     $scope.results = "";
     $scope.result_indication = "";
-    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '.json')
+    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '.json')
       .success(function (data, status, headers, config) {
         var old = moment().diff(moment(data.born), 'years');
         if (old >= 60) {
@@ -13,7 +13,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         } else {
           data.olds = "Não";
         }
-        console.log(data); // for browser console
+        console.log(data);
         switch (data.civil_state_id) {
           case 1:
             data.civil_state_id = "Solteiro(a)";
@@ -77,17 +77,20 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         }
 
         $scope.result = data;
+        console.log('mimi'+data);
       })
       .error(function (data, status, headers, config) {
-        console.log('data error');
+        console.log('data errorrrr');
+         console.log('mimi'+data);
       })
       .then(function (result) {
         things = result.data;
+         console.log('mimi'+data);
       });
 
 
     // Inicio do segundo search -- position
-    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
+    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '/position.json')
       .success(function (data2, status, headers, config) {
         console.log(data2);
         $scope.results = data2;
@@ -100,7 +103,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
       });
 
     // Inicio do terceiro search -- indicação
-    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/indication.json')
+    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '/indication.json')
       .success(function (data, status, headers, config) {
         console.log(data);
         $scope.result_indication = data;
