@@ -1,17 +1,16 @@
-var app = angular.module('codhab.controllers.search',[]);
-app.controller('SearchCtrl', function($scope, $state, $ionicLoading, $http) {
+var app = angular.module('codhab.controllers.search', []);
+app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
 
-
-$scope.searchCPF = function (search) {
+  $scope.searchCPF = function (search) {
     $scope.result = "";
     $scope.results = "";
     $scope.result_indication = "";
-    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'.json')
-      .success(function(data, status, headers,config){
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '.json')
+      .success(function (data, status, headers, config) {
         var old = moment().diff(moment(data.born), 'years');
-        if(old >= 60){
+        if (old >= 60) {
           data.olds = "Idoso";
-        }else{
+        } else {
           data.olds = "Não";
         }
         console.log(data); // for browser console
@@ -77,45 +76,42 @@ $scope.searchCPF = function (search) {
             break;
         }
 
-        $scope.result = data; // for UI
-
-
+        $scope.result = data;
       })
-      .error(function(data, status, headers,config){
+      .error(function (data, status, headers, config) {
         console.log('data error');
       })
-      .then(function(result){
+      .then(function (result) {
         things = result.data;
       });
 
 
-      // Inicio do segundo search -- position
-      $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'/position.json')
-        .success(function(data2, status, headers,config){
-          //console.log(data2);
-          $scope.results = data2;
+    // Inicio do segundo search -- position
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
+      .success(function (data2, status, headers, config) {
+        console.log(data2);
+        $scope.results = data2;
+      })
+      .error(function (data, status, headers, config) {
+        console.log('data error');
+      })
+      .then(function (results) {
+        things = results.data2;
+      });
 
-        })
-        .error(function(data, status, headers,config){
-          console.log('data error');
-        })
-        .then(function(results){
-          things = results.data2;
-        });
+    // Inicio do terceiro search -- indicação
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/indication.json')
+      .success(function (data, status, headers, config) {
+        console.log(data);
+        $scope.result_indication = data;
 
-      // Inicio do terceiro search -- indicação
-      $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'/indication.json')
-        .success(function(data, status, headers,config){
-          console.log(data);
-          $scope.result_indication = data;
+      })
+      .error(function (data, status, headers, config) {
+        console.log('data error');
+      })
+      .then(function (result_indication) {
+        things = result_indication.data;
+      });
 
-        })
-        .error(function(data, status, headers,config){
-          console.log('data error');
-        })
-        .then(function(result_indication){
-          things = result_indication.data;
-        });
-
-    }
+  }
 });
