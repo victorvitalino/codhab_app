@@ -6,7 +6,4 @@ app.controller('EntidadesCtrl', function($scope, $state, $stateParams, $ionicLoa
           console.log($scope.result)
           });
     }
-
-
-
 });

@@ -84,12 +84,23 @@
       </div>
     </ion-list>
     <div ng-hide="result.cpf" class="logo_interna_search">
-      <img src="img/search.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;" />
-      <p class="texto_interno_search marginz">
-        Preencha com um CPF válido e cadastrado na CODHAB.
+      <div ng-hide="verify">
+        <img src="img/search.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;" />
+        <p class="texto_interno_search marginz">
+          Preencha com um CPF válido e cadastrado na CODHAB.
+        </p>
+        <p class="texto_interno_search marginz">
+          Os dados estão disponíveis para consulta pública.
+        </p>
+      </div>
+    </div>
+    <div ng-show="verify" class="logo_interna_search">
+      <img src="img/warning.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;" />
+      <p class="texto_interno_search marginz" style="color:#ff0000">
+        O CPF que você digitou está não está cadastrado.
       </p>
-      <p class="texto_interno_search marginz">
-        Os dados estão disponíveis para consulta pública.
+      <p class="texto_interno_search marginz" style="color:#ff0000">
+        Por favor preencha com um CPF cadastrado na CODHAB.
       </p>
     </div>
   </ion-content>

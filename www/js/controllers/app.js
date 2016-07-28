@@ -10,7 +10,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state,$cordovaGeolocat
      window.localStorage['long'] = $scope.long;
      console.log($scope.lat);
    }, function (err){
-     console.log(err);
+     alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
    });
   }
 });

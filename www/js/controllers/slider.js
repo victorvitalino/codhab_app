@@ -1,7 +1,6 @@
 var app = angular.module('codhab.controllers.slider', []);
 
 app.controller('sliderCtrl', function ($scope,$state,$ionicSlideBoxDelegate) {
-  $scope.cpf = false;
     $scope.startApp = function(cpf) {
         $state.go('app.home');
         window.localStorage['tutorial'] = true;

@@ -3,7 +3,6 @@
     <div class="h1 title">Bem Vindo</div>
   </ion-nav-buttons>
   <ion-slide-box on-slide-changed="slideChanged($index)">
-
     <ion-slide>
         <img src="img/tela1.jpg">
     </ion-slide>
@@ -22,7 +21,6 @@
     <ion-slide>
         <img src="img/App-Arraste.jpg">
     </ion-slide>
-
     <ion-slide>
         <h1 class="start-color">Vamos começar?</h1>
         <p>
@@ -31,14 +29,14 @@
         <form name="startForm">
           <div class="list list-inset">
             <label class="item item-input">
-              <input class="start-color" name="cpf" ng-model="cpf" type="text" ng-cpf ui-mask="999.999.999-99" validate-cpf required  />
+              <input class="start-color" name="cpf" ng-model="cpf" type="text" ng-cpf validate-cpf required  />
             </label>
           </div>
         </form>
         <p  class="start-color" ng-hide="startForm.cpf.$valid">
-          Preencha com um CPF válido
+          Preencha com um CPF válido, apenas números.
         </p>
-        <button ng-click="startApp(cpf)"ng-model="cpf" style="font-weight:400"class="button button-outline button-energized start-button" ng-show="startForm.cpf.$valid">
+        <button ng-click="startApp(cpf)" ng-model="cpf" style="font-weight:400" class="button button-energized start-button" ng-show="startForm.cpf.$valid">
             INICIAR APLICATIVO
         </button>
     </ion-slide>

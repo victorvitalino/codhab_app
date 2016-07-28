@@ -101,8 +101,9 @@ app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation,
 
   },
   function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-    'message: ' + error.message + '\n');
+     alert("Erro: Para visualizar a localização, ligue seu GPS.");
+    // alert('code: '    + error.code    + '\n' +
+    // 'message: ' + error.message + '\n');
     });
 
 });

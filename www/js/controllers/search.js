@@ -2,10 +2,11 @@ var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
 
   $scope.searchCPF = function (search) {
+    $scope.verify = "";
     $scope.result = "";
     $scope.results = "";
     $scope.result_indication = "";
-    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '.json')
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '.json')
       .success(function (data, status, headers, config) {
         var old = moment().diff(moment(data.born), 'years');
         if (old >= 60) {
@@ -77,33 +78,35 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         }
 
         $scope.result = data;
-        console.log('mimi'+data);
       })
       .error(function (data, status, headers, config) {
-        console.log('data errorrrr');
-         console.log('mimi'+data);
+        console.log('data error');
+         $scope.verify = true;
       })
       .then(function (result) {
         things = result.data;
-         console.log('mimi'+data);
+
       });
 
 
     // Inicio do segundo search -- position
-    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '/position.json')
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
       .success(function (data2, status, headers, config) {
         console.log(data2);
         $scope.results = data2;
+
       })
       .error(function (data, status, headers, config) {
         console.log('data error');
+                $scope.verify = true;
+
       })
       .then(function (results) {
         things = results.data2;
       });
 
     // Inicio do terceiro search -- indicação
-    $http.get('http://codhab.localhost.df.gov.br:3000/habitacao/candidato/' + search.cpf + '/indication.json')
+    $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/indication.json')
       .success(function (data, status, headers, config) {
         console.log(data);
         $scope.result_indication = data;
@@ -111,6 +114,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
       })
       .error(function (data, status, headers, config) {
         console.log('data error');
+                $scope.verify = true;
       })
       .then(function (result_indication) {
         things = result_indication.data;

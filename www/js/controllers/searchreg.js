@@ -1,8 +1,8 @@
 var app = angular.module('codhab.controllers.searchreg',[]);
 app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
   $scope.searchCPF = function (search) {
-      console.log(search)
       $scope.result = "";
+      $scope.verify = "";   
       $scope.results = "";
       $http.get('http://www.codhab.df.gov.br/regularizacao/cadastro/'+ search.cpf +'.json')
         .success(function(data, status, headers,config){
@@ -81,6 +81,7 @@ app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
         })
         .error(function(data, status, headers,config){
           console.log('data error');
+           $scope.verify = true;
         })
         .then(function(result){
           things = result.data;
@@ -96,6 +97,7 @@ app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
           })
           .error(function(data, status, headers,config){
             console.log('data error');
+             $scope.verify = true;
           })
           .then(function(results){
             things = results.data2;
