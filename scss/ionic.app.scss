@@ -4,6 +4,8 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 */
+
+
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
@@ -15,8 +17,54 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,300');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,300');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,300');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700,300');
+
+/*
+Google @fontface , espero que n de pala dnvo :s
+*/
+
+// Lato
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url('www/fonts/Lato/Lato-Light.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url('www/fonts/Lato/Lato-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url('www/fonts/Lato/Lato-Bold.ttf') format('ttf');
+}
+
+// Roboto
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url('www/fonts/Roboto/Roboto-Light.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('www/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('www/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+}
+
+/* fim @fontface*/
 $font-family-base: 'Roboto';
 $font-family-second: 'Lato';
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -110,8 +158,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	overflow: hidden;
 	height: 110px;
 }
-.fundo-single img{
-}
+
 .cor-clara{
 	color:#ddd;
 }

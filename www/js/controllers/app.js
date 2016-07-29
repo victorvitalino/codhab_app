@@ -1,8 +1,8 @@
 var app = angular.module('codhab.controllers.app', []);
-app.controller('AppCtrl', function($scope, $ionicConfig, $state,$cordovaGeolocation, AuthService) {
+app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeolocation) {
 
   $scope.addGeoLocation = function (){
-    $cordovaGeolocation.getCurrentPosition({timeout:10000, enableHighAccuracy:true})
+    $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
     .then(function(position){
      $scope.lat = position.coords.latitude;
      $scope.long = position.coords.longitude;

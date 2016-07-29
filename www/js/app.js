@@ -9,8 +9,8 @@ var app = angular.module('codhab', ['ionic',
 'ngCpfCnpj',
 'ui.mask',
 'angularMoment',
-'parse-angular',
-'parse-angular.enhance',
+// 'parse-angular', Removido Temporariamente
+// 'parse-angular.enhance', Removido Temporariamente
 'codhab.controllers.app',
 'codhab.controllers.map',
 'codhab.controllers.search',
@@ -47,15 +47,16 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
 
-    Parse.initialize("0nHHDsgXpUZieEkv46JhEKgk8fXUkKn8aDNpyqZP", "r4pMXbjMUVCrqcSzh25W1J1U3yJ5U4rjG6kdCwry");
+    // Parse - Removido Temporariamente
+    // Parse.initialize("0nHHDsgXpUZieEkv46JhEKgk8fXUkKn8aDNpyqZP", "r4pMXbjMUVCrqcSzh25W1J1U3yJ5U4rjG6kdCwry");
 
-      window.fbAsyncInit = function() {
-          Parse.FacebookUtils.init({
-              appId      : '1248184141874382',
-              version    : 'v2.3',
-              xfbml      : true
-          });
-      };
+    //   window.fbAsyncInit = function() {
+    //       Parse.FacebookUtils.init({
+    //           appId      : '1248184141874382',
+    //           version    : 'v2.3',
+    //           xfbml      : true
+    //       });
+    //   };
 
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
