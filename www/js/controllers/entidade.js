@@ -41,7 +41,7 @@ app.controller('EntidadeCtrl', function($scope, $state, $stateParams,$cordovaGeo
      //Gerar marker após o load do mapa
      google.maps.event.addListenerOnce($scope.map, 'idle', function(){
        var icon_posto = {
-         url: "img/postos.png",
+         url: "img/entidades.png",
          scaledSize: new google.maps.Size(50,55)
        }
        var icon_carro = {

@@ -13,4 +13,6 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeoloca
      alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
    });
   }
+
+
 });
