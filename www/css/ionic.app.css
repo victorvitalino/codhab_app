@@ -18220,6 +18220,17 @@ form .form-errors {
 .item-card .category {
   color: lightgray; }
 
+label.error-formz {
+  border-color: #ef473a !important; }
+
+label.no_error-formz {
+  border-color: #33cd5f !important; }
+
+.placeholder-right-icon {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #33cd5f; }
+
 .startTitle {
   padding: 5px; }
 
