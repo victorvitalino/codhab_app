@@ -1,9 +1,8 @@
-<ion-view ng-init="addAuthenticated();">
+<ion-view scroll="true">
   <ion-nav-buttons class="bar bar-header">
     <div class="h1 title">Bem Vindo</div>
   </ion-nav-buttons>
-  <ion-slide-box on-slide-changed="slideChanged($index)">
-
+  <ion-slide-box  style="position:absolute; bottom: 0;left: 0;right: 0;">
     <ion-slide>
       <img src="img/tela1.jpg">
     </ion-slide>
@@ -25,47 +24,63 @@
     <ion-slide>
       <h1 class="start-color">Vamos começar?</h1>
       <p>
-        <h5 class="startTitle start-color">Ajude a CODHAB a melhorar seus dados, preencha com o formulário para iniciar o aplicativo.<br/><br/> <strong>É necessário conexão com a internet</strong></h5>
+        <h5 class="startTitle start-color">
+          Ajude a CODHAB a melhora seu aplicativo.
+          <br/><br/>
+          Dúvidas ou sugestões entre em contato: suporte.app@codhab.df.gov.br
+          <br/><br/>
+          <strong>É necessário conexão com a internet</strong></h5>
       </p>
-      <form name="startForm">
-        <div class="list list-inset">
-          <label class="item item-input">
-            <input class="start-color" name="cpf" ng-model="cpf" type="text" ng-cpf validate-cpf required placeholder="ex: 01722602121" />
-            <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='startForm.cpf.$valid'></i>
-          </label>
-          <p class="start-color" ng-hide="startForm.cpf.$valid">
-            Preencha com um CPF válido, apenas números.
-          </p>
-        </div>
-        <div class="list list-inset">
-          <label class="item item-input">
-            <input class="start-color" name="telefone" ng-model="telefone" type="text" required placeholder="ex: 61 987654321"  ng-minlength="9" maxlength="12" />
-            <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='startForm.telefone.$valid'></i>
-          </label>
-          <p class="start-color" ng-hide='startForm.telefone.$valid'>
-            Preencha com o seu número de celular, apenas números
-          </p>
-        </div>
-        <div class="list list-inset">
-          <label class="item item-input" ng-class="{'no_error-formz':startForm.$error.email">
-            <input class="start-color" name="email" ng-model="email" type="email" required placeholder="ex: maria@codhab.com" />
-            <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='!startForm.$error.email && !startForm.email.$error.required'></i>
-          </label>
-          <!-- <tt>text = {{telefone.text}}</tt><br/>
-          <tt>startForm.input.$valid = {{startForm.telefone.$valid}}</tt><br/>
-          <tt>startForm.input.$error = {{startForm.telefone.$error}}</tt><br/>
-          <tt>startForm.$valid = {{startForm.$valid}}</tt><br/>
-          <tt>startForm.$error.required = {{!!startForm.$error.required}}</tt><br/>
-          <tt>startForm.$error.telefone = {{!!startForm.$error.telefone}}</tt><br/> -->
-          <p class="start-color" ng-hide='!startForm.$error.email && !startForm.email.$error.required'>
-            Preencha com seu email.
-          </p>
-        </div>
-      </form>
-
-      <button ng-click="startApp(cpf, email, telefone)" style="font-weight:400" class="button button-energized start-button" ng-show="startForm.$valid">
+      <button ng-click="startApp()" style="font-weight:400" class="button button-energized start-button">
         INICIAR APLICATIVO
       </button>
     </ion-slide>
+    <!-- <ion-slide>
+      <ion-scroll>
+        <h1 class="start-color">Vamos começar?</h1>
+        <p>
+          <h5 class="startTitle start-color">Ajude a CODHAB a melhorar seus dados, preencha com o formulário para iniciar o aplicativo.<br/><br/> <strong>É necessário conexão com a internet</strong></h5>
+        </p>
+        <form name="startForm">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input class="start-color" name="cpf" ng-model="cpf" type="text" ng-cpf validate-cpf required placeholder="ex: 01722602121" />
+              <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='startForm.cpf.$valid'></i>
+            </label>
+            <p class="start-color" ng-hide="startForm.cpf.$valid">
+              Preencha com um CPF válido, apenas números.
+            </p>
+          </div>
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input class="start-color" name="telefone" ng-model="telefone" type="text" required placeholder="ex: 61 987654321"  ng-minlength="9" maxlength="12" />
+              <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='startForm.telefone.$valid'></i>
+            </label>
+            <p class="start-color" ng-hide='startForm.telefone.$valid'>
+              Preencha com o seu número de celular, apenas números
+            </p>
+          </div>
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input class="start-color" name="email" ng-model="email" type="email" required placeholder="ex: maria@codhab.com" />
+              <i class="icon ion-ios-checkmark placeholder-icon placeholder-right-icon" ng-show='!startForm.$error.email && !startForm.email.$error.required'></i>
+            </label>
+            <tt>text = {{telefone.text}}</tt><br/>
+            <tt>startForm.input.$valid = {{startForm.telefone.$valid}}</tt><br/>
+            <tt>startForm.input.$error = {{startForm.telefone.$error}}</tt><br/>
+            <tt>startForm.$valid = {{startForm.$valid}}</tt><br/>
+            <tt>startForm.$error.required = {{!!startForm.$error.required}}</tt><br/>
+            <tt>startForm.$error.telefone = {{!!startForm.$error.telefone}}</tt><br/>
+            <p class="start-color" ng-hide='!startForm.$error.email && !startForm.email.$error.required'>
+              Preencha com seu email.
+            </p>
+          </div>
+        </form>
+
+        <button ng-click="startApp(cpf, email, telefone)" style="font-weight:400" class="button button-energized start-button" ng-show="startForm.$valid">
+          INICIAR APLICATIVO
+        </button>
+      </ion-scroll>
+    </ion-slide> -->
   </ion-slide-box>
 </ion-view>

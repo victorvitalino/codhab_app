@@ -1,11 +1,11 @@
 var app = angular.module('codhab.controllers.slider', []);
 app.controller('sliderCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
   $scope.authenticated = false;
-  $scope.startApp = function(cpf, email, telefone) {
+  $scope.startApp = function() {
     window.localStorage['tutorial'] = true;
-    window.localStorage['cpf'] = cpf;
-    window.localStorage['telefone'] = telefone;
-    window.localStorage['email'] = email;
+    // window.localStorage['cpf'] = cpf;  removidos Temporariamente
+    // window.localStorage['telefone'] = telefone;
+    // window.localStorage['email'] = email;
     $state.go('app.home');
   };
 

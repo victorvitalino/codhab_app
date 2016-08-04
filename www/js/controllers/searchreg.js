@@ -2,8 +2,16 @@ var app = angular.module('codhab.controllers.searchreg',[]);
 app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
   $scope.searchCPF = function (search) {
       $scope.result = "";
-      $scope.verify = "";   
+      $scope.verify = "";
       $scope.results = "";
+      $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+      });
+
       $http.get('http://www.codhab.df.gov.br/regularizacao/cadastro/'+ search.cpf +'.json')
         .success(function(data, status, headers,config){
           var old = moment().diff(moment(data.born), 'years');
@@ -76,15 +84,16 @@ app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
           }
 
           $scope.result = data; // for UI
-
-
+          $ionicLoading.hide();
         })
         .error(function(data, status, headers,config){
           console.log('data error');
            $scope.verify = true;
+           $ionicLoading.hide();
         })
         .then(function(result){
           things = result.data;
+          $ionicLoading.hide();
         });
 
 
