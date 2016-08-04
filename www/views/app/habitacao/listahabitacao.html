@@ -8,10 +8,10 @@
         <label class="item-input-wrapper">
         <i class="icon ion-ios-search placeholder-icon"></i>
         <input type="search" placeholder="CPF somente números" name="search" id="search" ng-model="search.cpf" ng-required="true" required maxlength="11">
-      </label>
-					<div class="form-errors" ng-messages="createForm.search.$error">
-	        	<div ng-messages-include="views/errors/form-errors.html"></div>
-	        </div>
+        </label>
+        <button ng-click="searchCPF(search)" style="font-weight:400" class="button button-energized button-small">
+          PESQUISAR
+        </button>
       </div>
     </form>
     <ion-list ng-show="result.cpf">

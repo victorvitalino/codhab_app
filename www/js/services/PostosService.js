@@ -21,9 +21,9 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
           nome: "Sol Nascente",
           endereco: "Prologongamento da Av. P4, Sol Nascente - Trecho I, Ceilândia/DF",
           hora: "Seg. à Sex. -  9:00  às 17:00",
-          coordenador: "Isabela Gardês",
+          coordenador: "Edson Lima",
           tel: "995574085",
-          email: "isabela.gardes@codhab.df.gov.br",
+          email: "edson.mello@codhab.df.gov.br",
           latitude: "-15.836044311523438",
           longitude: "-48.12946319580078"
         }, {
@@ -43,7 +43,7 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
           hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
           coordenador: "Paulo Cavalcante",
           tel: "993266472",
-          email: "frederico.barboza@codhab.df.gov.br",
+          email: "paulo.cavalcante@codhab.df.gov.br ",
           latitude: "-15.8749524",
           longitude: "-47.9606197"
         }, {
@@ -59,7 +59,7 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
         }, {
           id: 6,
           nome: "Brazlândia",
-          endereco: "Quadra 47, Área Especial, Vila São José – Brazlândia/DF",
+          endereco: "Entre Quadra 37/47, Área Especial, Vila São José – Brazlândia/DF",
           hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
           coordenador: "Erick Mendonça",
           tel: "982792994",
@@ -104,6 +104,16 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
           coordenador: "Jéssica Costa",
           tel: "992189330",
           email: "jessica.costa@codhab.df.gov.br",
+          latitude: "-15.601094",
+          longitude: "-47.8702421"
+        }, {
+          id: 11,
+          nome: "Por do Sol",
+          endereco: "SHPS, Qd 303 Conjunto A Loja 28 -B,Ceilândia/DF",
+          hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
+          coordenador: "Frederico Barboza",
+          tel: "992189330",
+          email: "frederico.barboza@codhab.df.gov.br",
           latitude: "-15.601094",
           longitude: "-47.8702421"
         }
