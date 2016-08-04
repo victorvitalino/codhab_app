@@ -62,6 +62,10 @@
       <div class="item item-divider">
         Situação do Candidato
       </div>
+      <div ng-hide="results">
+        <h5 style="text-align:center;"> Calculando... </h5>
+          <img src="img/ripple.gif"  style="display:block; margin:0 auto;"/>
+      </div>
       <div class="item" ng-repeat="i in results">
         <div ng-if="i.list == 'rii'">
           <strong>Lista: </strong>RII<br/>
