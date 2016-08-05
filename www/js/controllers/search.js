@@ -1,6 +1,5 @@
 var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
-  console.log($state.current.name)
   $scope.searchCPF = function (search) {
     $scope.verify = "";
     $scope.result = "";
