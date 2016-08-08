@@ -18247,9 +18247,6 @@ label.no_error-formz {
 .fontsx {
   color: #333 !important; }
 
-.badge_indication {
-  position: relative !important; }
-
 .slider-slide img {
   width: 100%; }
 
@@ -18435,3 +18432,17 @@ label.no_error-formz {
   margin-bottom: 20px;
   font-weight: bold;
   color: #818285; }
+
+.badge_indication {
+  width: 100%;
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin-top: 5px;
+  padding: 5px; }
+
+.indication-balanced {
+  background-color: #33cd5f; }
+
+.indication-energized {
+  background-color: #ffc10e; }

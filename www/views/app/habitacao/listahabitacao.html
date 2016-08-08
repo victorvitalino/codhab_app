@@ -47,6 +47,11 @@
       <div class="item item-divider">
         Indicado ao empreendimento
       </div>
+      <div ng-show="!!!result_indication.length">
+        <div class="item">
+          Sem Indicação à Empreendimento
+        </div>
+      </div>
       <div class="item" ng-repeat="i in result_indication">
         <strong>Empreendimento: </strong>{{i.enterprise}}<br />
         <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
@@ -57,6 +62,8 @@
           <div><strong>Situação: </strong>Indicação Inativa</div><br/>
         </div>
       </div>
+
+
     </ion-list>
     <ion-list ng-show="result.cpf">
       <div class="item item-divider">
@@ -84,7 +91,10 @@
         </div>
         <strong>Pontuação: </strong>{{i.pontuation}}<br/>
         <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
-        <span class="badge {{i.situation_status == 'ok' ? 'badge-balanced' : 'badge-energized'}}  badge_search">{{i.situation}}</span><br/>
+        <span class="badge_indication {{i.situation_status == 'ok' ? 'indication-balanced' : 'indication-energized'}}">
+          <strong>{{i.situation}}</strong>
+        </span>
+        <br/>
       </div>
     </ion-list>
     <div ng-hide="result.cpf" class="logo_interna_search">

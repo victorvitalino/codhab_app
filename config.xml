@@ -9,6 +9,7 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+  <access origin="*.pushwoosh.com" />
   <access origin="tel:*" launch-external="yes"/>
   <allow-intent href="mailto:*"/>
   <preference name="webviewbounce" value="false"/>
