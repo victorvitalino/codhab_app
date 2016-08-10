@@ -3,6 +3,90 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
+
+function onPushwooshInitialized(pushNotification) {
+
+  //if you need push token at a later time you can always get it from Pushwoosh plugin
+  pushNotification.getPushToken(
+    function(token) {
+      //alert("o token é:" + token)
+      console.info('push token: ' + token);
+    }
+  );
+  //crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
+  //and HWID if you want to communicate with Pushwoosh API
+  pushNotification.getPushwooshHWID(
+    function(token) {
+      console.info('Pushwoosh HWID: ' + token);
+    }
+  );
+  //crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
+  //settings tags
+  pushNotification.setTags({
+      tagName: "tagValue",
+      intTagName: 10
+    },
+    function(status) {
+      console.info('setTags success: ' + JSON.stringify(status));
+    },
+    function(status) {
+      console.warn('setTags failed');
+    }
+  );
+
+  pushNotification.getTags(
+    function(status) {
+      //alert('getTags success: ' + JSON.stringify(status));
+      console.info('getTags success: ' + JSON.stringify(status));
+    },
+    function(status) {
+      console.warn('getTags failed');
+    }
+  );
+
+  //start geo tracking.
+  //pushNotification.startLocationTracking();
+}
+
+function initPushwoosh() {
+  var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
+
+  //set push notifications handler
+  document.addEventListener('push-notification',
+    function(event) {
+      var message = event.notification.message;
+      var userData = event.notification.userdata;
+
+    //  alert("Push message opened: " + message);
+      console.info(JSON.stringify(event.notification));
+
+      //dump custom data to the console if it exists
+      if (typeof(userData) != "undefined") {
+        console.warn('user data: ' + JSON.stringify(userData));
+      }
+    }
+  );
+
+  //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
+  pushNotification.onDeviceReady({
+    projectid: "190801927723",
+    appid: "48A40-8A976",
+    serviceName: ""
+  });
+
+  //register for push notifications
+  pushNotification.registerDevice(
+    function(status) {
+    //  alert("registered with token: " + status.pushToken);
+      onPushwooshInitialized(pushNotification);
+    },
+    function(status) {
+    //  alert("failed to register: " + status);
+      console.warn(JSON.stringify(['failed to register ', status]));
+    }
+  );
+}
+
 var app = angular.module('codhab', ['ionic',
 'ngCordova',
 'ngMessages',
@@ -44,25 +128,10 @@ app.run(function($ionicPlatform) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    initPushwoosh();
 
     // Parse - Removido Temporariamente
     // Parse.initialize("0nHHDsgXpUZieEkv46JhEKgk8fXUkKn8aDNpyqZP", "r4pMXbjMUVCrqcSzh25W1J1U3yJ5U4rjG6kdCwry");
-
-    //   window.fbAsyncInit = function() {
-    //       Parse.FacebookUtils.init({
-    //           appId      : '1248184141874382',
-    //           version    : 'v2.3',
-    //           xfbml      : true
-    //       });
-    //   };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
 
   });
 });

@@ -18441,6 +18441,9 @@ label.no_error-formz {
   margin-top: 5px;
   padding: 5px; }
 
+.badge_indication strong {
+  text-transform: uppercase !important; }
+
 .indication-balanced {
   background-color: #33cd5f; }
 
