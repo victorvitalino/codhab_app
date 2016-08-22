@@ -13,7 +13,7 @@ function onPushwooshInitialized(pushNotification) {
       console.info('push token: ' + token);
     }
   );
-  //crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
+//crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
   //and HWID if you want to communicate with Pushwoosh API
   pushNotification.getPushwooshHWID(
     function(token) {
