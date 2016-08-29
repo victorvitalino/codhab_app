@@ -29,19 +29,19 @@ Google @fontface , espero que n de pala dnvo :s
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'), url('www/fonts/Lato/Lato-Light.ttf') format('ttf');
+  src: local('Lato Light'), local('Lato-Light'), url('../www/fonts/Lato/Lato-Light.ttf') format('ttf');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url('www/fonts/Lato/Lato-Regular.ttf') format('ttf');
+  src: local('Lato Regular'), local('Lato-Regular'), url('../www/fonts/Lato/Lato-Regular.ttf') format('ttf');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url('www/fonts/Lato/Lato-Bold.ttf') format('ttf');
+  src: local('Lato Bold'), local('Lato-Bold'), url('../www/fonts/Lato/Lato-Bold.ttf') format('ttf');
 }
 
 // Roboto
@@ -49,19 +49,19 @@ Google @fontface , espero que n de pala dnvo :s
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url('www/fonts/Roboto/Roboto-Light.ttf') format('ttf');
+  src: local('Roboto Light'), local('Roboto-Light'), url('../www/fonts/Roboto/Roboto-Light.ttf') format('ttf');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('www/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('../www/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url('www/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('../www/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
 }
 
 /* fim @fontface*/
