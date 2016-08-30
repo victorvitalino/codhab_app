@@ -13,8 +13,6 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/Lato/Lato-Light.eot") format("embedded-opentype"),
-       url("../fonts/Lato/Lato-Light.woff2") format("woff2"),
-       url("../fonts/Lato/Lato-Light.woff") format("woff"),
        url("../fonts/Lato/Lato-Light.ttf") format("truetype"),
        url("../fonts/Lato/Lato-Light.svg#Lato") format("svg"); }
 
@@ -23,8 +21,6 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/Lato/Lato-Regular.eot") format("embedded-opentype"),
-       url("../fonts/Lato/Lato-Regular.woff2") format("woff2"),
-       url("../fonts/Lato/Lato-Regular.woff") format("woff"),
        url("../fonts/Lato/Lato-Regular.ttf") format("truetype"),
        url("../fonts/Lato/Lato-Regular.svg#Lato") format("svg"); }
 
@@ -33,8 +29,6 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/Lato/Lato-Bold.eot") format("embedded-opentype"),
-       url("../fonts/Lato/Lato-Bold.woff2") format("woff2"),
-       url("../fonts/Lato/Lato-Bold.woff") format("woff"),
        url("../fonts/Lato/Lato-Bold.ttf") format("truetype"),
        url("../fonts/Lato/Lato-Bold.svg#Lato") format("svg"); }
 
@@ -43,8 +37,6 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/Roboto/Roboto-Light.eot") format("embedded-opentype"),
-       url("../fonts/Roboto/Roboto-Light.woff2") format("woff2"),
-       url("../fonts/Roboto/Roboto-Light.woff") format("woff"),
        url("../fonts/Roboto/Roboto-Light.ttf") format("truetype"),
        url("../fonts/Roboto/Roboto-Light.svg#Lato") format("svg"); }
 
@@ -53,8 +45,6 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/Roboto/Roboto-Regular.eot") format("embedded-opentype"),
-       url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
-       url("../fonts/Roboto/Roboto-Regular.woff") format("woff"),
        url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
        url("../fonts/Roboto/Roboto-Regular.svg#Lato") format("svg"); }
 
@@ -63,11 +53,8 @@ Google @fontface , espero que n de pala dnvo :s
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/Roboto/Roboto-Bold.eot") format("embedded-opentype"),
-       url("../fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
-       url("../fonts/Roboto/Roboto-Bold.woff") format("woff"),
        url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
        url("../fonts/Roboto/Roboto-Bold.svg#Lato") format("svg"); }
-
 /* fim @fontface*/
 /*!
   Ionicons, v2.0.1
@@ -8927,28 +8914,28 @@ a.button {
  * Platform specific tweaks
  */
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
-  height: 64px; }
+  height: 44px; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
     margin-top: 19px !important; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
-    margin-top: 20px; }
+    margin-top: 0px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs,
 .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
-  top: 64px; }
+  top: 44px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header,
 .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
-  top: 64px; }
+  top: 44px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 108px; }
+  top: 88px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
-  top: 113px; }
+  top: 93px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
-  top: 157px; }
+  top: 137px; }
 
 .platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) {
   height: 44px; }
@@ -18001,28 +17988,28 @@ a.button {
  * Platform specific tweaks
  */
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
-  height: 64px; }
+  height: 44px; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
     margin-top: 19px !important; }
   .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
-    margin-top: 20px; }
+    margin-top: 0px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs,
 .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
-  top: 64px; }
+  top: 44px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header,
 .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
-  top: 64px; }
+  top: 44px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
-  top: 108px; }
+  top: 88px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
-  top: 113px; }
+  top: 93px; }
 
 .platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
-  top: 157px; }
+  top: 137px; }
 
 .platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) {
   height: 44px; }
