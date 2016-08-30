@@ -127,6 +127,7 @@ app.run(function($ionicPlatform) {
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
+      StatusBar.overlaysWebView(false);
     }
     initPushwoosh();
 
