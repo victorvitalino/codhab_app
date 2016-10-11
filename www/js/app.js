@@ -107,6 +107,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.slider',
 'codhab.controllers.entidades',
 'codhab.controllers.entidade',
+'codhab.controllers.noticias',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -304,6 +305,24 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
+    .state('app.noticias',{
+      url: "/noticias",
+      views:{
+        'home':{
+        templateUrl: "views/app/noticias/index.html",
+        controller: 'NoticiasCtrl'
+        }
+      }
+    })
+    .state('app.noticia',{
+      url: "/noticia/:id",
+      views:{
+        'home':{
+        templateUrl: "views/app/noticias/single.html",
+        controller: 'NoticiaCtrl'
+        }
+      }
+    })
     .state('app.oqueentidades',{
       url: "/oqueentidades",
       views:{
@@ -361,4 +380,10 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
   }else{
     $urlRouterProvider.otherwise('/intro');
   }
+  if(localStorage.getItem("LocalData") == null)
+    {
+        var data = [];
+        data = JSON.stringify(data);
+        localStorage.setItem("LocalData", data);
+    }
 });
