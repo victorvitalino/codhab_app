@@ -24,45 +24,41 @@ $dark:                            #444 !default;
 Google @fontface , espero que n de pala dnvo :s
 */
 
-// Lato
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'), url('../www/fonts/Lato/Lato-Light.ttf') format('ttf');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url('../www/fonts/Lato/Lato-Regular.ttf') format('ttf');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url('../www/fonts/Lato/Lato-Bold.ttf') format('ttf');
-}
+  src: local("Lato Light"), local("Lato-Light"), url("../www/fonts/Lato/Lato-Light.ttf") format("ttf"); }
 
-// Roboto
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url("../www/fonts/Lato/Lato-Regular.ttf") format("ttf"); }
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Lato Bold"), local("Lato-Bold"), url("../www/fonts/Lato/Lato-Bold.ttf") format("ttf"); }
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url('../www/fonts/Roboto/Roboto-Light.ttf') format('ttf');
-}
+  src: local("Roboto Light"), local("Roboto-Light"), url("../www/fonts/Roboto/Roboto-Light.ttf") format("ttf"); }
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('../www/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
-}
+  src: local("Roboto Regular"), local("Roboto-Regular"), url("../www/fonts/Roboto/Roboto-Regular.ttf") format("ttf"); }
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url('../www/fonts/Roboto/Roboto-Bold.ttf') format('ttf');
-}
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("../www/fonts/Roboto/Roboto-Bold.ttf") format("ttf"); }
 
 /* fim @fontface*/
 $font-family-base: 'Roboto';
@@ -78,6 +74,24 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
 
+.img_destaque{
+  position: relative;
+  overflow: hidden;
+}
+.img_destaque::before{
+  content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-image: url("../img/mascara.png");
+    -webkit-background-size: cover;
+background-size: cover;
+background-position: center center;
+}
 
 label.error-formz{
   border-color: $assertive!important;
@@ -106,9 +120,9 @@ label.no_error-formz{
 .fontsx{
 	color: #333!important;
 }
-.slider-slide img{
-	width: 100%;
-}
+// .slider-slide img{
+// 	width: 100%;
+// }
 
 .avatar-nome{
 	text-align: center;

@@ -8,7 +8,7 @@ For example, you might change some of the default colors:
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
-@font-face {
+font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
@@ -18230,6 +18230,24 @@ form .form-errors {
 
 .item-card .category {
   color: lightgray; }
+
+.img_destaque {
+  position: relative;
+  overflow: hidden; }
+
+.img_destaque::before {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-image: url("../img/mascara.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center; }
 
 label.error-formz {
   border-color: #ef473a !important; }

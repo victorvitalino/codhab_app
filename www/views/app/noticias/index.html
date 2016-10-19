@@ -1,7 +1,17 @@
-<ion-view view-title="Noticias CODHAB">
-  <ion-content class="padding">
-    <ion-list class="list list-inset">
-      <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="result in results" href="#/app/noticia/{{result.id}}">
+<ion-view>
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">Noticias CODHAB</div>
+  </ion-nav-buttons>
+  <ion-content>
+<ion-slide-box  style="">
+  <ion-slide ng-repeat="result_slider in results_sliders | limitTo : 6" show-pager="false" on-slide-changed="onSlideChanged(index)" active-slide="currentIndex">
+
+            <img src="http://www.codhab.df.gov.br/{{result_slider.thumbnail.url}}"style="width: 100%;height: 30%;">
+
+    </ion-slide>
+</ion-slide-box>
+    <ion-list class="list list-inset padding">
+      <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="result in results | limitTo : 15" href="#/app/noticia/{{result.id}}">
         <img src="http://www.codhab.df.gov.br/{{result.thumbnail.url}}">
         <p>Criado em: {{result.created_at}}</p>
         {{result.title}}
