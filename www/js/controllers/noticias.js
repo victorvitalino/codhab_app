@@ -3,8 +3,19 @@ var app = angular.module('codhab.controllers.noticias', []);
 /*********************************************************************
  * NoticiasCtrl
  *********************************************************************/
-app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $parse,$ionicSlideBoxDelegate, $state) {
-  $ionicSlideBoxDelegate.update()
+app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $parse, $state) {
+  $scope.swiper = {};
+
+  $scope.onReadySwiper = function (swiper) {
+
+  swiper.on('slideChangeStart', function () {
+    console.log('slide start');
+  });
+
+  swiper.on('onSlideChangeEnd', function () {
+    console.log('slide end');
+  });
+  };
   $http.get('http://www.codhab.df.gov.br/noticias.json')
         .success(function(data, status, headers,config){
           console.log(data);

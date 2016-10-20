@@ -28,38 +28,49 @@ Google @fontface , espero que n de pala dnvo :s
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: local("Lato Light"), local("Lato-Light"), url("../www/fonts/Lato/Lato-Light.ttf") format("ttf"); }
+  src: url("../fonts/Lato/Lato-Light.eot") format("embedded-opentype"),
+       url("../fonts/Lato/Lato-Light.ttf") format("truetype"),
+       url("../fonts/Lato/Lato-Light.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local("Lato Regular"), local("Lato-Regular"), url("../www/fonts/Lato/Lato-Regular.ttf") format("ttf"); }
+  src: url("../fonts/Lato/Lato-Regular.eot") format("embedded-opentype"),
+       url("../fonts/Lato/Lato-Regular.ttf") format("truetype"),
+       url("../fonts/Lato/Lato-Regular.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local("Lato Bold"), local("Lato-Bold"), url("../www/fonts/Lato/Lato-Bold.ttf") format("ttf"); }
+  src: url("../fonts/Lato/Lato-Bold.eot") format("embedded-opentype"),
+       url("../fonts/Lato/Lato-Bold.ttf") format("truetype"),
+       url("../fonts/Lato/Lato-Bold.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url("../www/fonts/Roboto/Roboto-Light.ttf") format("ttf"); }
+  src: url("../fonts/Roboto/Roboto-Light.eot") format("embedded-opentype"),
+       url("../fonts/Roboto/Roboto-Light.ttf") format("truetype"),
+       url("../fonts/Roboto/Roboto-Light.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local("Roboto Regular"), local("Roboto-Regular"), url("../www/fonts/Roboto/Roboto-Regular.ttf") format("ttf"); }
+  src: url("../fonts/Roboto/Roboto-Regular.eot") format("embedded-opentype"),
+       url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+       url("../fonts/Roboto/Roboto-Regular.svg#Lato") format("svg"); }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local("Roboto Bold"), local("Roboto-Bold"), url("../www/fonts/Roboto/Roboto-Bold.ttf") format("ttf"); }
-
+  src: url("../fonts/Roboto/Roboto-Bold.eot") format("embedded-opentype"),
+       url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
+       url("../fonts/Roboto/Roboto-Bold.svg#Lato") format("svg"); }
 /* fim @fontface*/
 $font-family-base: 'Roboto';
 $font-family-second: 'Lato';
@@ -74,6 +85,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
 
+a{text-decoration: none;}
+.destaque{
+  height: auto;
+    width: 100%;
+    display: block;
+    color:#fff;
+    text-align: center;
+    padding:5px 0;
+}
+.destaque h3{color:#fff; text-align: center;}
 .img_destaque{
   position: relative;
   overflow: hidden;

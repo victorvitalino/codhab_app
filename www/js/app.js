@@ -92,6 +92,7 @@ var app = angular.module('codhab', ['ionic',
 'ngMessages',
 'ngCpfCnpj',
 'ui.mask',
+'ksSwiper',
 'angularMoment',
 // 'parse-angular', Removido Temporariamente
 // 'parse-angular.enhance', Removido Temporariamente
@@ -320,6 +321,22 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         'home':{
         templateUrl: "views/app/noticias/single.html",
         controller: 'NoticiaCtrl'
+        }
+      }
+    })
+    .state('app.cadastro',{
+      url: "/cadastro",
+      views:{
+        'home':{
+        templateUrl: "views/app/cadastro/index.html"
+        }
+      }
+    })
+    .state('app.portal',{
+      url: "/portal",
+      views:{
+        'home':{
+        templateUrl: "views/app/portal/index.html"
         }
       }
     })
