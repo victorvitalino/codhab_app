@@ -14,39 +14,39 @@
         </button>
       </div>
     </form>
-    <ion-list ng-show="result.cpf">
+    <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Dados Pessoais
       </div>
       <div class="item">
-        <strong>Nome: </strong>{{result.name}}<br/>
+        <strong>Nome: </strong>{{result.basic_information.name}}<br/>
       </div>
       <div class="item">
-        <strong>Estado Civil: </strong>{{result.civil_state_id}}<br/>
+        <strong>Estado Civil: </strong>{{result.basic_information.civil_state}}<br/>
       </div>
       <div class="item">
-        <strong>Endereço: </strong>{{result.address}} {{result.address_complement}}<br/>
+        <strong>Endereço: </strong>{{result.basic_information.address}} {{result.basic_information.address_complement}}<br/>
       </div>
       <div class="item">
-        <strong>Chegada no DF: </strong>{{result.arrival_df | date:"dd/MM/yyyy" }}<br/>
+        <strong>Chegada no DF: </strong>{{result.basic_information.arrival_df }}<br/>
       </div>
       <div class="item">
-        <strong>Nascido em: </strong>{{result.born_uf}}<br/>
+        <strong>Nascido em: </strong>{{result.basic_information.naturality ? result.basic_information.naturality : "Não informado"}}<br/>
       </div>
       <div class="item">
         <strong>Idoso: </strong><span class="badge badge-positive badge_search">{{result.olds}}</span><br/>
       </div>
       <div class="item">
-        <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.special_condition_id}}</span><br/>
+        <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.basic_information.special_condition}}</span><br/>
       </div>
       <div class="item">
-        <strong>CID: </strong>{{result.cid ? "Possui" : "Não Informado"}}<br/>
+        <strong>CID: </strong>{{result.basic_information.cid}}<br/>
       </div>
       <div class="item">
-        <strong>NIS: </strong>{{result.nis ? "Possui" : "Não Informado"}}<br/>
+        <strong>NIS: </strong>{{result.basic_information.nis}}<br/>
       </div>
     </ion-list>
-    <div ng-hide="result.cpf" class="logo_interna_search">
+    <div ng-hide="result.basic_information.cpf" class="logo_interna_search">
       <div ng-hide="verify">
         <img src="img/search.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;" />
         <p class="texto_interno_search marginz">
