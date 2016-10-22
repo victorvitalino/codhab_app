@@ -14,47 +14,46 @@
         </button>
       </div>
     </form>
-    <ion-list ng-show="result.cpf">
+    <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Dados Pessoais
       </div>
       <div class="item">
-        <strong>Nome: </strong>{{result.name}}<br/>
+        <strong>Nome: </strong>{{result.basic_information.name}}<br/>
       </div>
       <div class="item">
-        <strong>Estado Civil: </strong>{{result.civil_state_id}}<br/>
+        <strong>Estado Civil: </strong>{{result.basic_information.civil_state}}<br/>
       </div>
       <div class="item">
-        <strong>Chegada no DF: </strong>{{result.arrival_df | date:"dd/MM/yyyy" }}<br/>
+        <strong>Chegada no DF: </strong>{{result.basic_information.arrival_df | date:"dd/MM/yyyy" }}<br/>
       </div>
       <div class="item">
-        <strong>Nascido em: </strong>{{result.born_uf}}<br/>
+        <strong>Nascido em: </strong>{{result.basic_information.born}}<br/>
       </div>
       <div class="item">
         <strong>Idoso: </strong><span class="badge badge-positive badge_search">{{result.olds}}</span><br/>
       </div>
       <div class="item">
-        <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.special_condition_id}}</span><br/>
+        <strong>Condição Especial: </strong><span class="badge badge-positive badge_search">{{result.basic_information.special_condition}}</span><br/>
       </div>
       <div class="item">
-        <strong>CID: </strong>{{result.cid ? "Possui" : "Não Informado"}}<br/>
+        <strong>CID: </strong>{{result.basic_information.cid}}<br/>
       </div>
       <div class="item">
-        <strong>NIS: </strong>{{result.nis ? "Possui" : "Não Informado"}}<br/>
+        <strong>NIS: </strong>{{result.basic_information.nis}}<br/>
       </div>
     </ion-list>
-    <ion-list ng-show="result.cpf">
+    <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Indicado ao empreendimento
       </div>
-      <div ng-show="!!!result_indication.length">
+      <div ng-show="!!!result.enterprise_cadastre.length">
         <div class="item">
           Sem Indicação à Empreendimento
         </div>
       </div>
-      <div class="item" ng-repeat="i in result_indication">
-        <strong>Empreendimento: </strong>{{i.enterprise}}<br />
-        <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
+      <div class="item" ng-repeat="i in result.enterprise_cadastre">
+        <strong>Empreendimento: </strong>{{i.enterprise_name}}<br />
         <div ng-if="i.inactive === false || i.inactive === 'empty'">
           <div><strong>Situação: </strong>Indicação Ativa</div>
         </div>
@@ -62,42 +61,48 @@
           <div><strong>Situação: </strong>Indicação Inativa</div><br/>
         </div>
       </div>
-
-
-    </ion-list>
-    <ion-list ng-show="result.cpf">
       <div class="item item-divider">
         Situação do Candidato
       </div>
-      <div ng-hide="results">
-        <h5 style="text-align:center;"> Calculando... </h5>
-          <img src="img/ripple.gif"  style="display:block; margin:0 auto;"/>
-      </div>
-      <div class="item" ng-repeat="i in results">
-        <div ng-if="i.list == 'rii'">
-          <strong>Lista: </strong>RII<br/>
-        </div>
-        <div ng-if="i.list == 'rie'">
-          <strong>Lista: </strong>RIE<br/>
-        </div>
-        <div ng-if="i.list == 'special'">
-          <strong>Lista: </strong>Deficientes<br/>
-        </div>
-        <div ng-if="i.list == 'vulnerable'">
-          <strong>Lista: </strong>Vulneráveis<br/>
-        </div>
+      <div class="item" ng-repeat="i in result.lists">
+          <strong>Lista: </strong>{{i.name}}<br/>
         <div ng-if="i.position != null">
           <strong>Posição: </strong>{{i.position}}<br/>
         </div>
-        <strong>Pontuação: </strong>{{i.pontuation}}<br/>
+        <strong>Pontuação: </strong>{{result.pontuations[0].total}}<br/>
         <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
-        <span class="badge_indication {{i.situation_status == 'ok' ? 'indication-balanced' : 'indication-energized'}}">
-          <strong>{{i.situation}}</strong>
+        <span class="badge_indication {{result.situations[0].name == 'HABILITADO' ? 'indication-balanced' : 'indication-energized'}}">
+          <strong>{{result.situations[0].name}}</strong>
         </span>
         <br/>
-      </div>
+    </div>
     </ion-list>
-    <div ng-hide="result.cpf" class="logo_interna_search">
+
+
+    <!-- <ion-list ng-show="result.basic_information.cpf">
+      <div class="item item-divider">
+        Situação do Candidato
+      </div>
+      <div ng-hide="results.lists">
+        <h5 style="text-align:center;"> Calculando... </h5>
+          <img src="img/ripple.gif"  style="display:block; margin:0 auto;"/>
+      </div>
+        <div class="item" ng-repeat="i in results.lists">
+          <div ng-if="i.lists.name">
+            <strong>Lista: </strong>{{i.lists.name}}<br/>
+          </div>
+          <div ng-if="i.lists.position != null">
+            <strong>Posição: </strong>{{i.lists.position}}<br/>
+          </div>
+          <strong>Pontuação: </strong>{{i.pontuation}}<br/>
+          <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
+          <span class="badge_indication {{i.situation_status == 'ok' ? 'indication-balanced' : 'indication-energized'}}">
+            <strong>{{i.situation}}</strong>
+          </span>
+          <br/>
+      </div>
+    </ion-list> -->
+    <div ng-hide="result.basic_information.cpf" class="logo_interna_search">
       <div ng-hide="verify">
         <img src="img/search.png" style="width:50%; margin: 0 auto; display:block;margin-bottom: 20px;" />
         <p class="texto_interno_search marginz">

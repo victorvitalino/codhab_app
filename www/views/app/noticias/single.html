@@ -1,0 +1,15 @@
+<ion-view>
+  <ion-nav-buttons class="bar bar-header">
+    <div class="h1 title">{{noticia.created_at | date:"dd/MM/yyyy" }}</div>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <div class="row">
+      <img src="http://www.codhab.df.gov.br/{{noticia.thumbnail.url}}" alt="" style="width: 100%;height: 30%;" />
+    </div>
+    <h2>
+      {{noticia.title}}
+    </h2>
+    <small>{{noticia.created_at}}</small>
+    <div ng-bind-html="noticia.content"></div>
+  </ion-content>
+</ion-view>
