@@ -8,6 +8,9 @@ For example, you might change some of the default colors:
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
+.slider-slide img{
+	width: 100%;
+}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
