@@ -126,7 +126,7 @@ label.no_error-formz{
   color:$balanced;
 }
 .startTitle{
-  padding:5px;
+  padding:10px;
 }
 .start-button{
 	margin-top: 65px;
@@ -137,6 +137,10 @@ label.no_error-formz{
 }
 .bloco-energized{
 	background-color:#ffc10e;
+}
+.bloco-energized img{
+    display: block;
+    margin: 0 auto;
 }
 .fontsx{
 	color: #333!important;
@@ -281,7 +285,7 @@ label.no_error-formz{
 	margin-top: 25px!important;
 }
 .bloco-inicial{
-	margin-top:15%!important;
+	margin-top:7%!important;
 }
 .btn-texto{
 	text-align: center;
