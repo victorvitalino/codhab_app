@@ -1,6 +1,6 @@
 <ion-view>
   <ion-nav-buttons class="bar bar-header">
-    <div class="h1 title">{{noticia.created_at | date:"dd/MM/yyyy" }}</div>
+    <div class="h1 title">Noticias</div>
   </ion-nav-buttons>
   <ion-content class="padding">
     <div class="row">
@@ -9,7 +9,7 @@
     <h2>
       {{noticia.title}}
     </h2>
-    <small>{{noticia.created_at}}</small>
+    <small>{{noticia.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</small>
     <div ng-bind-html="noticia.content"></div>
   </ion-content>
 </ion-view>

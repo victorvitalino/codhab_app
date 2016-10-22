@@ -17,7 +17,7 @@
     <ion-list class="list list-inset">
       <ion-item class="padding item item-thumbnail-left item-icon-right" ng-repeat="result in results | limitTo : 15" href="#/app/noticia/{{result.id}}">
         <img src="http://www.codhab.df.gov.br/{{result.thumbnail.url}}">
-        <p>Criado em: {{result.created_at}}</p>
+        <p>Criado em: {{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
         {{result.title}}
         <p ng-bind-html="result.resume"></p>
         <i class="icon ion-chevron-right icon-accessory"></i>
