@@ -9,7 +9,9 @@ function onPushwooshInitialized(pushNotification) {
   //if you need push token at a later time you can always get it from Pushwoosh plugin
   pushNotification.getPushToken(
     function(token) {
-      alert("o token é:" + token);
+
+    //alert("o token é:" + token)
+
       console.info('push token: ' + token);
     }
   );
