@@ -8,9 +8,6 @@ For example, you might change some of the default colors:
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
-.slider-slide img{
-	width: 100%;
-}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -18268,7 +18265,7 @@ label.no_error-formz {
   color: #33cd5f; }
 
 .startTitle {
-  padding: 5px; }
+  padding: 10px; }
 
 .start-button {
   margin-top: 65px; }
@@ -18280,8 +18277,15 @@ label.no_error-formz {
 .bloco-energized {
   background-color: #ffc10e; }
 
+.bloco-energized img {
+  display: block;
+  margin: 0 auto; }
+
 .fontsx {
   color: #333 !important; }
+
+.slider-slide img {
+  width: 100%; }
 
 .avatar-nome {
   text-align: center;
@@ -18418,7 +18422,7 @@ label.no_error-formz {
   margin-top: 25px !important; }
 
 .bloco-inicial {
-  margin-top: 15% !important; }
+  margin-top: 7% !important; }
 
 .btn-texto {
   text-align: center;
