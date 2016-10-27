@@ -111,6 +111,8 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.entidades',
 'codhab.controllers.entidade',
 'codhab.controllers.noticias',
+'codhab.controllers.portal',
+'codhab.controllers.scan',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -338,7 +340,8 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       url: "/portal",
       views:{
         'home':{
-        templateUrl: "views/app/portal/index.html"
+        templateUrl: "views/app/portal/index.html",
+        controller: 'portalCtrl'
         }
       }
     })
@@ -382,6 +385,15 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         'home':{
           templateUrl: "views/app/report/report.html",
           controller: 'reportCreateCtrl'
+        }
+      }
+    })
+    .state('app.scan',{
+      url: "/scan",
+      views:{
+        'home':{
+          templateUrl: "views/app/scan/index.html",
+          controller: 'ScanCtrl'
         }
       }
     })
