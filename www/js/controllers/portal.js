@@ -1,12 +1,12 @@
 var app = angular.module('codhab.controllers.portal', []);
 
 
-app.controller('portalCtrl', function ($scope) {
+app.controller('portalCtrl', function ($scope, $window, $cordovaInAppBrowser) {
 
   $scope.linkPortal = function(url,target,option)
   {
    // Open in external browser
-   window.open(url,target,option); 
+   $cordovaInAppBrowser.open(url,target,option);
   };
 
 });
