@@ -345,6 +345,42 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
+    .state('app.portal_codhab',{
+      url: "/portal_codhab",
+      views:{
+        'home':{
+        templateUrl: "views/app/portal/codhab.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
+    .state('app.portal_acoes',{
+      url: "/portal_acoes",
+      views:{
+        'home':{
+        templateUrl: "views/app/portal/acoesurbanas.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
+    .state('app.portal_habita',{
+      url: "/portal_habita",
+      views:{
+        'home':{
+        templateUrl: "views/app/portal/habitabrasilia.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
+    .state('app.portal_mobi',{
+      url: "/portal_mobi",
+      views:{
+        'home':{
+        templateUrl: "views/app/portal/mobi.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
     .state('app.oqueentidades',{
       url: "/oqueentidades",
       views:{
