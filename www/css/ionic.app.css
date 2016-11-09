@@ -18220,6 +18220,9 @@ form .form-errors {
 .item-card .category {
   color: lightgray; }
 
+.platform-ios.platform-cordova:not(.fullscreen) .search-bar {
+  margin-top: 20px; }
+
 a {
   text-decoration: none; }
 
