@@ -18496,3 +18496,30 @@ label.no_error-formz {
 
 .indication-energized {
   background-color: #ffc10e; }
+
+.btn-camera {
+  font-size:30px;
+  float:left;
+  margin-left:15px;
+  color:white;
+
+}
+
+.btn-text-cam {
+  
+  color:white;
+}
+
+.btn-buttom-cam {
+  background-color:#289728;
+  margin: 0 auto;
+  display: block;
+  border-radius:10px;
+}
+
+.btn-tit-cam {
+  text-align: center;
+}
+.btn-text-int {
+  color:#C0C0C0;
+}

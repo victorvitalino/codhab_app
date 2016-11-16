@@ -5,6 +5,7 @@ app.controller('ScanCtrl', function ($scope,$cordovaBarcodeScanner) {
   $scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
+            console.log(imageData);
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
         }, function(error) {
