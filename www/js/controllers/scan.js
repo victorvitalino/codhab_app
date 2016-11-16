@@ -1,10 +1,14 @@
 var app = angular.module('codhab.controllers.scan', []);
 
-app.controller('ScanCtrl', function ($scope,$cordovaBarcodeScanner) {
+app.controller('ScanCtrl', function ($scope,$cordovaBarcodeScanner,$cordovaInAppBrowser) {
 
   $scope.scanBarcode = function() {
+    var urlnova = "http://www.google.com";
         $cordovaBarcodeScanner.scan().then(function(imageData) {
-            alert(imageData.text);
+            // alert(imageData.text);
+
+            $cordovaInAppBrowser.open(imageData.text,'_system');
+            console.log(imageData);
             console.log("Barcode Format -> " + imageData.format);
             console.log("Cancelled -> " + imageData.cancelled);
         }, function(error) {
@@ -15,5 +19,6 @@ app.controller('ScanCtrl', function ($scope,$cordovaBarcodeScanner) {
           "formats" : "QR_CODE" // default: all but PDF_417 and RSS_EXPANDED
 
       });
+
     };
 });
