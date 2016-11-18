@@ -156,12 +156,12 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
       templateUrl:"views/login/login.html",
       controller: 'LoginCtrl'
     })
-		.state('app', {
+		.state('tabs', {
 			url: "/app",
       abstract: true,
 			templateUrl: "views/app/side.html"
 		})
-    .state('app.home', {
+    .state('tabs.home', {
       url: "/home",
       views:{
         'home':{
@@ -170,7 +170,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.messages',{
+    .state('tabs.messages',{
       url: "/messages",
       views:{
         'home':{
@@ -179,7 +179,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.habitacao',{
+    .state('tabs.habitacao',{
       url: "/habitacao",
       views:{
         'home':{
@@ -187,7 +187,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.oquehabitacao',{
+    .state('tabs.oquehabitacao',{
       url: "/oque_habitacao",
       views:{
         'home':{
@@ -195,7 +195,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.agendamentohabitacao',{
+    .state('tabs.agendamentohabitacao',{
       url: "/agendamento",
       views:{
         'home':{
@@ -203,7 +203,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.listahabitacao',{
+    .state('tabs.listahabitacao',{
       url: "/listahabitacao",
       views:{
         'home':{
@@ -212,7 +212,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.regularizacao',{
+    .state('tabs.regularizacao',{
       url: "/regularizacao",
       views:{
         'home':{
@@ -220,7 +220,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.oqueregularizacao',{
+    .state('tabs.oqueregularizacao',{
       url: "/oque_regularizacao",
       views:{
         'home':{
@@ -228,7 +228,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.listaregularizacao',{
+    .state('tabs.listaregularizacao',{
       url: "/listaregularizacao",
       views:{
         'home':{
@@ -237,7 +237,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.agendamentoregularizacao',{
+    .state('tabs.agendamentoregularizacao',{
       url: "/agendamentoregularizacao",
       views:{
         'home':{
@@ -245,7 +245,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.terms',{
+    .state('tabs.terms',{
           url: "/terms",
           views:{
             'home':{
@@ -253,7 +253,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
             }
           }
         })
-    .state('app.faq',{
+    .state('tabs.faq',{
           url: "/faq",
           views:{
             'home':{
@@ -266,7 +266,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
           templateUrl:"views/app/intro.html",
           controller: 'sliderCtrl'
         })
-    .state('app.new_message',{
+    .state('tabs.new_message',{
       url: "/new_message",
       views:{
         'home':{
@@ -275,7 +275,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.map',{
+    .state('tabs.map',{
       url: "/map",
       views:{
         'home':{
@@ -284,7 +284,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.assistencia',{
+    .state('tabs.assistencia',{
       url: "/assistencia",
       views:{
         'home':{
@@ -293,7 +293,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.entidades',{
+    .state('tabs.entidades',{
       url: "/entidades",
       views:{
         'home':{
@@ -301,7 +301,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.listaentidades',{
+    .state('tabs.listaentidades',{
       url: "/listaentidades",
       views:{
         'home':{
@@ -310,7 +310,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.noticias',{
+    .state('tabs.noticias',{
       url: "/noticias",
       views:{
         'home':{
@@ -319,7 +319,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.noticia',{
+    .state('tabs.noticia',{
       url: "/noticia/:id",
       views:{
         'home':{
@@ -328,7 +328,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.cadastro',{
+    .state('tabs.cadastro',{
       url: "/cadastro",
       views:{
         'home':{
@@ -336,7 +336,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.portal',{
+    .state('tabs.portal',{
       url: "/portal",
       views:{
         'home':{
@@ -345,7 +345,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.portal_codhab',{
+    .state('tabs.portal_codhab',{
       url: "/portal_codhab",
       views:{
         'home':{
@@ -354,7 +354,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.portal_acoes',{
+    .state('tabs.portal_acoes',{
       url: "/portal_acoes",
       views:{
         'home':{
@@ -363,7 +363,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.portal_habita',{
+    .state('tabs.portal_habita',{
       url: "/portal_habita",
       views:{
         'home':{
@@ -372,7 +372,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.portal_mobi',{
+    .state('tabs.portal_mobi',{
       url: "/portal_mobi",
       views:{
         'home':{
@@ -381,7 +381,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.oqueentidades',{
+    .state('tabs.oqueentidades',{
       url: "/oqueentidades",
       views:{
         'home':{
@@ -389,7 +389,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.agendamentoentidades',{
+    .state('tabs.agendamentoentidades',{
       url: "/entidades",
       views:{
         'home':{
@@ -397,7 +397,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.entidade',{
+    .state('tabs.entidade',{
       url:"/entidade/:cnpj?lat&long",
       views:{
         'home':{
@@ -406,7 +406,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.postos',{
+    .state('tabs.postos',{
       url:"/postos/:id?nome&endereco&hora&coordenador&tel&email&latitude&longitude",
       views:{
         'home':{
@@ -415,7 +415,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.report',{
+    .state('tabs.report',{
       url: "/report",
       views:{
         'home':{
@@ -424,7 +424,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         }
       }
     })
-    .state('app.scan',{
+    .state('tabs.scan',{
       url: "/scan",
       views:{
         'home':{

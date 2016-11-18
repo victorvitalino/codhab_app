@@ -18422,7 +18422,31 @@ label.no_error-formz {
   color: #fff !important; }
 
 .bloco-home {
-  margin-top: 25px !important; }
+  margin-top: 10px !important; }
+
+.bloco-home2 {
+  margin-top: 10px !important; }
+
+.scan-img {
+  background-image:url("/img/qrcode1.png")!;
+  height: 48px;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+/*.button.btn-nav-codhab.energized.activated>.scan-img{
+  background-image:url("/img/qrcode2.png")!important;
+  background-repeat: no-repeat;
+}*/
+
+.tab-nav.tabs {
+border-top: 1px solid #f4efef;
+}
+
+.bar-footer {
+border-top: 1px solid #f4efef;
+}
+
 
 .bloco-inicial {
   margin-top: 7% !important; }
@@ -18506,7 +18530,7 @@ label.no_error-formz {
 }
 
 .btn-text-cam {
-  
+
   color:white;
 }
 

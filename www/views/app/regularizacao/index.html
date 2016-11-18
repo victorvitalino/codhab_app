@@ -8,13 +8,13 @@
             </div>
             <div class="row bloco-home bloco-inicial">
                 <div class="col col-50">
-                  <button class="button btn-nav-codhab energized" ui-sref="app.oqueregularizacao">
+                  <button class="button btn-nav-codhab energized" ui-sref="tabs.oqueregularizacao">
                     <span class="btn-codhab-icon ion-ios-help-outline "></span>
                   </button>
                     <span class="btn-texto">O QUE É?</span>
                 </div>
                 <div class="col col-50">
-                  <button class="button btn-nav-codhab energized" ui-sref="app.listaregularizacao">
+                  <button class="button btn-nav-codhab energized" ui-sref="tabs.listaregularizacao">
                     <span class="btn-codhab-icon ion-ios-list-outline "></span>
                   </button>
                     <span class="btn-texto">PESQUISAR CPF</span>
@@ -22,17 +22,43 @@
             </div>
             <div class="row bloco-home">
               <div class="col col-50">
-                <button class="button btn-nav-codhab energized" ui-sref="app.agendamentoregularizacao">
+                <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentoregularizacao">
                   <span class="btn-codhab-icon ion-ios-clock-outline "></span>
                 </button>
                   <span class="btn-texto">AGENDAMENTO</span>
               </div>
               <div class="col col-50">
-                <button class="button btn-nav-codhab" ui-sref="app.entidades">
+                <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
                   <span class="btn-codhab-icon ion-ios-people-outline"></span>
                 </button>
                 <span class="btn-texto">ENTIDADES</span>
               </div>
             </div>
+
+
+
+
            </ion-content>
+           <ion-footer-bar >
+
+         <ion-tabs  class="tabs-icon-top tabs-codhab ">
+
+         <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="tabs.home">
+           <!-- Tab 1 content -->
+         </ion-tab>
+
+         <ion-tab title="notícias" icon-on="ion-ios-world-outline" icon-off="ion-ios-world-outline" ui-sref="tabs.noticias">
+           <!-- Tab 2 content -->
+         </ion-tab>
+
+         <ion-tab title="Leitor Qr Code" icon-on="ion-ios-camera" icon-off="ion-ios-camera-outline" ui-sref="tabs.scan">
+           <!-- Tab 2 content -->
+         </ion-tab>
+
+         <ion-tab title="Atualização Cadastral" icon-on="ion-ios-loop" icon-off="ion-ios-loop" ui-sref="tabs.cadastro">
+           <!-- Tab 3 content -->
+         </ion-tab>
+
+         </ion-tabs>
+         </ion-footer-bar>
         </ion-view>
