@@ -322,7 +322,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.noticia',{
       url: "/noticia/:id",
       views:{
-        'tabs-noticias':{
+        'tabs-n':{
         templateUrl: "views/app/noticias/single.html",
         controller: 'NoticiaCtrl'
         }
@@ -331,7 +331,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.cadastro',{
       url: "/cadastro",
       views:{
-        'tabs-cadastro':{
+        'tabs-home':{
         templateUrl: "views/app/cadastro/index.html"
         }
       }
