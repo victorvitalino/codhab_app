@@ -3,12 +3,12 @@
     <div class="h1 title">Noticias CODHAB</div>
   </ion-nav-buttons>
   <ion-content>
-      <a class="destaque" ng-repeat="result in results_sliders | limitTo : 1" href="#/app/noticia/{{result.id}}" style="background-color:{{result.color}}">
+      <a class="destaque" ng-repeat="result in results_sliders | limitTo : 1" href="#/app/noticia/{{result.id}}" style="display:block;background-color:{{result.color}}!important">
         <div>
           <div class="img_destaque">
             <img src="http://www.codhab.df.gov.br/{{result.thumbnail.url}}"style="width: 100%;height: 30%;">
           </div>
-          <div class="mymask" href="#/tab/noticia/{{result.id}}" >
+          <div class="mymask" href="#/tab/noticia/{{result.id}}" style="background-color:#{{result.color}}!important">
             <h3 class="padding positive">{{result.title}}</h3>
             <p>{{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
           </div>

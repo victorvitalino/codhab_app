@@ -113,6 +113,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.noticias',
 'codhab.controllers.portal',
 'codhab.controllers.scan',
+'codhab.controllers.cadastro',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -130,6 +131,7 @@ app.run(function($ionicPlatform) {
       // from snapping when text inputs are focused. Ionic handles this internally for
       // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
+
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
@@ -144,7 +146,7 @@ app.run(function($ionicPlatform) {
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $cordovaFacebookProvider) {
-
+$ionicConfigProvider.tabs.position('bottom');
 	$stateProvider
     .state('signup',{
       url: "/signup",
@@ -167,6 +169,14 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
         'tabs-home':{
           templateUrl: "views/app/home.html",
           controller: 'AppCtrl'
+        }
+      }
+    })
+    .state('tabs.info', {
+      url: "/info",
+      views:{
+        'tabs-info':{
+          templateUrl: "views/app/info.html"
         }
       }
     })
@@ -248,7 +258,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.terms',{
           url: "/terms",
           views:{
-            'tabs-home':{
+            'tabs-info':{
               templateUrl: "views/app/terms.html"
             }
           }
@@ -256,7 +266,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.faq',{
           url: "/faq",
           views:{
-            'tabs-home':{
+            'tabs-info':{
               templateUrl: "views/app/faq.html"
             }
           }
@@ -322,7 +332,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.noticia',{
       url: "/noticia/:id",
       views:{
-        'tabs-n':{
+        'tabs-noticias':{
         templateUrl: "views/app/noticias/single.html",
         controller: 'NoticiaCtrl'
         }
@@ -331,8 +341,9 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.cadastro',{
       url: "/cadastro",
       views:{
-        'tabs-home':{
-        templateUrl: "views/app/cadastro/index.html"
+        'tabs-cadastro':{
+        templateUrl: "views/app/cadastro/index.html",
+        controller: 'CadastroCtrl'
         }
       }
     })

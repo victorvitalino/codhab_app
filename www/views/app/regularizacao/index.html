@@ -1,42 +1,40 @@
-<ion-view>
-          <ion-nav-buttons class="bar bar-header">
-            <div class="h1 title">Regularização</div>
-          </ion-nav-buttons>
-          <ion-content scroll="true" >
-            <div class="row bloco-energized">
-              <img src="img/codhab_branca.png" alt="" style="width: 100%;height: 30%;"/>
-            </div>
-            <div class="row bloco-home bloco-inicial">
-                <div class="col col-50">
-                  <button class="button btn-nav-codhab energized" ui-sref="tabs.oqueregularizacao">
-                    <span class="btn-codhab-icon ion-ios-help-outline "></span>
-                  </button>
-                    <span class="btn-texto">O QUE É?</span>
-                </div>
-                <div class="col col-50">
-                  <button class="button btn-nav-codhab energized" ui-sref="tabs.listaregularizacao">
-                    <span class="btn-codhab-icon ion-ios-list-outline "></span>
-                  </button>
-                    <span class="btn-texto">PESQUISAR CPF</span>
-                </div>
-            </div>
-            <div class="row bloco-home">
-              <div class="col col-50">
-                <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentoregularizacao">
-                  <span class="btn-codhab-icon ion-ios-clock-outline "></span>
-                </button>
-                  <span class="btn-texto">AGENDAMENTO</span>
-              </div>
-              <div class="col col-50">
-                <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
-                  <span class="btn-codhab-icon ion-ios-people-outline"></span>
-                </button>
-                <span class="btn-texto">ENTIDADES</span>
-              </div>
-            </div>
-
-
-
-
-           </ion-content>
-        </ion-view>
+<ion-view view-title="Regularização">
+  <ion-nav-bar class="bar-energized">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i> Voltar
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content scroll="true" >
+    <div class="row bloco-energized">
+      <img src="img/codhab_branca.png" alt="" style="width: 100%;height: 30%;"/>
+    </div>
+    <div class="row bloco-home bloco-inicial">
+        <div class="col col-50">
+          <button class="button btn-nav-codhab energized" ui-sref="tabs.oqueregularizacao">
+            <span class="btn-codhab-icon ion-ios-help-outline "></span>
+          </button>
+            <span class="btn-texto">O QUE É?</span>
+        </div>
+        <div class="col col-50">
+          <button class="button btn-nav-codhab energized" ui-sref="tabs.listaregularizacao">
+            <span class="btn-codhab-icon ion-ios-list-outline "></span>
+          </button>
+            <span class="btn-texto">PESQUISAR CPF</span>
+        </div>
+    </div>
+    <div class="row bloco-home">
+      <div class="col col-50">
+        <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentoregularizacao">
+          <span class="btn-codhab-icon ion-ios-clock-outline "></span>
+        </button>
+          <span class="btn-texto">AGENDAMENTO</span>
+      </div>
+      <div class="col col-50">
+        <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
+          <span class="btn-codhab-icon ion-ios-people-outline"></span>
+        </button>
+        <span class="btn-texto">ENTIDADES</span>
+      </div>
+    </div>
+   </ion-content>
+</ion-view>

@@ -1,7 +1,9 @@
-<ion-view>
-  <ion-nav-buttons class="bar bar-header">
-    <div class="h1 title">Noticias</div>
-  </ion-nav-buttons>
+<ion-view view-title="{{noticia.title}}">
+  <ion-nav-bar class="bar-energized">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i> Voltar
+    </ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content class="padding">
     <div class="row">
       <img src="http://www.codhab.df.gov.br/{{noticia.thumbnail.url}}" alt="" style="width: 100%;height: 30%;" />

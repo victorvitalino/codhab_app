@@ -6,7 +6,7 @@ app.controller('sliderCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
     // window.localStorage['cpf'] = cpf;  removidos Temporariamente
     // window.localStorage['telefone'] = telefone;
     // window.localStorage['email'] = email;
-    $state.go('app.home');
+    $state.go('tabs.home');
   };
 
   $scope.addAuthenticated = function(authenticated) {
