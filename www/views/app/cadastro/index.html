@@ -2,13 +2,16 @@
   <ion-nav-buttons class="bar bar-header">
     <div class="h1 title">Atualização</div>
   </ion-nav-buttons>
-  <ion-content overflow-scroll="true" >
+
+
+  <ion-content overflow-scroll="true" ng-model="urlfinal" ng-model="url">
+
         <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
         <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
         <iframe
                  name="iframe_a"
                  id="iframea"
-                 src="http://www.codhab.df.gov.br/candidato/lembrar-senha/new"
+                 ng-src={{trustSrc(url)}}
                  frameborder="0"
                  style=" overflow:hidden;
                          overflow-x:hidden;
@@ -21,29 +24,4 @@
                          height="100%" width="100%"
         ></iframe>
         </ion-content>
-
-
-        <ion-footer-bar >
-
-      <ion-tabs  class="tabs-icon-top tabs-codhab ">
-
-      <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="tabs.home">
-        <!-- Tab 1 content -->
-      </ion-tab>
-
-      <ion-tab title="notícias" icon-on="ion-ios-world-outline" icon-off="ion-ios-world-outline" ui-sref="tabs.noticias">
-        <!-- Tab 2 content -->
-      </ion-tab>
-
-      <ion-tab title="Leitor Qr Code" icon-on="ion-ios-camera" icon-off="ion-ios-camera-outline" ui-sref="tabs.scan">
-        <!-- Tab 2 content -->
-      </ion-tab>
-
-      <ion-tab title="Atualização Cadastral" icon-on="ion-ios-loop" icon-off="ion-ios-loop" ui-sref="tabs.cadastro">
-        <!-- Tab 3 content -->
-      </ion-tab>
-
-      </ion-tabs>
-      </ion-footer-bar>
-
 </ion-view>

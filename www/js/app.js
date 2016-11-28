@@ -113,6 +113,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.noticias',
 'codhab.controllers.portal',
 'codhab.controllers.scan',
+'codhab.controllers.cadastro',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -130,6 +131,7 @@ app.run(function($ionicPlatform) {
       // from snapping when text inputs are focused. Ionic handles this internally for
       // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
+
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
@@ -144,7 +146,7 @@ app.run(function($ionicPlatform) {
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $cordovaFacebookProvider) {
-
+$ionicConfigProvider.tabs.position('bottom');
 	$stateProvider
     .state('signup',{
       url: "/signup",
@@ -159,21 +161,29 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
 		.state('tabs', {
 			url: "/app",
       abstract: true,
-			templateUrl: "views/app/side.html"
+			templateUrl: "views/app/tabs.html"
 		})
     .state('tabs.home', {
       url: "/home",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/home.html",
           controller: 'AppCtrl'
+        }
+      }
+    })
+    .state('tabs.info', {
+      url: "/info",
+      views:{
+        'tabs-info':{
+          templateUrl: "views/app/info.html"
         }
       }
     })
     .state('tabs.messages',{
       url: "/messages",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/message/messages.html",
           controller: 'MessageListCtrl'
         }
@@ -182,7 +192,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.habitacao',{
       url: "/habitacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/habitacao/index.html"
         }
       }
@@ -190,7 +200,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.oquehabitacao',{
       url: "/oque_habitacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/habitacao/oque_habitacao.html"
         }
       }
@@ -198,7 +208,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.agendamentohabitacao',{
       url: "/agendamento",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/habitacao/agendamento.html"
         }
       }
@@ -206,7 +216,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.listahabitacao',{
       url: "/listahabitacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/habitacao/listahabitacao.html",
           controller: 'SearchCtrl'
         }
@@ -215,7 +225,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.regularizacao',{
       url: "/regularizacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/regularizacao/index.html"
         }
       }
@@ -223,7 +233,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.oqueregularizacao',{
       url: "/oque_regularizacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/regularizacao/oque_regularizacao.html"
         }
       }
@@ -231,7 +241,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.listaregularizacao',{
       url: "/listaregularizacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/regularizacao/listaregularizacao.html",
           controller: 'SearchRegCtrl'
         }
@@ -240,7 +250,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.agendamentoregularizacao',{
       url: "/agendamentoregularizacao",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/regularizacao/agendamento.html"
         }
       }
@@ -248,7 +258,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.terms',{
           url: "/terms",
           views:{
-            'home':{
+            'tabs-info':{
               templateUrl: "views/app/terms.html"
             }
           }
@@ -256,7 +266,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.faq',{
           url: "/faq",
           views:{
-            'home':{
+            'tabs-info':{
               templateUrl: "views/app/faq.html"
             }
           }
@@ -269,7 +279,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.new_message',{
       url: "/new_message",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/message/new_message.html",
           controller: 'messageCtrl'
         }
@@ -278,7 +288,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.map',{
       url: "/map",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/map/map.html",
           controller: 'MapCtrl'
         }
@@ -287,7 +297,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.assistencia',{
       url: "/assistencia",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/assistencia/index.html",
         controller: 'AssistenciaCtrl'
         }
@@ -296,7 +306,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.entidades',{
       url: "/entidades",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/entidade/index.html"
         }
       }
@@ -304,7 +314,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.listaentidades',{
       url: "/listaentidades",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/entidade/listaentidade.html",
         controller: 'EntidadesCtrl'
         }
@@ -313,7 +323,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.noticias',{
       url: "/noticias",
       views:{
-        'home':{
+        'tabs-noticias':{
         templateUrl: "views/app/noticias/index.html",
         controller: 'NoticiasCtrl'
         }
@@ -322,7 +332,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.noticia',{
       url: "/noticia/:id",
       views:{
-        'home':{
+        'tabs-noticias':{
         templateUrl: "views/app/noticias/single.html",
         controller: 'NoticiaCtrl'
         }
@@ -331,15 +341,16 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.cadastro',{
       url: "/cadastro",
       views:{
-        'home':{
-        templateUrl: "views/app/cadastro/index.html"
+        'tabs-cadastro':{
+        templateUrl: "views/app/cadastro/index.html",
+        controller: 'CadastroCtrl'
         }
       }
     })
     .state('tabs.portal',{
       url: "/portal",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/portal/index.html",
         controller: 'portalCtrl'
         }
@@ -348,7 +359,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.portal_codhab',{
       url: "/portal_codhab",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/portal/codhab.html",
         controller: 'portalCtrl'
         }
@@ -357,7 +368,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.portal_acoes',{
       url: "/portal_acoes",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/portal/acoesurbanas.html",
         controller: 'portalCtrl'
         }
@@ -366,7 +377,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.portal_habita',{
       url: "/portal_habita",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/portal/habitabrasilia.html",
         controller: 'portalCtrl'
         }
@@ -375,7 +386,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.portal_mobi',{
       url: "/portal_mobi",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/portal/mobi.html",
         controller: 'portalCtrl'
         }
@@ -384,7 +395,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.oqueentidades',{
       url: "/oqueentidades",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/entidade/oque_entidade.html"
         }
       }
@@ -392,7 +403,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.agendamentoentidades',{
       url: "/entidades",
       views:{
-        'home':{
+        'tabs-home':{
         templateUrl: "views/app/entidade/agendamento.html"
         }
       }
@@ -400,7 +411,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.entidade',{
       url:"/entidade/:cnpj?lat&long",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl:"views/app/entidade/single.html",
           controller:'EntidadeCtrl'
         }
@@ -409,7 +420,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.postos',{
       url:"/postos/:id?nome&endereco&hora&coordenador&tel&email&latitude&longitude",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl:"views/app/assistencia/single.html",
           controller:'PostosCtrl'
         }
@@ -418,7 +429,7 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.report',{
       url: "/report",
       views:{
-        'home':{
+        'tabs-home':{
           templateUrl: "views/app/report/report.html",
           controller: 'reportCreateCtrl'
         }
@@ -427,18 +438,14 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $
     .state('tabs.scan',{
       url: "/scan",
       views:{
-        'home':{
+        'tabs-scan':{
           templateUrl: "views/app/scan/index.html",
           controller: 'ScanCtrl'
         }
       }
     })
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "views/app/tabs.html"
-    })
-	;
+
+
 
    // $ionicConfigProvider.tabs.position('bottom')
 	// if none of the above states are matched, use this as the fallback

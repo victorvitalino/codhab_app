@@ -1,7 +1,9 @@
-<ion-view>
-  <ion-nav-buttons class="bar bar-header">
-    <div class="h1 title">Noticias</div>
-  </ion-nav-buttons>
+<ion-view view-title="{{noticia.title}}">
+  <ion-nav-bar class="bar-energized">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i> Voltar
+    </ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content class="padding">
     <div class="row">
       <img src="http://www.codhab.df.gov.br/{{noticia.thumbnail.url}}" alt="" style="width: 100%;height: 30%;" />
@@ -13,26 +15,4 @@
     <div ng-bind-html="noticia.content"></div>
 
   </ion-content>
-  <ion-footer-bar >
-
-<ion-tabs  class="tabs-icon-top tabs-codhab ">
-
-<ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="tabs.home">
-  <!-- Tab 1 content -->
-</ion-tab>
-
-<ion-tab title="notícias" icon-on="ion-ios-world-outline" icon-off="ion-ios-world-outline" ui-sref="tabs.noticias">
-  <!-- Tab 2 content -->
-</ion-tab>
-
-<ion-tab title="Leitor Qr Code" icon-on="ion-ios-camera" icon-off="ion-ios-camera-outline" ui-sref="tabs.scan">
-  <!-- Tab 2 content -->
-</ion-tab>
-
-<ion-tab title="Atualização Cadastral" icon-on="ion-ios-loop" icon-off="ion-ios-loop" ui-sref="tabs.cadastro">
-  <!-- Tab 3 content -->
-</ion-tab>
-
-</ion-tabs>
-</ion-footer-bar>
 </ion-view>

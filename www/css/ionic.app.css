@@ -8,6 +8,34 @@ For example, you might change some of the default colors:
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
+.btn-camera {
+ font-size:30px;
+ float:left;
+ margin-left:15px;
+ color:white;
+
+}
+.tab-nav.tabs{
+  border-top: 1px solid #ddd!important;
+}
+.btn-text-cam {
+
+ color:white;
+}
+
+.btn-buttom-cam {
+ background-color:#289728!important;
+ display: block!important;
+ margin: 0 auto!important;
+ border-radius:10px!important;
+}
+
+.btn-tit-cam {
+ text-align: center;
+}
+.btn-text-int {
+ color:#C0C0C0;
+}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -18422,31 +18450,7 @@ label.no_error-formz {
   color: #fff !important; }
 
 .bloco-home {
-  margin-top: 10px !important; }
-
-.bloco-home2 {
-  margin-top: 10px !important; }
-
-.scan-img {
-  background-image:url("/img/qrcode1.png")!;
-  height: 48px;
-  background-repeat: no-repeat;
-  margin-top: 20px;
-  margin-left: 5px;
-}
-/*.button.btn-nav-codhab.energized.activated>.scan-img{
-  background-image:url("/img/qrcode2.png")!important;
-  background-repeat: no-repeat;
-}*/
-
-.tab-nav.tabs {
-border-top: 1px solid #f4efef;
-}
-
-.bar-footer {
-border-top: 1px solid #f4efef;
-}
-
+  margin-top: 25px !important; }
 
 .bloco-inicial {
   margin-top: 7% !important; }
@@ -18520,30 +18524,3 @@ border-top: 1px solid #f4efef;
 
 .indication-energized {
   background-color: #ffc10e; }
-
-.btn-camera {
-  font-size:30px;
-  float:left;
-  margin-left:15px;
-  color:white;
-
-}
-
-.btn-text-cam {
-
-  color:white;
-}
-
-.btn-buttom-cam {
-  background-color:#289728;
-  margin: 0 auto;
-  display: block;
-  border-radius:10px;
-}
-
-.btn-tit-cam {
-  text-align: center;
-}
-.btn-text-int {
-  color:#C0C0C0;
-}

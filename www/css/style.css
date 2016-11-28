@@ -17,3 +17,33 @@
 	padding:20px!important;
 
 }
+
+.tab-nav.tabs{
+  border-top: 1px solid #ddd!important;
+}
+.btn-camera {
+ font-size:30px;
+ float:left;
+ margin-left:15px;
+ color:white;
+
+}
+
+.btn-text-cam {
+
+ color:white;
+}
+
+.btn-buttom-cam {
+ background-color:#289728;
+ margin: 0 auto;
+ display: block;
+ border-radius:10px;
+}
+
+.btn-tit-cam {
+ text-align: center;
+}
+.btn-text-int {
+ color:#C0C0C0;
+}
