@@ -36,6 +36,10 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         $ionicLoading.hide();
       });
 
+    $scope.bookmark ('bookmark'){
+      window.localStorage( ‘search.cpf’, ‘awesome-value’ );
+    }
+
 
     // Inicio do segundo search -- position
     // $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
