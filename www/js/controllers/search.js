@@ -1,5 +1,12 @@
 var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
+  $scope.bookmark = function(search){
+
+    var salvos = window.localStorage['bookmark'];
+    salvos.push('search.cpf')
+    console.log(salvos)
+  //localStorage.setItem("bookmark", search.cpf);
+  };
   $scope.searchCPF = function (search) {
     $scope.verify = "";
     $scope.result = "";
@@ -35,6 +42,8 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         things = result.data;
         $ionicLoading.hide();
       });
+
+
 
     // Inicio do segundo search -- position
     // $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
