@@ -1,4 +1,11 @@
 <ion-side-menus>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-energized">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Voltar</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="home" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
   <ion-side-menu side="left">
     <header class="bar bar-header bar-stable">
       <h1 class="title">Opções</h1>
@@ -14,8 +21,8 @@
         <ion-item nav-clear menu-close href="#/app/terms">
           Termos de Uso
         </ion-item>
-        <ion-item nav-clear menu-close onclick="cordova.InAppBrowser.open('http://www.ouvidoria.df.gov.br/', '_system');">
-            Ouvidoria GDF
+        <ion-item nav-clear menu-close href="#" onclick="window.open('http://www.ouvidoria.df.gov.br/', '_system', 'location=yes');">
+          Ouvidoria GDF
         </ion-item>
         <ion-item nav-clear menu-close href="mailto:suporte.app@codhab.df.gov.br">
           Problemas e Sugestões
@@ -23,10 +30,9 @@
         <ion-item nav-clear menu-close href="#/intro">
           Introdução
         </ion-item>
-
       </ion-list>
       <div class="bar bar-footer">
-        <div class="copy-codhab">Copyright © 2016 CODHAB. <br /> Versão: 2.0.4</div>
+        <div class="copy-codhab">Copyright © 2016 CODHAB. <br /> Versão: 2.0.2</div>
       </div>
     </ion-content>
   </ion-side-menu>
