@@ -1,11 +1,21 @@
 var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
+<<<<<<< HEAD
   $scope.bookmark = function(search){
 
     var salvos = window.localStorage['bookmark'];
     console.log(salvos)
   localStorage.setItem("bookmark", search.cpf);
   };
+=======
+  // $scope.bookmark = function(search){
+  //
+  //   var salvos = window.localStorage['bookmark'];
+  //   salvos.push('search.cpf')
+  //   console.log(salvos)
+  // //localStorage.setItem("bookmark", search.cpf);
+  // };
+>>>>>>> 6f9df7c91b43c94537a0fe30bbc14d37702b2434
   $scope.searchCPF = function (search) {
     $scope.verify = "";
     $scope.result = "";

@@ -19,7 +19,7 @@
     <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Dados Pessoais
-        <span class="ion-ios-star-outline" ng-click="bookmark(search)" ></span>
+        <!-- <span class="ion-ios-star-outline" ng-click="bookmark(search)" ></span> -->
       </div>
       <div class="item">
         <strong>Nome: </strong>{{result.basic_information.name}}<br/>
@@ -122,7 +122,7 @@
         Os seguintes erros podem ter ocorrido:
       </p>
       <p class="texto_interno_search marginz" style="color:#ff0000; margin-bottom: 10px;">
-        Você está sem conexão, ou o CPF inserido está incorreto.
+        Você está sem conexão, o CPF inserido está incorreto, ou o CPF inserido não consta no cadastro CODHAB.
       </p>
       <p class="texto_interno_search marginz" style="color:#ff0000; margin-bottom: 10px;">
         Por Favor verifique o CPF inserido, ou sua conexão.
