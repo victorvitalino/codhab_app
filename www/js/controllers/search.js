@@ -3,9 +3,8 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
   $scope.bookmark = function(search){
 
     var salvos = window.localStorage['bookmark'];
-    salvos.push('search.cpf')
     console.log(salvos)
-  //localStorage.setItem("bookmark", search.cpf);
+  localStorage.setItem("bookmark", search.cpf);
   };
   $scope.searchCPF = function (search) {
     $scope.verify = "";
