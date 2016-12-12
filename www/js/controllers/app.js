@@ -11,7 +11,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeoloca
   //   }, function (err) {
   //     console.error(err);
   //   });
-  // };
+  //  };
 
   // document.addEventListener("deviceready", function () {
   //
