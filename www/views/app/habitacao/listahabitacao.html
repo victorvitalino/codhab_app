@@ -16,11 +16,13 @@
         </button>
       </div>
     </form>
+
+
     <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Dados Pessoais
-        <span  ng-show="search.cpf != result.bookmark" class="ion-ios-star-outline" ng-click="bookmark(search);searchCPF(search)" ></span>
-        <span ng-show="search.cpf == result.bookmark"  class="ion-ios-star energized" ng-click="bookmark(search)" ></span>
+        <button ng-show="result.basic_information.cpf != result.bookmark" class="button button-small icon-left ion-ios-star-outline button-positive" ng-click="bookmark(search);searchCPF(search)" style="display: inline-block; float: right;">Favorito?</button>
+        <button ng-show="result.basic_information.cpf == result.bookmark" class="button button-small icon-left ion-ios-star button-positive" ng-click="bookmark(search);" style="display: inline-block; float: right;">Salvo</button>
       </div>
       <div class="item">
         <strong>Nome: </strong>{{result.basic_information.name}}<br/>
@@ -80,6 +82,7 @@
         </span>
         <br/>
     </div>
+
     </ion-list>
 
 
@@ -115,6 +118,7 @@
         <p class="texto_interno_search marginz">
           Os dados estão disponíveis para consulta pública.
         </p>
+        <button class="button icon-left ion-star button-positive" ng-click="searchBookmark()" style="margin: 0 auto;margin-top: 44px;display: block;">CPF Favorito</button>
       </div>
     </div>
     <div ng-show="verify" class="logo_interna_search">
@@ -128,6 +132,7 @@
       <p class="texto_interno_search marginz" style="color:#ff0000; margin-bottom: 10px;">
         Por Favor verifique o CPF inserido, ou sua conexão.
       </p>
+        <button class="button icon-left ion-star button-positive" ng-click="searchBookmark()" style="margin: 0 auto;margin-top: 44px;display: block;">CPF Favorito</button>
     </div>
 
   </ion-content>
