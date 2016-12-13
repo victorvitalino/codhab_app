@@ -19,7 +19,8 @@
     <ion-list ng-show="result.basic_information.cpf">
       <div class="item item-divider">
         Dados Pessoais
-        <span class="ion-ios-star-outline" ng-click="bookmark(search)" ></span>
+        <span  ng-show="search.cpf != result.bookmark" class="ion-ios-star-outline" ng-click="bookmark(search);searchCPF(search)" ></span>
+        <span ng-show="search.cpf == result.bookmark"  class="ion-ios-star energized" ng-click="bookmark(search)" ></span>
       </div>
       <div class="item">
         <strong>Nome: </strong>{{result.basic_information.name}}<br/>

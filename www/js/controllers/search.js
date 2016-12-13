@@ -1,23 +1,13 @@
 var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
-
-// <<<<<<< HEAD
   $scope.bookmark = function(search){
-
-    var salvos = window.localStorage['bookmark'];
-    console.log(salvos)
   localStorage.setItem("bookmark", search.cpf);
+
+  console.log(localStorage['bookmark']);
   };
-// =======
-  // $scope.bookmark = function(search){
-  //
-  //   var salvos = window.localStorage['bookmark'];
-  //   salvos.push('search.cpf')
-  //   console.log(salvos)
-  // //localStorage.setItem("bookmark", search.cpf);
-  // };
-// >>>>>>> 6f9df7c91b43c94537a0fe30bbc14d37702b2434
+
   $scope.searchCPF = function (search) {
+
     $scope.verify = "";
     $scope.result = "";
     $scope.results = "";
@@ -29,7 +19,11 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
       maxWidth: 200,
       showDelay: 0
     });
-    console.log(search.cpf)
+    if (search.cpf === undefined){
+      console.log('carai')
+    }else{
+      console.log(search.cpf)
+    }
     $http.get('http://extranet.codhab.df.gov.br/candidato/cadastros/'+ search.cpf +'.json?token=eed6a8780692be1675b1bd0f386ca8b0')
       .success(function (data, status, headers, config) {
         var old = moment().diff(moment(data.born), 'years');
@@ -39,7 +33,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
           data.olds = "Não";
         }
         console.log(data);
-
+        data.bookmark = localStorage['bookmark'];
         $scope.result = data;
         $ionicLoading.hide();
       })

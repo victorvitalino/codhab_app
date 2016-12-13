@@ -1,6 +1,9 @@
 var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeolocation) {
 
+
+
+
   //   var db = window.openDatabase("test", "1.0", "test DB", 1);
   //   var db = $cordovaSQLite.openDB({ name: "my.db" });
   //   var db = $cordovaSQLite.openDB({ name: "my.db", bgType: 1 });
