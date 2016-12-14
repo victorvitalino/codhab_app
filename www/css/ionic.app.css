@@ -8,34 +8,6 @@ For example, you might change some of the default colors:
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
-.btn-camera {
- font-size:30px;
- float:left;
- margin-left:15px;
- color:white;
-
-}
-.tab-nav.tabs{
-  border-top: 1px solid #ddd!important;
-}
-.btn-text-cam {
-
- color:white;
-}
-
-.btn-buttom-cam {
- background-color:#289728!important;
- display: block!important;
- margin: 0 auto!important;
- border-radius:10px!important;
-}
-
-.btn-tit-cam {
- text-align: center;
-}
-.btn-text-int {
- color:#C0C0C0;
-}
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -18251,6 +18223,30 @@ form .form-errors {
 .platform-ios.platform-cordova:not(.fullscreen) .search-bar {
   margin-top: 20px; }
 
+.tab-nav.tabs {
+  border-top: 1px solid #ddd !important; }
+
+.btn-camera {
+  font-size: 30px;
+  float: left;
+  margin-left: 15px;
+  color: white; }
+
+.btn-text-cam {
+  color: white; }
+
+.btn-buttom-cam {
+  background-color: #289728;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px; }
+
+.btn-tit-cam {
+  text-align: center; }
+
+.btn-text-int {
+  color: #C0C0C0; }
+
 a {
   text-decoration: none; }
 
@@ -18394,7 +18390,7 @@ label.no_error-formz {
 .copy-codhab {
   width: 100%;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   color: #808080; }
 

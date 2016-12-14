@@ -1,5 +1,5 @@
 var app = angular.module('codhab.controllers.app', []);
-app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeolocation) {
+app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeolocation,$cordovaAppVersion) {
 
 
 
@@ -16,14 +16,12 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $cordovaGeoloca
   //   });
   //  };
 
-  // document.addEventListener("deviceready", function () {
-  //
-  //   $cordovaAppVersion.getVersionNumber().then(function (version) {
-  //     var appVersion = version;
-  //     console.log(appVersion)
-  //   });
-  // }, false);
-  //
+  document.addEventListener("deviceready", function () {
+
+  $cordovaAppVersion.getVersionNumber().then(function (version) {
+    $scope.appv = version;
+  });
+}, false);
   // $cordovaAppVersion.getVersionCode().then(function (build) {
   //   var appBuild = build;
   // });

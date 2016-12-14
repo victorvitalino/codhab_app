@@ -176,7 +176,8 @@ $ionicConfigProvider.tabs.position('bottom');
       url: "/info",
       views:{
         'tabs-info':{
-          templateUrl: "views/app/info.html"
+          templateUrl: "views/app/info.html",
+          controller: 'AppCtrl'
         }
       }
     })
