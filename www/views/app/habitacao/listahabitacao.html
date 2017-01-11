@@ -78,7 +78,7 @@
         <strong>Pontuação: </strong>{{result.pontuations[0].total}}<br/>
         <strong>Faixa de renda: </strong>Faixa {{i.zone}}<br/>
         <span class="badge_indication {{result.situations[0].name == 'HABILITADO' ? 'indication-balanced' : 'indication-energized'}}">
-          <strong>{{result.situations[0].name}}</strong>
+          <strong>{{result.basic_information.situation}}</strong>
         </span>
         <br/>
     </div>
@@ -132,7 +132,8 @@
       <p class="texto_interno_search marginz" style="color:#ff0000; margin-bottom: 10px;">
         Por Favor verifique o CPF inserido, ou sua conexão.
       </p>
-        <button class="button icon-left ion-star button-positive" ng-click="searchBookmark()" style="margin: 0 auto;margin-top: 44px;display: block;">CPF Favorito</button>
+
+        <button class="button icon-left ion-star button-positive" ng-show="localStorage['bookmark']" ng-click="searchBookmark()" style="margin: 0 auto;margin-top: 44px;display: block;">CPF Favorito</button>
     </div>
 
   </ion-content>

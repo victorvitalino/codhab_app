@@ -1,8 +1,11 @@
 var app = angular.module('codhab.controllers.search', []);
 app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
+
   $scope.bookmark = function(search){
   localStorage.setItem("bookmark", search.cpf);
   };
+
+
 
   $scope.searchBookmark = function(){
     var bookmark = localStorage['bookmark'];
@@ -18,7 +21,7 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
       showDelay: 0
     });
     if (search.cpf === undefined){
-      console.log('carai')
+      console.log('error')
     }else{
       console.log(search.cpf)
     }
