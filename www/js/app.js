@@ -94,10 +94,7 @@ var app = angular.module('codhab', ['ionic',
 'ngMessages',
 'ngCpfCnpj',
 'ui.mask',
-'ksSwiper',
 'angularMoment',
-// 'parse-angular', Removido Temporariamente
-// 'parse-angular.enhance', Removido Temporariamente
 'codhab.controllers.app',
 'codhab.controllers.map',
 'codhab.controllers.search',
@@ -139,13 +136,10 @@ app.run(function($ionicPlatform) {
     }
     initPushwoosh();
     //StatusBar.overlaysWebView(false);
-    // Parse - Removido Temporariamente
-    // Parse.initialize("0nHHDsgXpUZieEkv46JhEKgk8fXUkKn8aDNpyqZP", "r4pMXbjMUVCrqcSzh25W1J1U3yJ5U4rjG6kdCwry");
-
   });
 });
 
-app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $cordovaFacebookProvider) {
+app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
 	$stateProvider
     .state('signup',{
@@ -450,15 +444,13 @@ $ionicConfigProvider.tabs.position('bottom');
 
    // $ionicConfigProvider.tabs.position('bottom')
 	// if none of the above states are matched, use this as the fallback
-  if(window.localStorage['tutorial'] === "true") {
+
 	   $urlRouterProvider.otherwise('/app/home');
-  }else{
-    $urlRouterProvider.otherwise('/intro');
-  }
-  if(localStorage.getItem("LocalData") == null)
-    {
-        var data = [];
-        data = JSON.stringify(data);
-        localStorage.setItem("LocalData", data);
-    }
+
+    if(localStorage.getItem("LocalData") == null)
+      {
+          var data = [];
+          data = JSON.stringify(data);
+          localStorage.setItem("LocalData", data);
+      }
 });

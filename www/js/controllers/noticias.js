@@ -2,20 +2,9 @@ var app = angular.module('codhab.controllers.noticias', []);
 
 /*********************************************************************
  * NoticiasCtrl
+  Controller para carregar todas as noticias da codhab
  *********************************************************************/
-app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $parse, $state, $ionicLoading) {
-  // $scope.swiper = {};
-  //
-  // $scope.onReadySwiper = function (swiper) {
-  //
-  // swiper.on('slideChangeStart', function () {
-  //   console.log('slide start');
-  // });
-  //
-  // swiper.on('onSlideChangeEnd', function () {
-  //   console.log('slide end');
-  // });
-  // };
+app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $state, $ionicLoading) {
   $ionicLoading.show({
     content: 'Loading',
     animation: 'fade-in',
@@ -42,8 +31,9 @@ app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $parse
 });
 /*********************************************************************
  * NoticiaCtrl
+  Controller para carregar uma noticia especifica da codhab.
  *********************************************************************/
-app.controller('NoticiaCtrl', function ($scope,$stateParams,$http, $sce, $parse, $ionicLoading) {
+app.controller('NoticiaCtrl', function ($scope,$stateParams,$http, $sce, $ionicLoading) {
   $ionicLoading.show({
     content: 'Loading',
     animation: 'fade-in',
