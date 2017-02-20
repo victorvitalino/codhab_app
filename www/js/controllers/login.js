@@ -5,22 +5,40 @@ var app = angular.module('codhab.controllers.login', []);
  * LoginCtrl
  *********************************************************************/
 
-// app.controller('LoginCtrl',function($scope, $state, AuthService, $cordovaFacebook){
-//     $scope.formData = {
-//   		"email": "",
-//   		"password": ""
-//   	};
-//     // Logar com form basico do Parse
-//     $scope.login = function (form) {
-//       if (form.$valid){
-//       console.log("LoginCtrl::login");
-//       AuthService.login($scope.formData.email, $scope.formData.password)
-//       .then(function(){
-//           $state.go("app.home")
-//       });
-//       }
-//     };
-//   });
+ app.controller('LoginCtrl',function($scope, $state, $http){
+     $scope.formData = {
+      "cpf": "",
+      "password": ""
+      };
+    $scope.getData = function () {
+      var data = {
+        "cpf": $scope.formData.cpf,
+        "password": $scope.formData.password
+        }
+        $http.post("http://www.codhab.df.gov.br/autentica?cpf="+$scope.formData.cpf+'&password='+$scope.formData.password)
+             .success(function (data, status, headers, config){
+                console.log(data)
+                for (var k in data){
+                  if (k == 'data'){
+                    var y = data[k];
+                    if(y.message == 'success'){
+                      // console.log(y.cpf)
+                       window.localStorage['cpf_logado'] = y.cpf;
+                       $state.go('tabs.area_restrita');
+
+                    }else{
+                      alert("CPF ou senha errados.")
+                    }
+                  }
+                }
+
+             }).error(function(data, status, headers, config){
+               alert("Você está sem conexão, ou ela está lenta, tente mais tarde.")
+             }).then(function(result){
+               console.log('foi')
+             });
+    }
+});
   /*********************************************************************
    * SignupCtrl
    *********************************************************************/

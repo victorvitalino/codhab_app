@@ -111,10 +111,13 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.portal',
 'codhab.controllers.scan',
 'codhab.controllers.cadastro',
+'codhab.controllers.area',
+'codhab.controllers.tabs',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
+// 'codhab.services.BackgroundGeolocationService',
 'codhab.services.EntidadesService'
 ])
 
@@ -147,16 +150,30 @@ $ionicConfigProvider.tabs.position('bottom');
       templateUrl:"views/login/signup.html",
       controller: 'SignupCtrl'
     })
-    .state('login',{
-      url: "/login",
-      templateUrl:"views/login/login.html",
-      controller: 'LoginCtrl'
-    })
 		.state('tabs', {
 			url: "/app",
       abstract: true,
-			templateUrl: "views/app/tabs.html"
+			templateUrl: "views/app/tabs.html",
+      controller: 'TabsCtrl'
 		})
+    .state('tabs.login',{
+      url: "/login",
+      views:{
+      'tabs-login':{
+        templateUrl:"views/login/login.html",
+        controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('tabs.area_restrita',{
+      url: "/area_restrita",
+      views:{
+      'tabs-cadastro':{
+        templateUrl:"views/app/arearestrita/index.html",
+        controller: 'AreaCtrl'
+        }
+      }
+    })
     .state('tabs.home', {
       url: "/home",
       views:{
@@ -247,6 +264,22 @@ $ionicConfigProvider.tabs.position('bottom');
       views:{
         'tabs-home':{
           templateUrl: "views/app/regularizacao/agendamento.html"
+        }
+      }
+    })
+    .state('tabs.agendamentogeral',{
+      url: "/agendamentogeral",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/agendamentogeral.html"
+        }
+      }
+    })
+    .state('tabs.agendamentocarteira',{
+      url: "/agendamentocarteira",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/agendamentocarteira.html"
         }
       }
     })

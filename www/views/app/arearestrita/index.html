@@ -1,0 +1,30 @@
+<ion-view view-title="Area Restrita">
+  <ion-nav-bar class="bar-energized">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i> Voltar
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <a class="button button-icon icon ion-android-exit"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content scroll="true" >
+
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 ng-src="{{url}}"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:14px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+
+
+      </ion-content>
+</ion-view>

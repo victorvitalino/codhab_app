@@ -1,5 +1,4 @@
 var app = angular.module('codhab.services.EntidadesService', []);
-
 app.service("EntidadesService", function ($http,$q) {
 
   return {
