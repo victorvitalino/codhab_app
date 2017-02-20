@@ -5,7 +5,7 @@ var app = angular.module('codhab.controllers.login', []);
  * LoginCtrl
  *********************************************************************/
 
- app.controller('LoginCtrl',function($scope, $state, $http){
+ app.controller('LoginCtrl',function($scope, $state, $http,$ionicPlatform){
      $scope.formData = {
       "cpf": "",
       "password": ""
@@ -22,10 +22,9 @@ var app = angular.module('codhab.controllers.login', []);
                   if (k == 'data'){
                     var y = data[k];
                     if(y.message == 'success'){
-                      // console.log(y.cpf)
                        window.localStorage['cpf_logado'] = y.cpf;
-                       $state.go('tabs.area_restrita');
-
+                       $state.go('tabs.home');
+                        window.location.reload();
                     }else{
                       alert("CPF ou senha errados.")
                     }
@@ -35,9 +34,9 @@ var app = angular.module('codhab.controllers.login', []);
              }).error(function(data, status, headers, config){
                alert("Você está sem conexão, ou ela está lenta, tente mais tarde.")
              }).then(function(result){
-               console.log('foi')
              });
     }
+
 });
   /*********************************************************************
    * SignupCtrl

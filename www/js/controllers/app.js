@@ -1,5 +1,5 @@
 var app = angular.module('codhab.controllers.app', []);
-app.controller('AppCtrl', function($scope,$ionicPlatform, $ionicConfig, $state, $cordovaGeolocation) {
+app.controller('AppCtrl', function($scope,$ionicPlatform, $ionicConfig, $state, $cordovaGeolocation,$cordovaBadge) {
 
    /** Inicio da antiga geolocalização **/
 
@@ -10,6 +10,7 @@ app.controller('AppCtrl', function($scope,$ionicPlatform, $ionicConfig, $state, 
      window.localStorage['lat'] = $scope.lat;
      window.localStorage['long'] = $scope.long;
      console.log($scope.lat);
+     // http://www.codhab.df.gov.br/lat-lng?lat=123&lng=123&cpf=123
    }, function (err){
      alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
    });
