@@ -1,17 +1,19 @@
-<ion-view view-title="Habitação">
+<ion-view view-title="Area Restrita" cache-view="false">
   <ion-nav-bar class="bar-energized">
     <ion-nav-back-button class="button-clear">
       <i class="ion-arrow-left-c"></i> Voltar
     </ion-nav-back-button>
-    <!-- src="http://www.codhab.df.gov.br/agendamento/habitacao/new" -->
+    <ion-nav-buttons side="right">
+      <a ng-click="logout()" class="button button-icon icon ion-android-exit"></a>
+    </ion-nav-buttons>
   </ion-nav-bar>
-  <ion-content overflow-scroll="true" >
-        <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
-        <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
+  <ion-content scroll="true" >
+    <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
+    <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
         <iframe
                  name="iframe_a"
                  id="iframea"
-                 src="http://www.codhab.df.gov.br/agendamento/habitacao/new"
+                 ng-src="{{url}}"
                  frameborder="0"
                  style=" overflow:hidden;
                          overflow-x:hidden;
@@ -19,10 +21,11 @@
                          height:100%;
                          width:100%;
                          position:absolute;
-                         top:0px;left:0px;right:0px;bottom:0px;
+                         top:14px;left:0px;right:0px;bottom:0px;
                          -ms-touch-action: none;"
                          height="100%" width="100%"
         ></iframe>
+
 
       </ion-content>
 </ion-view>

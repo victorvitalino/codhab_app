@@ -94,10 +94,7 @@ var app = angular.module('codhab', ['ionic',
 'ngMessages',
 'ngCpfCnpj',
 'ui.mask',
-'ksSwiper',
 'angularMoment',
-// 'parse-angular', Removido Temporariamente
-// 'parse-angular.enhance', Removido Temporariamente
 'codhab.controllers.app',
 'codhab.controllers.map',
 'codhab.controllers.search',
@@ -114,10 +111,13 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.portal',
 'codhab.controllers.scan',
 'codhab.controllers.cadastro',
+'codhab.controllers.area',
+'codhab.controllers.tabs',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
+// 'codhab.services.BackgroundGeolocationService',
 'codhab.services.EntidadesService'
 ])
 
@@ -139,13 +139,10 @@ app.run(function($ionicPlatform) {
     }
     initPushwoosh();
     //StatusBar.overlaysWebView(false);
-    // Parse - Removido Temporariamente
-    // Parse.initialize("0nHHDsgXpUZieEkv46JhEKgk8fXUkKn8aDNpyqZP", "r4pMXbjMUVCrqcSzh25W1J1U3yJ5U4rjG6kdCwry");
-
   });
 });
 
-app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider,  $cordovaFacebookProvider) {
+app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
 	$stateProvider
     .state('signup',{
@@ -153,16 +150,30 @@ $ionicConfigProvider.tabs.position('bottom');
       templateUrl:"views/login/signup.html",
       controller: 'SignupCtrl'
     })
-    .state('login',{
-      url: "/login",
-      templateUrl:"views/login/login.html",
-      controller: 'LoginCtrl'
-    })
 		.state('tabs', {
 			url: "/app",
       abstract: true,
-			templateUrl: "views/app/tabs.html"
+			templateUrl: "views/app/tabs.html",
+      controller: 'TabsCtrl'
 		})
+    .state('tabs.login',{
+      url: "/login",
+      views:{
+      'tabs-login':{
+        templateUrl:"views/login/login.html",
+        controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('tabs.area_restrita',{
+      url: "/area_restrita",
+      views:{
+      'tabs-cadastro':{
+        templateUrl:"views/app/arearestrita/index.html",
+        controller: 'AreaCtrl'
+        }
+      }
+    })
     .state('tabs.home', {
       url: "/home",
       views:{
@@ -253,6 +264,22 @@ $ionicConfigProvider.tabs.position('bottom');
       views:{
         'tabs-home':{
           templateUrl: "views/app/regularizacao/agendamento.html"
+        }
+      }
+    })
+    .state('tabs.agendamentogeral',{
+      url: "/agendamentogeral",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/agendamentogeral.html"
+        }
+      }
+    })
+    .state('tabs.agendamentocarteira',{
+      url: "/agendamentocarteira",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/agendamentocarteira.html"
         }
       }
     })
@@ -450,15 +477,13 @@ $ionicConfigProvider.tabs.position('bottom');
 
    // $ionicConfigProvider.tabs.position('bottom')
 	// if none of the above states are matched, use this as the fallback
-  if(window.localStorage['tutorial'] === "true") {
+
 	   $urlRouterProvider.otherwise('/app/home');
-  }else{
-    $urlRouterProvider.otherwise('/intro');
-  }
-  if(localStorage.getItem("LocalData") == null)
-    {
-        var data = [];
-        data = JSON.stringify(data);
-        localStorage.setItem("LocalData", data);
-    }
+
+    if(localStorage.getItem("LocalData") == null)
+      {
+          var data = [];
+          data = JSON.stringify(data);
+          localStorage.setItem("LocalData", data);
+      }
 });

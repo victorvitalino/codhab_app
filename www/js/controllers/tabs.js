@@ -1,13 +1,5 @@
-var app = angular.module('codhab.controllers.portal', []);
-
-
-app.controller('portalCtrl', function ($scope, $window, $cordovaInAppBrowser,$http, $cordovaGeolocation) {
-
-  // $scope.linkPortal = function(url,target,option)
-  // {
-  //  // Open in external browser
-  //  $cordovaInAppBrowser.open(url,target,option);
-  // };
+var app = angular.module('codhab.controllers.tabs', []);
+app.controller('TabsCtrl', function($scope,$ionicPlatform, $ionicConfig, $state, $cordovaGeolocation, $http) {
 
   /* Envio da localização do usuário logado. Colocado no controler do tabs pois é o controller presente em todo o app*/
      $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
@@ -28,4 +20,13 @@ app.controller('portalCtrl', function ($scope, $window, $cordovaInAppBrowser,$ht
        alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
      });
 
+
+
+     /* Verifico se existe um cpf no localStorage para fazer a mudança dos tabs*/
+  $scope.tabsz = window.localStorage['cpf_logado'];
+  if($scope.tabsz === undefined || $scope.tabsz === null || $scope.tabsz === '' || $scope.tabsz === ' ' ){
+    $scope.tabswitch = '1';
+  } else {
+    $scope.tabswitch = '2';
+  }
 });

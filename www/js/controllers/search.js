@@ -1,12 +1,9 @@
 var app = angular.module('codhab.controllers.search', []);
-app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
+app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http, $cordovaGeolocation) {
 
   $scope.bookmark = function(search){
   localStorage.setItem("bookmark", search.cpf);
   };
-
-
-
   $scope.searchBookmark = function(){
     var bookmark = localStorage['bookmark'];
     $scope.verify = "";
@@ -89,38 +86,24 @@ app.controller('SearchCtrl', function ($scope, $state, $ionicLoading, $http) {
         $ionicLoading.hide();
       });
 
-
-
-    // Inicio do segundo search -- position
-    // $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/position.json')
-    //   .success(function (data2, status, headers, config) {
-    //     console.log(data2);
-    //     $scope.results = data2;
-    //
-    //   })
-    //   .error(function (data, status, headers, config) {
-    //     console.log('data error');
-    //             $scope.verify = true;
-    //
-    //   })
-    //   .then(function (results) {
-    //     things = results.data2;
-    //   });
-
-    // Inicio do terceiro search -- indicação
-    // $http.get('http://www.codhab.df.gov.br/habitacao/candidato/' + search.cpf + '/indication.json')
-    //   .success(function (data, status, headers, config) {
-    //     console.log(data);
-    //     $scope.result_indication = data;
-    //
-    //   })
-    //   .error(function (data, status, headers, config) {
-    //     console.log('data error');
-    //             $scope.verify = true;
-    //   })
-    //   .then(function (result_indication) {
-    //     things = result_indication.data;
-    //   });
-
   }
+
+  /* Envio da localização do usuário logado. Colocado no controler do tabs pois é o controller presente em todo o app*/
+     $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
+     .then(function(position){
+       $scope.lat = position.coords.latitude;
+       $scope.long = position.coords.longitude;
+       window.localStorage['lat'] = $scope.lat;
+       window.localStorage['long'] = $scope.long;
+       $scope.cpf_envio = localStorage['cpf_logado'];
+       $http.get("http://www.codhab.df.gov.br/lat-lng?lat="+$scope.lat+'&lng='+$scope.long+'&cpf='+$scope.cpf_envio)
+            .success(function (data, status, headers, config){
+                console.log(data)
+            }).error(function(data, status, headers, config){
+                console.log("Erro no envio de latitude e longitude")
+            }).then(function(result){
+            });
+     }, function (err){
+       alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
+     });
 });

@@ -1,44 +1,47 @@
-<ion-view view-title="Login do usuário"
-          hide-back-button="true">
-	<ion-content padding="true"
-	             scroll="false">
-		<!-- Form with floating labels -->
-		<form ng-submit="login(loginForm)" novalidate="novalidate" name="loginForm">
-			<ion-list>
-				<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.email.$invalid}">
-					<span class="input-label">Email</span>
-					<input type="email"
-					       placeholder="Email"
-					       ng-model="formData.email"
-                 ng-required="true"
-                 name="email">
-				</label>
-        		<div class="form-errors" ng-messages="loginForm.email.$error">
-                  <div ng-messages-include="views/errors/form-errors.html"></div>
-        		</div>
-				<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.password.$invalid}">
-					<span class="input-label">Senha</span>
-					<input type="password"
-					       placeholder="Senha"
-					       ng-model="formData.password"
-                 ng-required="true"
-                 name="password"
-                 ng-minlength="6">
-				</label>
-				<div class="form-errors" ng-messages="loginForm.password.$error">
-        			<div ng-messages-include="views/errors/form-errors.html"></div>
-        		</div>
-			</ion-list>
-			<button class="button button-royal button-block"
-			        type="submit">Logar
-			</button>
-		</form>
-		<p class="text-center">
-			Não possui conta no aplicativo?
-			<a nav-direction="enter"
-			   ui-sref="signup">Criar
-			</a>
-		</p>
+<ion-view cache-view="false" >
+         <ion-nav-buttons class="bar bar-header">
+           <div class="h1 title">Login do usuário</div>
+         </ion-nav-buttons>
+<ion-content padding="true"
+            scroll="false"
+              ng-controller="LoginCtrl">
+<!-- Form with floating labels -->
+<form ng-submit="getData()" novalidate="novalidate" name="loginForm">
+<ion-list>
+<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.cpf.$invalid}">
+<span class="input-label">CPF</span>
+<input type="text"
+      placeholder="CPF"
+      ng-model="formData.cpf"
+                ng-required="true"
+                name="cpf"
+                >
+</label>
+       	<div class="form-errors" ng-messages="loginForm.cpf.$error">
+                 <div ng-messages-include="views/errors/form-errors.html"></div>
+       	</div>
+<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.password.$invalid}">
+<span class="input-label">Senha</span>
+<input type="password"
+      placeholder="Senha"
+      ng-model="formData.password"
+                ng-required="true"
+                name="password"
+                ng-minlength="6">
+</label>
+<div class="form-errors" ng-messages="loginForm.password.$error">
+       	<div ng-messages-include="views/errors/form-errors.html"></div>
+       	</div>
+</ion-list>
+<button class="button button-royal button-block"
+       type="submit" >Logar
+</button>
+     <button class="button button-royal button-block" ui-sref="tabs.cadastro"
+             type="submit">Recuperar senha
+     </button>
+</form>
 
-	</ion-content>
+
+
+</ion-content>
 </ion-view>
