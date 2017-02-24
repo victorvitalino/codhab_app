@@ -53,7 +53,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
                startOnBoot: true,
                stopOnStillActivity: false,
                notificationIconLarge:'icon',
-              //  notificationIconSmall:'icon',
+               notificationIconSmall:'icon',
                url: 'http://www.codhab.df.gov.br/lat-lng?cpf='+ $scope.cpf_envio,
                httpHeaders: {
                  'cpf': $scope.cpf_envio
