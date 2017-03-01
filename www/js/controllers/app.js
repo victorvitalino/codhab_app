@@ -46,7 +46,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
                stationaryRadius: 5,
                distanceFilter:5,
                interval: 60000,
-               debug:true,
+               debug:false,
                notificationTitle: 'CODHAB',
                notificationText: 'ativo',
                stopOnTerminate: false,
