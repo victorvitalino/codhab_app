@@ -18232,6 +18232,23 @@ form .form-errors {
   margin-left: 15px;
   color: white; }
 
+/*custom tabs*/
+.tabs {
+  background-color: #353535 !important;
+  height: 75px;
+  color: #fff; }
+
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  border-top: 4px solid #f4b500; }
+
+.tabs .tab-item .icon.custom_home {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/home.png");
+  background-size: contain; }
+
 .btn-text-cam {
   color: white; }
 
