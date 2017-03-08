@@ -18249,6 +18249,45 @@ form .form-errors {
   background-image: url("../img/home.png");
   background-size: contain; }
 
+.tabs .tab-item .icon.custom_noticias {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/notice.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.custom_info {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/info.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.custom_login {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/login-2.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.custom_qr {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/qr.png");
+  background-size: contain; }
+
+#qr {
+  width: 30px;
+  height: 30px;
+  background-color: #f4b500;
+  position: absolute;
+  border-top: 4px solid #f4b500; }
+
 .btn-text-cam {
   color: white; }
 
