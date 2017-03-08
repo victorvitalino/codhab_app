@@ -150,6 +150,7 @@ $ionicConfigProvider.tabs.position('bottom');
       templateUrl:"views/login/signup.html",
       controller: 'SignupCtrl'
     })
+
 		.state('tabs', {
 			url: "/app",
       abstract: true,
@@ -162,6 +163,15 @@ $ionicConfigProvider.tabs.position('bottom');
       'tabs-login':{
         templateUrl:"views/login/login.html",
         controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('tabs.senha',{
+      url: "/cadastro",
+      views:{
+        'tabs-login':{
+          templateUrl: "views/app/cadastro/index.html",
+          controller: 'CadastroCtrl'
         }
       }
     })
@@ -366,15 +376,7 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.cadastro',{
-      url: "/cadastro",
-      views:{
-        'tabs-cadastro':{
-        templateUrl: "views/app/cadastro/index.html",
-        controller: 'CadastroCtrl'
-        }
-      }
-    })
+
     .state('tabs.portal',{
       url: "/portal",
       views:{
