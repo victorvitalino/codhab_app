@@ -144,6 +144,7 @@ app.run(function($ionicPlatform) {
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
+$ionicConfigProvider.navBar.alignTitle('center')
 	$stateProvider
     .state('signup',{
       url: "/signup",
