@@ -18521,11 +18521,13 @@ label.no_error-formz {
 .btn-nav-codhab {
   height: 100px;
   width: 100px;
-  border-radius: 300px;
   margin: 0 auto;
   display: block;
-  border: 2px solid #808080;
-  background-color: #fff; }
+  background-color: #fff;
+  border: none;
+  -webkit-box-shadow: 1px 4px 23px -1px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 1px 4px 23px -1px rgba(0, 0, 0, 0.13);
+  box-shadow: 1px 4px 23px -1px rgba(0, 0, 0, 0.13); }
 
 .btn-nav-codhab.activated {
   background-color: #c2c2c2 !important;
