@@ -7,7 +7,7 @@ For example, you might change some of the default colors:
 
 
 $light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
+$stable:                          #f9f9f9 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
@@ -23,6 +23,7 @@ $dark:                            #444 !default;
 /*
 Google @fontface , espero que n de pala dnvo :s
 */
+
 
 @font-face {
   font-family: 'Lato';
@@ -94,7 +95,95 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
  color:white;
 
 }
-
+/*custom tabs*/
+.tabs{
+  background-color: #353535!important;
+  height: 75px;
+  color: #fff;
+}
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  border-top: 2px solid #f4b500;
+  margin-top:0px!important;
+}
+.tabs-striped .tabs{
+  padding-top: 0px;
+}
+.tabs .tab-item .icon.custom_home {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/home.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.custom_noticias {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/notice.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.custom_info {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/info.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.custom_login {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/login-2.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.custom_qr {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/qr.png');
+  background-size:contain;
+}
+.bar.bar-stable .title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.custom-back{
+  font-size: 30px!important;
+  margin: 10px;
+}
+#qr{
+  background-color: #f4b500;
+}
+.tabs-striped .tabs{
+  background-color: none;
+}
+.tabs :nth-child(8) {
+  background-color:   #f4b500;
+}
+.logintop,.notificationtop{
+    height: 40px;
+    width: 40px;
+}
+.logintop{
+  margin-top: 8px;
+}
+.notificationtop{
+  margin-top:5px;
+}
+.bar-stable .bar{
+  height: 70px;
+}
+.logobar{
+  width: 40%;
+height: 100%;
+display: block;
+margin: 0 auto;
+}
 .btn-text-cam {
 
  color:white;
@@ -293,14 +382,21 @@ label.no_error-formz{
 .captalize{
 	text-transform: capitalize;
 }
+.margin30{
+  margin-top:30px;
+}
 .btn-nav-codhab{
 	height: 100px;
 	width: 100px;
-	border-radius: 300px;
+	// border-radius: 300px;
 	margin: 0 auto;
 	display: block;
-	border: 2px solid #808080;
+	// border: 2px solid #808080;
 	background-color: #fff;
+  border:none;
+  -webkit-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
+-moz-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
+box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
 }
 .btn-nav-codhab.activated{
 	background-color: #c2c2c2!important;

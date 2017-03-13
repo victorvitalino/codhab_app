@@ -15,9 +15,27 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
    });
 
    $ionicPlatform.ready(function () {
+
      document.addEventListener('deviceready', onDeviceReady, false);
 
      function onDeviceReady () {
+
+           var networkState = navigator.connection.type;
+
+           var states = {};
+           states[Connection.UNKNOWN]  = 'Unknown connection';
+           states[Connection.ETHERNET] = 'Ethernet connection';
+           states[Connection.WIFI]     = 'WiFi connection';
+           states[Connection.CELL_2G]  = 'Cell 2G connection';
+           states[Connection.CELL_3G]  = 'Cell 3G connection';
+           states[Connection.CELL_4G]  = 'Cell 4G connection';
+           states[Connection.CELL]     = 'Cell generic connection';
+           states[Connection.NONE]     = 'No network connection';
+
+           alert('Connection type: ' + states[networkState]);
+
+
+
 
            /**
            * This callback will be executed every time a geolocation is recorded in the background.
@@ -66,6 +84,19 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
            // If you wish to turn OFF background-tracking, call the #stop method.
            // backgroundGeolocation.stop();
        }
+
+       document.addEventListener("offline", onOffline, false);
+        function onOffline() {
+            alert("Cabo a net. QUEBRADO.")
+            backgroundGeolocation.stop();
+        }
+
+        document.addEventListener("online", onOnline, false);
+          function onOnline() {
+            alert("Voltamos bitch!")
+            backgroundGeolocation.start();
+        }
+
 
    	});
 });
