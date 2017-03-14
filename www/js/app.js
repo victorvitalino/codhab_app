@@ -77,6 +77,7 @@ app.run(function($ionicPlatform) {
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
 $ionicConfigProvider.navBar.alignTitle('center')
+$ionicConfigProvider.tabs.style('standard');
 	$stateProvider
     .state('signup',{
       url: "/signup",

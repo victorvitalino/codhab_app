@@ -18321,6 +18321,14 @@ form .form-errors {
   display: block;
   margin: 0 auto; }
 
+.custom-badge {
+  top: -50px !important;
+  right: 5px !important;
+  width: 25px;
+  border-radius: 28px;
+  height: 25px;
+  padding: 5px; }
+
 .btn-text-cam {
   color: white; }
 
@@ -18528,9 +18536,9 @@ label.no_error-formz {
   display: block;
   background-color: #fff;
   border: none;
-  -webkit-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.13);
-  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.13); }
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.13); }
 
 .btn-nav-codhab.activated {
   background-color: #c2c2c2 !important;
