@@ -1,6 +1,26 @@
 var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
 
+
+
+  document.addEventListener("deviceready", connectionCheck, false);
+
+        function connectionCheck() {
+          var networkState = navigator.connection.type;
+
+          var states = {};
+          states[Connection.UNKNOWN]  = 'Unknown connection';
+          states[Connection.ETHERNET] = 'Ethernet connection';
+          states[Connection.WIFI]     = 'WiFi connection';
+          states[Connection.CELL_2G]  = 'Cell 2G connection';
+          states[Connection.CELL_3G]  = 'Cell 3G connection';
+          states[Connection.CELL_4G]  = 'Cell 4G connection';
+          states[Connection.CELL]     = 'Cell generic connection';
+          states[Connection.NONE]     = 'No network connection';
+
+          alert('Connection type: ' + states[networkState]);
+        }
+
    /** Inicio da antiga geolocalização **/
     $scope.cpf_envio = localStorage['cpf_logado'];
     $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
@@ -70,13 +90,13 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
 
        document.addEventListener("offline", onOffline, false);
         function onOffline() {
-            alert("Cabo a net. QUEBRADO.")
+            alert("O aplicativo da CODHAB necessita de conexão com a internet, por favor tente novamente mais tarde.")
             backgroundGeolocation.stop();
         }
 
         document.addEventListener("online", onOnline, false);
           function onOnline() {
-            alert("Voltamos bitch!")
+            alert("Sua conexão foi restabelecida.")
             backgroundGeolocation.start();
         }
 
