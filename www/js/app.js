@@ -59,8 +59,8 @@ app.run(function($ionicPlatform) {
 
     // Alert to debug
     var notificationOpenedCallback = function(jsonData) {
-      alert("Notification opened:\n" + JSON.stringify(jsonData));
-      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+      // alert("Notification opened:\n" + JSON.stringify(jsonData));
+      // console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
     };
 
     // TODO: Update with your OneSignal AppId before running.
@@ -70,6 +70,11 @@ app.run(function($ionicPlatform) {
       .endInit();
       /*END OneSignal*/
 
+      window.plugins.OneSignal.getIds(function(ids) {
+        console.log("UserId: " + ids.userId);
+        console.log("PushToken: " + ids.pushToken);
+        console.log('getIds: ' + JSON.stringify(ids));
+    });
 
   });
 });
