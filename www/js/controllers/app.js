@@ -2,6 +2,17 @@ var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
 
 
+  $http.get('http://mobile.codhab.df.gov.br/notifications?cpf=47317841153')
+    .success(function (data, status, headers, config) {
+      console.log(data);
+      $scope.msg = data;
+    })
+    .error(function (data, status, headers, config) {
+      console.log('data error');
+    })
+    .then(function (result) {
+    });
+
    /** Inicio da antiga geolocalização **/
     $scope.cpf_envio = localStorage['cpf_logado'];
     $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
@@ -77,7 +88,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
 
         document.addEventListener("online", onOnline, false);
           function onOnline() {
-            alert("Sua conexão foi restabelecida.")
+
             backgroundGeolocation.start();
         }
 
