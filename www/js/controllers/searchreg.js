@@ -36,21 +36,5 @@ app.controller('SearchRegCtrl', function($scope, $state, $ionicLoading, $http) {
         $ionicLoading.hide();
       });
 
-
-        // Inicio do segundo search -- position
-        // $http.get('http://www.codhab.df.gov.br/habitacao/candidato/'+ search.cpf +'/position.json')
-        //   .success(function(data2, status, headers,config){
-        //     console.log(data2);
-        //     $scope.results = data2;
-        //
-        //   })
-        //   .error(function(data, status, headers,config){
-        //     console.log('data error');
-        //      $scope.verify = true;
-        //   })
-        //   .then(function(results){
-        //     things = results.data2;
-        //   });
-
       }
 });

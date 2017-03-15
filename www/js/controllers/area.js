@@ -11,8 +11,8 @@ app.controller('AreaCtrl', function($scope,$ionicPlatform, $ionicConfig, $state,
      $http.post("http://www.codhab.df.gov.br/autentica?cpf="+$scope.cpf_logados+'=false')
      .success(function (data, status, headers, config){
        console.log(data)
-     }).error(function(data, status, headers, config){
-     }).then(function(result){
+      }).error(function(data, status, headers, config){
+      }).then(function(result){
      });
      window.localStorage['cpf_logado'] = '';
      $scope.cpf_logados = '';
