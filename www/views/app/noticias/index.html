@@ -10,14 +10,14 @@
           </div>
           <div class="mymask" href="#/tab/noticia/{{result.id}}" style="background-color:#{{result.color}}!important">
             <h3 class="padding positive">{{result.title}}</h3>
-            <p>{{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
+            <p style="color:#fff">{{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
           </div>
         </div>
       </a>
     <ion-list class="list list-inset">
       <ion-item class="padding item item-thumbnail-left item-icon-right" ng-repeat="result in results | limitTo : 5" href="#/app/noticia/{{result.id}}">
         <img src="http://www.codhab.df.gov.br/{{result.thumbnail.url}}">
-        <p>Criado em: {{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
+        <p>{{result.created_at | date:"d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
         {{result.title}}
         <p ng-bind-html="result.resume"></p>
         <i class="icon ion-chevron-right icon-accessory"></i>

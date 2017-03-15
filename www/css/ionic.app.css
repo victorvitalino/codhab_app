@@ -18223,6 +18223,9 @@ form .form-errors {
 .platform-ios.platform-cordova:not(.fullscreen) .search-bar {
   margin-top: 20px; }
 
+p {
+  color: #444; }
+
 .tab-nav.tabs {
   border-top: 1px solid #ddd !important; }
 

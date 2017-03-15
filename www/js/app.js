@@ -81,7 +81,8 @@ app.run(function($ionicPlatform) {
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
-$ionicConfigProvider.navBar.alignTitle('center')
+$ionicConfigProvider.navBar.alignTitle('center');
+$ionicConfigProvider.backButton.text('');
 $ionicConfigProvider.tabs.style('standard');
 	$stateProvider
     .state('signup',{

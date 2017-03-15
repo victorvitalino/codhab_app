@@ -1,6 +1,9 @@
 <ion-view>
   <ion-nav-buttons class="bar bar-header">
-    <button class="button button-icon" ui-sref="app.new_message">
+    <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
+      <img src="img/login-1.png" class="logintop"/>
+    </button>
+    <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
       <img src="img/login-1.png" class="logintop"/>
     </button>
     <img src="img/logo-codhab.png" class="logobar" />

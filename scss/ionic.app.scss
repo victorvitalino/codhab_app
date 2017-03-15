@@ -85,6 +85,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
+p {
+  color: #444;
+}
 .tab-nav.tabs{
   border-top: 1px solid #ddd!important;
 }
