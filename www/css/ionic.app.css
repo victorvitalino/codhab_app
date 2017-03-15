@@ -18223,7 +18223,7 @@ form .form-errors {
 .platform-ios.platform-cordova:not(.fullscreen) .search-bar {
   margin-top: 20px; }
 
-p {
+p, .color_txt {
   color: #444; }
 
 .tab-nav.tabs {

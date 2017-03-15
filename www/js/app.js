@@ -71,8 +71,11 @@ app.run(function($ionicPlatform) {
       /*END OneSignal*/
 
       window.plugins.OneSignal.getIds(function(ids) {
+        window.localStorage['UserId'] = ids.userId;
         console.log("UserId: " + ids.userId);
-        console.log("PushToken: " + ids.pushToken);
+        window.localStorage['PushToken'] = ids.pushToken;
+        console.log("oi"+ window.localStorage['PushToken']);
+        console.log("oi"+ window.localStorage['UserId']);
         console.log('getIds: ' + JSON.stringify(ids));
     });
 
