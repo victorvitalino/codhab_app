@@ -28,6 +28,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
 'codhab.controllers.faq',
+'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -240,7 +241,8 @@ $ionicConfigProvider.backButton.text('');
           url: "/terms",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/terms.html"
+              templateUrl: "views/app/terms.html",
+              controller: 'TermsCtrl'
             }
           }
         })

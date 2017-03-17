@@ -18325,7 +18325,7 @@ p, .color_txt {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
 
 .item-expand.active {
-  max-height: 500px;
+  max-height: 1000px;
   transition: max-height 0.3s ease-out; }
 
 .item-faq {
