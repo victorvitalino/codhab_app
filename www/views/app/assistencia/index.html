@@ -1,10 +1,8 @@
 <ion-view view-title="Postos">
-  <ion-nav-bar class="bar-energized">
-    <ion-nav-back-button class="button-clear">
-      <i class="ion-arrow-left-c"></i> Voltar
-    </ion-nav-back-button>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
   </ion-nav-bar>
-  <ion-content scroll="true" >
+  <ion-content scroll="true" class="margin30">
   <ion-list>
     <ion-item class="item-avatar item-icon-right item-icon-left"
               ng-repeat="posto in postos"
@@ -12,10 +10,12 @@
       <i class="icon ion-ios-location cor-clara"></i>
       <h2>{{posto.nome}}</h2>
       <p>{{posto.endereco}}</p>
+
       <i class="icon ion-ios-arrow-right"></i>
       <ion-option-button class="button-royal" ng-click="chamar({{posto.tel}})"><span class="list_button ion-ios-telephone"></span></ion-option-button>
       <ion-option-button class="button-calm" ng-click="email('{{posto.email}}')"><span class="list_button ion-ios-email"></span></ion-option-button>
     </ion-item>
+    <br/>
   </ion-list>
   </ion-content>
   </ion-view>

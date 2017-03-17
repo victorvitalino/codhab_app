@@ -138,12 +138,13 @@ app.run(function($ionicPlatform) {
       StatusBar.overlaysWebView(false);
     }
     initPushwoosh();
-    //StatusBar.overlaysWebView(false);
   });
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
+$ionicConfigProvider.navBar.alignTitle('center')
+$ionicConfigProvider.backButton.text('');
 	$stateProvider
     .state('signup',{
       url: "/signup",
