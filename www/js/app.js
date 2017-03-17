@@ -27,11 +27,13 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.cadastro',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
+'codhab.controllers.faq',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
 'codhab.services.EntidadesService'
+
 ])
 
 app.run(function($ionicPlatform) {
@@ -248,7 +250,8 @@ $ionicConfigProvider.tabs.style('standard');
           url: "/faq",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/faq.html"
+              templateUrl: "views/app/faq.html",
+              controller: 'FaqCtrl'
             }
           }
         })
