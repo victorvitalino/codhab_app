@@ -23,7 +23,7 @@ app.controller('portalCtrl', function ($scope, $window, $cordovaInAppBrowser,$ht
             }).error(function(data, status, headers, config){
                 console.log("Erro no envio de latitude e longitude")
             }).then(function(result){
-            });
+        });
      }, function (err){
        alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
      });

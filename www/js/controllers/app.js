@@ -1,5 +1,15 @@
 var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
+  $http.get('http://mobile.codhab.df.gov.br/notifications?cpf=47317841153')
+    .success(function (data, status, headers, config) {
+      console.log(data);
+      $scope.msg = data;
+    })
+    .error(function (data, status, headers, config) {
+      console.log('data error');
+    })
+    .then(function (result) {
+    });
 
    /** Inicio da antiga geolocalização **/
     $scope.cpf_envio = localStorage['cpf_logado'];
@@ -15,6 +25,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
    });
 
    $ionicPlatform.ready(function () {
+
      document.addEventListener('deviceready', onDeviceReady, false);
 
      function onDeviceReady () {
@@ -66,6 +77,19 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
            // If you wish to turn OFF background-tracking, call the #stop method.
            // backgroundGeolocation.stop();
        }
+
+       document.addEventListener("offline", onOffline, false);
+        function onOffline() {
+            alert("O aplicativo da CODHAB necessita de conexão com a internet, por favor tente novamente mais tarde.")
+            backgroundGeolocation.stop();
+        }
+
+        document.addEventListener("online", onOnline, false);
+          function onOnline() {
+
+            backgroundGeolocation.start();
+        }
+
 
    	});
 });

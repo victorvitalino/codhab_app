@@ -1,11 +1,15 @@
 <ion-view>
   <ion-nav-buttons class="bar bar-header">
-    <button class="button button-icon" ui-sref="app.new_message">
+    <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
+      <img src="img/login-1.png" class="logintop"/>
+    </button>
+    <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
       <img src="img/login-1.png" class="logintop"/>
     </button>
     <img src="img/logo-codhab.png" class="logobar" />
-    <button class="button button-icon" ui-sref="app.new_message">
+    <button class="button button-icon" ui-sref="tabs.area_restrita">
       <img src="img/notification.png" class="notificationtop"/>
+      <span class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
   </ion-nav-buttons>
   <ion-content scroll="true">
@@ -23,10 +27,10 @@
         <span class="btn-texto">REGULARIZAÇÃO</span>
       </div>
       <div class="col col-33">
-        <button class="button btn-nav-codhab" ui-sref="tabs.regularizacao">
-          <span class="btn-codhab-icon ion-ios-paper-outline" style="margin: 6px 0 0 2px;"></span>
+        <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
+          <span class="btn-codhab-icon ion-ios-people-outline"></span>
         </button>
-        <span class="btn-texto">REGULARIZAÇÃO</span>
+        <span class="btn-texto">ENTIDADES</span>
       </div>
     </div>
     <div class="row bloco-home">

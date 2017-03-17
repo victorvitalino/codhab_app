@@ -85,6 +85,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
+p,.color_txt {
+  color: #444;
+}
 .tab-nav.tabs{
   border-top: 1px solid #ddd!important;
 }
@@ -159,6 +162,53 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 #qr{
   background-color: #f4b500;
 }
+.tit-qr{
+  margin-top: 30px!important;
+}
+.item-expand {
+  position: relative;
+  width: 100%;
+  max-height: 10px;
+  transition: max-height 0.1s ease-out;
+  overflow: hidden;
+
+}
+
+.item-expand.inactive:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 15px;
+  width: 100%;
+  display: block;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, rgba(255, 255, 255, 0)),
+    color-stop(1, rgba(255, 255, 255, 1))
+  );
+  background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.item-expand.active {
+  max-height: 500px;
+  transition: max-height 0.3s ease-out;
+}
+.item {
+  border:none;
+}
+
+
+
+/* DEMO */
+
+
 .tabs-striped .tabs{
   background-color: none;
 }
@@ -179,10 +229,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   height: 70px;
 }
 .logobar{
-  width: 50%;
+  width: 40%;
 height: 100%;
 display: block;
 margin: 0 auto;
+}
+// .col-33 button{
+//   background-color: #f9f9f9;
+// }
+.custom-badge{
+  top: -50px !important;
+  right: 5px !important;
+  width: 25px;
+  border-radius: 28px;
+  height: 25px;
+  padding: 5px;
 }
 .btn-text-cam {
 
@@ -218,17 +279,17 @@ a{text-decoration: none;}
 }
 .img_destaque::before{
   content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    background-image: url("../img/mascara.png");
-    -webkit-background-size: cover;
-background-size: cover;
-background-position: center center;
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-image: url("../img/mascara.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
 }
 
 label.error-formz{
@@ -394,9 +455,9 @@ label.no_error-formz{
 	// border: 2px solid #808080;
 	background-color: #fff;
   border:none;
-  -webkit-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
--moz-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
+  box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
 }
 .btn-nav-codhab.activated{
 	background-color: #c2c2c2!important;
@@ -418,7 +479,7 @@ box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.13);
 	margin-top: 5px;
 	color:#808080;
 	font-family: $font-family-second;
-	font-size: 12px;
+	font-size: 11px;
 }
 .btn-nav-codhab span{
   display: block;
