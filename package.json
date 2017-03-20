@@ -34,7 +34,6 @@
     "cordova-plugin-console",
     "cordova-plugin-device",
     "cordova-plugin-inappbrowser",
-    "cordova-sqlite-storage",
     "cordova-plugin-mauron85-background-geolocation",
     "onesignal-cordova-plugin",
     "cordova-plugin-network-information"

@@ -2,7 +2,7 @@ var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
 
 
-  $http.get('http://mobile.codhab.df.gov.br/notifications?cpf=47317841153')
+  $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
     .success(function (data, status, headers, config) {
       console.log(data);
       $scope.msg = data;
