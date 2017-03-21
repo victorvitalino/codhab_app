@@ -1,6 +1,6 @@
 var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
-
+  $scope.cpf_toogle = localStorage['cpf_logado']
 
   $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
 
