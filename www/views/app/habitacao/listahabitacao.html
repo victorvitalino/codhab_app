@@ -2,6 +2,31 @@
   <ion-nav-bar class="bar-stable">
     <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
   </ion-nav-bar>
+  <ion-content scroll="true" >
+        <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
+        <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 src="http://mobile.df.gov.br/candidate/search"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:0px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+
+      </ion-content>
+</ion-view>
+<!-- <ion-view view-title="Habitação">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content scroll="true"class="margin30" >
     <form name="createForm" novalidate="novalidate" ng-submit="searchCPF(search)">
       <div class="bar bar-header item-input-inset">
@@ -135,4 +160,4 @@
     </div>
 
   </ion-content>
-</ion-view>
+</ion-view> -->
