@@ -23,6 +23,7 @@ var app = angular.module('codhab.controllers.login', []);
                     var y = data[k];
                     if(y.message == 'success'){
                        window.localStorage['cpf_logado'] = y.cpf;
+                       $scope.cpf_logados = localStorage['cpf_logado'];
                        $state.go('tabs.home');
                         window.location.reload();
                     }else{
