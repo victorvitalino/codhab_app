@@ -3,11 +3,32 @@
     <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
   </ion-nav-bar>
   <ion-content scroll="true" padding="true" class="color_txt">
+
+
           </br>
           <h1 class="post_title">
           Conheça o Programa
           </h1>
-          <p class="post-post">
+          <ion-list>
+          </br>
+              <br><strong></strong></p>
+
+                <ion-item ng-repeat="item in items" class="item item-faq item-text-wrap">
+                  <div ng-click="toggleItem(item)" class="item-expand-footer">
+                    <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+                    <b>{{item.title}}</b>
+                  </div>
+                  <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+                    <h4 style="text-align: justify;"></strong></h4>
+                    <p>{{item.text}}</p>
+                  </div>
+
+                </ion-item>
+
+            </ion-list>
+          </br>
+        </br>
+          <!-- <p class="post-post">
           </p><p ><strong><span >O que é?</span></strong></p>
           <p><span>O Programa Morar Bem, vinculado ao Programa Minha Casa, Minha Vida, do governo federal, tem transformado o sonho da casa própria em realidade. A ação é voltada para famílias com renda bruta de até 12 salários mínimos. Criado em 2011, o programa popular visa a construção de unidades habitacionais no Distrito Federal. A proposta é ofertar moradias com infraestrutura urbana, como abastecimento de água, esgoto sanitário, energia elétrica, iluminação pública, instalações telefônicas, redes de drenagem de águas pluviais, pavimentação asfáltica e, equipamentos públicos, como escolas, postos de saúde e de polícia.</span></p>
           <p><strong><span >Quem pode participar?</span></strong></p>
@@ -74,7 +95,7 @@
           <p ><strong><span >Como se inscrever?</span></strong></p>
           <p ><span >Para participar, o candidato precisa realizar o cadastro no portal da CODHAB. As novas datas de inscrições serão divulgadas no portal da Companhia e nos meios de comunicação do DF.</span></p>
           <p ><strong><span >*Preencha o formulário de inscrição apenas com informações verdadeiras&nbsp;e que possam ser comprovadas por meio de documentos&nbsp;como certidões, comprovantes de endereço&nbsp;e tempo de residência.</span></strong></p>
-          <p></p>
+          <p></p> -->
 
 
     </ion-content>

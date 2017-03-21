@@ -28,6 +28,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
 'codhab.controllers.faq',
+'codhab.controllers.hab',
 'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
@@ -167,7 +168,8 @@ $ionicConfigProvider.backButton.text('');
       url: "/oque_habitacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/habitacao/oque_habitacao.html"
+          templateUrl: "views/app/habitacao/oque_habitacao.html",
+          controller: 'HabCtrl'
         }
       }
     })
