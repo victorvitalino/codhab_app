@@ -29,6 +29,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.tabs',
 'codhab.controllers.faq',
 'codhab.controllers.hab',
+'codhab.controllers.reg',
 'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
@@ -202,7 +203,8 @@ $ionicConfigProvider.backButton.text('');
       url: "/oque_regularizacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/regularizacao/oque_regularizacao.html"
+          templateUrl: "views/app/regularizacao/oque_regularizacao.html",
+          controller: 'RegCtrl'
         }
       }
     })
