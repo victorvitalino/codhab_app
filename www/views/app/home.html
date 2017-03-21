@@ -7,9 +7,13 @@
       <img src="img/login-1.png" class="logintop"/>
     </button>
     <img src="img/logo-codhab.png" class="logobar" />
-    <button class="button button-icon" ui-sref="tabs.area_restrita">
+    <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
       <img src="img/notification.png" class="notificationtop"/>
-      <span class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
+      <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
+    </button>
+    <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
+      <img src="img/notification.png" class="notificationtop"/>
+      <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
   </ion-nav-buttons>
   <ion-content scroll="true">
