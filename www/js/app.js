@@ -27,11 +27,14 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.cadastro',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
+'codhab.controllers.faq',
+'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
 'codhab.services.EntidadesService'
+
 ])
 
 app.run(function($ionicPlatform) {
@@ -78,7 +81,6 @@ app.run(function($ionicPlatform) {
         console.log("oi"+ window.localStorage['UserId']);
         console.log('getIds: ' + JSON.stringify(ids));
     });
-
   });
 });
 
@@ -86,7 +88,6 @@ app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
 $ionicConfigProvider.navBar.alignTitle('center');
 $ionicConfigProvider.backButton.text('');
-$ionicConfigProvider.tabs.style('standard');
 	$stateProvider
     .state('signup',{
       url: "/signup",
@@ -240,7 +241,8 @@ $ionicConfigProvider.tabs.style('standard');
           url: "/terms",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/terms.html"
+              templateUrl: "views/app/terms.html",
+              controller: 'TermsCtrl'
             }
           }
         })
@@ -248,7 +250,8 @@ $ionicConfigProvider.tabs.style('standard');
           url: "/faq",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/faq.html"
+              templateUrl: "views/app/faq.html",
+              controller: 'FaqCtrl'
             }
           }
         })

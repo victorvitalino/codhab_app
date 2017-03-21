@@ -3,6 +3,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
 
 
   $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
+
     .success(function (data, status, headers, config) {
       console.log(data);
       $scope.msg = data;
