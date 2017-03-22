@@ -18223,6 +18223,9 @@ form .form-errors {
 .platform-ios.platform-cordova:not(.fullscreen) .search-bar {
   margin-top: 20px; }
 
+.back-button > .back-text > .previous-title {
+  display: none; }
+
 p, .color_txt {
   color: #444; }
 
@@ -18336,6 +18339,9 @@ p, .color_txt {
   background-color: none; }
 
 .tabs :nth-child(8) {
+  background-color: #f4b500; }
+
+.tabs .tab-hidden :nth-child(8) {
   background-color: #f4b500; }
 
 .logintop, .notificationtop {

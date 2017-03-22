@@ -215,6 +215,9 @@ p,.color_txt {
 .tabs :nth-child(8) {
   background-color:   #f4b500;
 }
+.tabs .tab-hidden :nth-child(8) {
+  background-color:   #f4b500;
+}
 .logintop,.notificationtop{
     height: 40px;
     width: 40px;

@@ -1,21 +1,20 @@
 var app = angular.module('codhab.controllers.app', []);
 app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordovaGeolocation, $ionicPlatform) {
   $scope.cpf_toogle = localStorage['cpf_logado']
+  $scope.cpf_envio = localStorage['cpf_logado'];
 
   $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
 
     .success(function (data, status, headers, config) {
-      console.log(data);
       $scope.msg = data;
     })
     .error(function (data, status, headers, config) {
-      console.log('data error');
+      console.log('nao enviou');
     })
     .then(function (result) {
     });
 
    /** Inicio da antiga geolocalização **/
-    $scope.cpf_envio = localStorage['cpf_logado'];
     $cordovaGeolocation.getCurrentPosition({timeout:30000, maximumAge:3000, enableHighAccuracy:false})
     .then(function(position){
      $scope.lat = position.coords.latitude;
@@ -24,7 +23,7 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
      window.localStorage['long'] = $scope.long;
      console.log($scope.lat);
    }, function (err){
-     alert("Aviso: O aplicativo CODHAB utiliza o GPS para localizar Postos e Entidades. Por favor ative seu GPS.");
+
    });
 
    $ionicPlatform.ready(function () {
@@ -56,15 +55,16 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
 
            // BackgroundGeolocation is highly configurable. See platform specific configuration options
            backgroundGeolocation.configure(callbackFn, failureFn, {
-               desiredAccuracy: 10,
-               stationaryRadius: 5,
+               desiredAccuracy: 1000,
+               stationaryRadius:20,
                distanceFilter:5,
-               interval: 60000,
+               interval: 3600000,
                debug:false,
                notificationTitle: 'CODHAB',
                notificationText: 'ativo',
                stopOnTerminate: false,
-               startOnBoot: true,
+               saveBatteryOnBackground: true,
+               startOnBoot: false,
                stopOnStillActivity: false,
                notificationIconLarge:'icon',
                notificationIconSmall:'icon',
@@ -75,7 +75,14 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
            });
 
            // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-           backgroundGeolocation.start();
+
+           if($scope.cpf_envio !== undefined && $scope.cpf_envio !== null && $scope.cpf_envio !== '' && $scope.cpf_envio !== ' ' ){
+             console.log('iniciou')
+             backgroundGeolocation.start();
+           }else{
+             console.log('terminou')
+             backgroundGeolocation.stop();
+           }
 
            // If you wish to turn OFF background-tracking, call the #stop method.
            // backgroundGeolocation.stop();
@@ -90,7 +97,13 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
         document.addEventListener("online", onOnline, false);
           function onOnline() {
 
-            backgroundGeolocation.start();
+            if($scope.cpf_envio !== undefined && $scope.cpf_envio !== null && $scope.cpf_envio !== '' && $scope.cpf_envio !== ' ' ){
+              console.log('iniciou')
+              backgroundGeolocation.start();
+            }else{
+              console.log('terminou')
+              backgroundGeolocation.stop();
+            }
         }
 
 
