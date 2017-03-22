@@ -1,23 +1,44 @@
 <ion-view view-title="Habitação">
-  <ion-nav-bar class="bar-energized">
-    <ion-nav-back-button class="button-clear">
-      <i class="ion-arrow-left-c"></i> Voltar
-    </ion-nav-back-button>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
   </ion-nav-bar>
-  <ion-content scroll="true">
-    <div class="row bloco-energized">
-      <img src="img/codhab_branca.png" alt="" style="width: 100%;height: 30%;" />
-    </div>
+  <ion-content scroll="true" >
+        <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
+        <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 src="http://mobile.df.gov.br/candidate/portal"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:0px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+
+      </ion-content>
+</ion-view>
+<!-- <ion-view view-title="Portal">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content scroll="true" >
+
     <div class="row bloco-home bloco-inicial">
       <div class="col col-50">
-        <button class="button btn-nav-codhab linkmaluco" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br', '_system');">
-          <span class="btn-codhab-icon ion-monitor" style="margin: 19px 0 0 3px;"></span>
-        </button>
+        <a class="button btn-nav-codhab linkmaluco" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br', '_system');">
+          <span class="btn-codhab-icon ion-monitor" style="margin: 19px 0 0 3px;padding-top: 20px;"></span>
+        </a>
         <span class="btn-texto">PORTAL CODHAB</span>
       </div>
       <div class="col col-50">
           <a class="button btn-nav-codhab" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br/acoesurbanas', '_system');">
-              <span class="btn-codhab-icon ion-paintbrush" style="margin: 19px 0 0 3px;"></span>
+              <span class="btn-codhab-icon ion-paintbrush" style="margin: 19px 0 0 3px;padding-top: 20px;"></span>
           </a>
           <span class="btn-texto">AÇÕES URBANAS</span>
       </div>
@@ -25,19 +46,18 @@
     <div class="row bloco-home bloco-inicial">
       <div class="col col-50">
         <a class="button btn-nav-codhab" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br/pagina/30', '_system');">
-          <span class="btn-codhab-icon ion-person-stalker" style="margin: 17px 0 0 3px;"></span>
+          <span class="btn-codhab-icon ion-person-stalker" style="margin: 17px 0 0 3px;padding-top: 20px;"></span>
         </a>
         <span class="btn-texto">MOBILIZAÇÃO SOCIAL</span>
       </div>
       <div class="col col-50">
           <a class="button btn-nav-codhab" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br/habitabrasilia', '_system');">
-              <span class="btn-codhab-icon ion-home" style="margin: 16px 0 0 2px;"></span>
+              <span class="btn-codhab-icon ion-home" style="margin: 16px 0 0 2px;padding-top: 20px;"></span>
           </a>
           <span class="btn-texto">HABITA BRASÍLIA</span>
       </div>
     </div>
-    </div>
 
 
   </ion-content>
-</ion-view>
+</ion-view> -->

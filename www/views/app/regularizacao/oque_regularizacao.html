@@ -1,10 +1,9 @@
 <ion-view view-title="Regularização">
-  <ion-nav-bar class="bar-energized">
-    <ion-nav-back-button class="button-clear">
-      <i class="ion-arrow-left-c"></i> Voltar
-    </ion-nav-back-button>
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
   </ion-nav-bar>
-    <ion-content overflow-scroll="true" padding="true">
+  <ion-content scroll="true" padding="true" class="color_txt">
+          </br>
           <h1 class="post_title">
           Conheça o Programa
           </h1>
@@ -13,62 +12,28 @@
             Quanto às regularizações em andamento na CODHAB, qualquer morador poderá solicitar a inclusão de documentos aos processos, mesmo que a área habitada não esteja com projeto urbanístico aprovado.
           </p>
 
-          <h5>O que é Escritura?</h5>
+          <ion-list>
+          </br>
+              <br><strong></strong></p>
 
-          <p>
-            Documento legal que assegura ao morador a segurança jurídica do imóvel.<br/><br/>
-            Para que seja emitida a escritura o imóvel é necessário que o projeto urbanístico da localidade esteja aprovado pelos órgãos competentes.<br/>
-            Formalizar processo de escrituração junto a CODHAB.<br/><br/>
-            Taxa de formalização do processo junto a CODHAB é de R$ 47,83.<br/><br/>
-            Pagamento de Taxas e Emolumentos junto ao Cartório.<br/><br/>
-            Isenção do Imposto sobre transmissão Causa Mortis e Doação de Quaisquer Bens ou Direitos - ITCD (tributo que incide sobre a doação ou sobre a transmissão hereditária ou testamentária de bens móveis, inclusive semoventes, títulos e créditos, e direitos a eles relativos ou bens imóveis situados em território do Estado, na transmissão da propriedade plena ou da nua propriedade e na instituição onerosa de usufruto).
-            Inicia-se com o agendamento através dos telefones 156.<br/><br/>
-            Formalização do requerimento de regularização (realizado no dia do agendamento);<br/><br/>
-          </p>
-          <h5>Fases da Escrituração</h5>
-          <p>
-          Análise do processo: verificação da conformidade da documentação apresentada com a legislação em vigor;<br/><br/>
-          Emissão de despacho conclusivo e assentamento do interessado no cadastro de regularização;<br/><br/>
-          Emissão da isenção do ITCD;<br/><br/>
-          Emissão da Ficha descritiva para envio ao cartório;<br/><br/>
-          Convocação do morador a comparecer ao cartório;<br/><br/>
-          Lavratura da escritura;<br/><br/>
-          Após assinatura do Presidente da CODHAB a escritura segue para registro.<br/><br/>
-          Prazo médio do tramite de 06 meses.<br/><br/>
-          </p>
-          <h5>Relação das Normas e Regulamentações</h5>
-          <p>
-            Lei 4.996/2012, lei 3.877/2006 e lei 5.126/2013;<br/><br/>
-            Decreto 34.210/2013, decreto 29.072/2009 e decreto 31.714/2010.<br/><br/>
-          </p>
+                <ion-item ng-repeat="item in items" class="item item-faq item-text-wrap">
+                  <div ng-click="toggleItem(item)" class="item-expand-footer">
+                    <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+                    <b>{{item.title}}</b>
+                  </div>
+                  <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+                    <h4 style="text-align: justify;"></strong></h4>
+                    <p>{{item.text}}</p>
+                  </div>
 
-          <h5>Certidão Positiva</h5>
-          <p>
-            Documento que comprova endereçamento, ocupação do imóvel e sua regularidade processual.
-           <ul>
-              <li>
-                A Certidão Positiva poderá ser emitida pelo próprio interessado no sítio eletrônico www.codhab.df.gov.br, na aba serviços "emitir certidão positiva". Quando não estiver disponível no sítio eletrônico o interessado poderá requerer sua emissão junto a CODHAB.<br/><br/>
-              </li>
-              <li>
-                Para obter a certidão positiva é necessário que o imóvel seja residencial e que o processo de regularização esteja devidamente autuado na CODHAB.<br/><br/>
-              </li>
-              <li>
-                Para requerer a emissão da certidão positiva junto a CODHAB é necessário:<br/><br/>
-              </li>
-              <li>
-                Agendar atendimento através dos telefones 156;<br/><br/>
-              </li>
-              <li>
-                Efetuar requerimento;<br/><br/>
-              </li>
-              <li>
-                Aguardar análise do setor competente;<br/><br/>
-              </li>
-              <li>
-                A emissão da Certidão Positiva é gratuita.<br/><br/>
-              </li>
-           </ul>
-         </p>
+                </ion-item>
+
+            </ion-list>
+          </br>
+        </br>
+
+
+  
 
     </ion-content>
 </ion-view>

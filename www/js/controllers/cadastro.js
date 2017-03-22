@@ -6,6 +6,6 @@ app.controller('CadastroCtrl', function($scope, $ionicConfig, $state, $cordovaGe
   }
   $scope.lat = window.localStorage['lat'];
   $scope.lon = window.localStorage['long'];
-  $scope.url = "http://www.codhab.df.gov.br/candidato/area_restrita/acesso/new?lat="+$scope.lat+'&lon='+$scope.lon;
+  $scope.url = "http://www.codhab.df.gov.br/candidato/lembrar-senha/new?lat="+$scope.lat+'&lon='+$scope.lon;
 console.log($scope.url)
 });

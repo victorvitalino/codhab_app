@@ -3,92 +3,6 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-
-function onPushwooshInitialized(pushNotification) {
-
-  //if you need push token at a later time you can always get it from Pushwoosh plugin
-  pushNotification.getPushToken(
-    function(token) {
-
-    //alert("o token é:" + token)
-
-      console.info('push token: ' + token);
-    }
-  );
-//crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
-  //and HWID if you want to communicate with Pushwoosh API
-  pushNotification.getPushwooshHWID(
-    function(token) {
-      console.info('Pushwoosh HWID: ' + token);
-    }
-  );
-  //crRNSCHBa0Q:APA91bEUo_WiPB-nNXJmElEcH-LujAQihY-ZWrxML8aC6SQew1WnvuSU0qo-suuVgv5N38RySPdm_KQ_trg7O2y0NzCobJebOotgnkOc4YfZVZ6S-3osMaCNOQUUf1TDGM2vGMasNbTu
-  //settings tags
-  pushNotification.setTags({
-      tagName: "tagValue",
-      intTagName: 10
-    },
-    function(status) {
-      console.info('setTags success: ' + JSON.stringify(status));
-    },
-    function(status) {
-      console.warn('setTags failed');
-    }
-  );
-
-  pushNotification.getTags(
-    function(status) {
-      //alert('getTags success: ' + JSON.stringify(status));
-      console.info('getTags success: ' + JSON.stringify(status));
-    },
-    function(status) {
-      console.warn('getTags failed');
-    }
-  );
-
-  //start geo tracking.
-  //pushNotification.startLocationTracking();
-}
-
-function initPushwoosh() {
-  var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
-
-  //set push notifications handler
-  document.addEventListener('push-notification',
-    function(event) {
-      var message = event.notification.message;
-      var userData = event.notification.userdata;
-
-    //  alert("Push message opened: " + message);
-      console.info(JSON.stringify(event.notification));
-
-      //dump custom data to the console if it exists
-      if (typeof(userData) != "undefined") {
-        console.warn('user data: ' + JSON.stringify(userData));
-      }
-    }
-  );
-
-  //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-  pushNotification.onDeviceReady({
-    projectid: "190801927723",
-    appid: "48A40-8A976",
-    serviceName: ""
-  });
-
-  //register for push notifications
-  pushNotification.registerDevice(
-    function(status) {
-    //  alert("registered with token: " + status.pushToken);
-      onPushwooshInitialized(pushNotification);
-    },
-    function(status) {
-    //  alert("failed to register: " + status);
-      console.warn(JSON.stringify(['failed to register ', status]));
-    }
-  );
-}
-
 var app = angular.module('codhab', ['ionic',
 'ngCordova',
 'ngMessages',
@@ -113,16 +27,21 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.cadastro',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
+'codhab.controllers.faq',
+'codhab.controllers.hab',
+'codhab.controllers.reg',
+'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
-// 'codhab.services.BackgroundGeolocationService',
 'codhab.services.EntidadesService'
+
 ])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -137,19 +56,47 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
       StatusBar.overlaysWebView(false);
     }
-    initPushwoosh();
-    //StatusBar.overlaysWebView(false);
+
+    /*OneSignal*/
+
+    // Enable to debug issues.
+    // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+    // Alert to debug
+    var notificationOpenedCallback = function(jsonData) {
+      // alert("Notification opened:\n" + JSON.stringify(jsonData));
+      // console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+    };
+
+    // TODO: Update with your OneSignal AppId before running.
+    window.plugins.OneSignal
+      .startInit("f8691fb0-e0c9-4d6a-b927-c795b65727c5")
+      .handleNotificationOpened(notificationOpenedCallback)
+      .endInit();
+      /*END OneSignal*/
+
+      window.plugins.OneSignal.getIds(function(ids) {
+        window.localStorage['UserId'] = ids.userId;
+        console.log("UserId: " + ids.userId);
+        window.localStorage['PushToken'] = ids.pushToken;
+        console.log("oi"+ window.localStorage['PushToken']);
+        console.log("oi"+ window.localStorage['UserId']);
+        console.log('getIds: ' + JSON.stringify(ids));
+    });
   });
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
+$ionicConfigProvider.navBar.alignTitle('center');
+$ionicConfigProvider.backButton.text('');
 	$stateProvider
     .state('signup',{
       url: "/signup",
       templateUrl:"views/login/signup.html",
       controller: 'SignupCtrl'
     })
+
 		.state('tabs', {
 			url: "/app",
       abstract: true,
@@ -162,6 +109,15 @@ $ionicConfigProvider.tabs.position('bottom');
       'tabs-login':{
         templateUrl:"views/login/login.html",
         controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('tabs.senha',{
+      url: "/cadastro",
+      views:{
+        'tabs-login':{
+          templateUrl: "views/app/cadastro/index.html",
+          controller: 'CadastroCtrl'
         }
       }
     })
@@ -213,7 +169,8 @@ $ionicConfigProvider.tabs.position('bottom');
       url: "/oque_habitacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/habitacao/oque_habitacao.html"
+          templateUrl: "views/app/habitacao/oque_habitacao.html",
+          controller: 'HabCtrl'
         }
       }
     })
@@ -246,7 +203,8 @@ $ionicConfigProvider.tabs.position('bottom');
       url: "/oque_regularizacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/regularizacao/oque_regularizacao.html"
+          templateUrl: "views/app/regularizacao/oque_regularizacao.html",
+          controller: 'RegCtrl'
         }
       }
     })
@@ -287,7 +245,8 @@ $ionicConfigProvider.tabs.position('bottom');
           url: "/terms",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/terms.html"
+              templateUrl: "views/app/terms.html",
+              controller: 'TermsCtrl'
             }
           }
         })
@@ -295,7 +254,8 @@ $ionicConfigProvider.tabs.position('bottom');
           url: "/faq",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/faq.html"
+              templateUrl: "views/app/faq.html",
+              controller: 'FaqCtrl'
             }
           }
         })
@@ -366,15 +326,7 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.cadastro',{
-      url: "/cadastro",
-      views:{
-        'tabs-cadastro':{
-        templateUrl: "views/app/cadastro/index.html",
-        controller: 'CadastroCtrl'
-        }
-      }
-    })
+
     .state('tabs.portal',{
       url: "/portal",
       views:{

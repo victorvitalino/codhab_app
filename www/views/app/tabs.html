@@ -1,28 +1,29 @@
 
-<ion-tabs class="tabs-icon-top tabs-codhab ">
+<ion-tabs class="tabs-icon-top tabs-codhab positive">
 
-<ion-tab title="Home" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="tabs.home">
-		<ion-nav-view name="tabs-home" ></ion-nav-view >
-</ion-tab>
+	<ion-tab title="Início" icon-on="custom_home" icon-off="custom_home" ui-sref="tabs.home">
+			<ion-nav-view name="tabs-home" ></ion-nav-view >
+	</ion-tab>
 
-<ion-tab title="Notícias" icon-on="ion-ios-world-outline" icon-off="ion-ios-world-outline" ui-sref="tabs.noticias">
-		<ion-nav-view name="tabs-noticias" ></ion-nav-view >
-</ion-tab>
+	<ion-tab title="Notícias" icon-on="custom_noticias" icon-off="custom_noticias" ui-sref="tabs.noticias">
+			<ion-nav-view name="tabs-noticias" ></ion-nav-view >
+	</ion-tab>
 
-<ion-tab title="QrCode" icon-on="ion-ios-camera" icon-off="ion-ios-camera-outline" ui-sref="tabs.scan">
-		<ion-nav-view name="tabs-scan" ></ion-nav-view >
-</ion-tab>
+	<ion-tab title="QrCode" icon-on="custom_qr" icon-off="custom_qr" ui-sref="tabs.scan" style="background-color:#fff">
+			<ion-nav-view name="tabs-scan" ></ion-nav-view >
 
-<ion-tab ng-if="tabswitch==='1'" title="Login" icon-on="ion-ios-locked-outline" icon-off="ion-ios-locked-outline" ui-sref="tabs.login">
-		<ion-nav-view name="tabs-login" ></ion-nav-view >
-</ion-tab>
+	</ion-tab>
 
-<ion-tab ng-if="tabswitch==='2'" title="Usuário" icon-on="ion-ios-unlocked" icon-off="ion-ios-unlocked" ui-sref="tabs.area_restrita">
-		<ion-nav-view name="tabs-cadastro" ></ion-nav-view >
-</ion-tab>
+	<ion-tab ng-if="tabswitch==='1'" title="Login" icon-on="custom_login" icon-off="custom_login" ui-sref="tabs.login">
+			<ion-nav-view name="tabs-login" ></ion-nav-view >
+	</ion-tab>
 
-<ion-tab title="Info" icon-on="ion-ios-information" icon-off="ion-ios-information-outline" ui-sref="tabs.info">
-		<ion-nav-view name="tabs-info" ></ion-nav-view >
-</ion-tab>
+	<ion-tab ng-if="tabswitch==='2'" title="Usuário" icon-on="custom_login" icon-off="custom_login" ui-sref="tabs.area_restrita">
+			<ion-nav-view name="tabs-cadastro" ></ion-nav-view >
+	</ion-tab>
+
+	<ion-tab title="Info" icon-on="custom_info" icon-off="custom_info" ui-sref="tabs.info">
+			<ion-nav-view name="tabs-info" ></ion-nav-view >
+	</ion-tab>
 
 </ion-tabs>

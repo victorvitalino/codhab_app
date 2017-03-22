@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.codhab.codhabapp" version="2.1.3" android-versionCode="213000" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.codhab.codhabapp" version="2.1.4" android-versionCode="214000" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>CODHAB</name>
   <description>
-        Aplicativo da CODHAB
-    </description>
+    Aplicativo da CODHAB
+  </description>
   <author email="vitalino.victor@gmail.com" href="http://www.codhab.df.gov.br">
-      Victor Fernandes Vitalino Coimbra
-    </author>
+    Victor Fernandes Vitalino Coimbra
+  </author>
   <content src="index.html"/>
   <access origin="*"/>
   <access launch-external="yes" origin="tel:*"/>
   <access launch-external="yes" origin="mailto:*"/>
-  <access origin="*.pushwoosh.com"/>
   <access launch-external="yes" origin="tel:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="tel:*"/>
@@ -25,7 +24,7 @@
   <plugin name="cordova-plugin-console" spec="~1.0.4"/>
   <plugin name="cordova-plugin-splashscreen" spec="~3.2.2"/>
   <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.2.0">
-    <variable name="ALWAYS_USAGE_DESCRIPTION" value="Este aplicativo utiliza GPS, acione para uma melhor experiencia." />
+    <variable name="ALWAYS_USAGE_DESCRIPTION" value="Este aplicativo utiliza GPS, acione para uma melhor experiencia."/>
   </plugin>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
