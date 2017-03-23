@@ -83,6 +83,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "www/lib/ionic/scss/ionic";
+@import "www/lib/font-awesome/scss/font-awesome";
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
 p,.color_txt {
@@ -213,10 +214,12 @@ p,.color_txt {
   background-color: none;
 }
 .tabs :nth-child(8) {
-  background-color:   #f4b500;
+  background-color:   #ffc10e;
+  opacity: 1;
 }
-.tabs .tab-hidden :nth-child(8) {
-  background-color:   #f4b500;
+.tabs>.tab-hidden>:nth-child(8) {
+  background-color:   #ffc10e;
+  opacity: 1;
 }
 .logintop,.notificationtop{
     height: 40px;
@@ -463,8 +466,8 @@ label.no_error-formz{
   box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
 }
 .btn-nav-codhab.activated{
-	background-color: #c2c2c2!important;
-	border: 2px solid #c2c2c2!important;
+	background-color: #353535!important;
+	border: 2px solid #353535!important;
 }
 .btn-nav-codhab.activated>:before{
 	color:#fff!important;
