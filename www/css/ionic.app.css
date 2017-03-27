@@ -20574,7 +20574,7 @@ p, .color_txt {
   color: #fff; }
 
 .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
-  border-top: 2px solid #f4b500;
+  border-top: 2px solid #ffc10e;
   margin-top: 0px !important; }
 
 .tabs-striped .tabs {
@@ -20641,6 +20641,10 @@ p, .color_txt {
   transition: max-height 0.1s ease-out;
   overflow: hidden; }
 
+.title-image {
+  margin-top: 8px !important;
+  height: 27px !important; }
+
 .item-expand.inactive:after {
   content: "";
   position: absolute;
@@ -20686,7 +20690,10 @@ p, .color_txt {
   margin-top: 5px; }
 
 .bar-stable .bar {
-  height: 70px; }
+  height: 70px !important; }
+
+.platform-ios .bar-stable .bar {
+  height: 110px !important; }
 
 .logobar {
   width: 40%;
@@ -20924,7 +20931,10 @@ label.no_error-formz {
   margin-top: 25px !important; }
 
 .bloco-inicial {
-  margin-top: 7% !important; }
+  margin-top: 9% !important; }
+
+.platform-ios .bloco-inicial {
+  margin-top: 15% !important; }
 
 .btn-texto {
   text-align: center;
