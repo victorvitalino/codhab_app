@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-nav-buttons class="bar bar-header">
+  <ion-nav-buttons class="bar bar-header" style="height: 400px!important;">
     <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
       <img src="img/login-1.png" class="logintop"/>
     </button>
@@ -17,6 +17,7 @@
     </button>
   </ion-nav-buttons>
   <ion-content scroll="true">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="row bloco-home bloco-inicial">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.habitacao">

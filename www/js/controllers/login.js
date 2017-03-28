@@ -15,7 +15,7 @@ var app = angular.module('codhab.controllers.login', []);
         "cpf": $scope.formData.cpf,
         "password": $scope.formData.password
         }
-        $http.post("http://www.codhab.df.gov.br/autentica?cpf="+$scope.formData.cpf+'&password='+$scope.formData.password)
+        $http.post("http://mobile.codhab.df.gov.br/auth?cpf="+$scope.formData.cpf+'&password='+$scope.formData.password)
              .success(function (data, status, headers, config){
                 console.log(data)
                 for (var k in data){
@@ -24,7 +24,7 @@ var app = angular.module('codhab.controllers.login', []);
                     if(y.message == 'success'){
                        window.localStorage['cpf_logado'] = y.cpf;
                        $scope.cpf_logados = localStorage['cpf_logado'];
-                       $state.go('tabs.home');
+                        $state.go('tabs.home');
                         window.location.reload();
                     }else{
                       alert("CPF ou senha errados.")

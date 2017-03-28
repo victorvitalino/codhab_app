@@ -3,6 +3,20 @@ app.controller('AppCtrl', function($scope, $ionicConfig, $state, $http, $cordova
   $scope.cpf_toogle = localStorage['cpf_logado']
   $scope.cpf_envio = localStorage['cpf_logado'];
 
+  $scope.doRefresh = function() {
+
+    $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
+
+      .success(function (data, status, headers, config) {
+        $scope.msg = data;
+      })
+      .error(function (data, status, headers, config) {
+        console.log('nao enviou');
+      })
+      .then(function (result) {
+      });
+    $scope.$broadcast('scroll.refreshComplete');
+  }
   $http.get('http://mobile.codhab.df.gov.br/notifications?cpf='+localStorage['cpf_logado'])
 
     .success(function (data, status, headers, config) {
