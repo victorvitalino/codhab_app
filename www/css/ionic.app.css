@@ -20692,8 +20692,8 @@ p, .color_txt {
 .bar-stable .bar {
   height: 70px !important; }
 
-.platform-ios .bar-stable .bar {
-  height: 110px !important; }
+.platform-ios .scroll-res {
+  overflow-scroll: true; }
 
 .logobar {
   width: 40%;
@@ -20931,10 +20931,7 @@ label.no_error-formz {
   margin-top: 25px !important; }
 
 .bloco-inicial {
-  margin-top: 9% !important; }
-
-.platform-ios .bloco-inicial {
-  margin-top: 15% !important; }
+  margin-top: 7% !important; }
 
 .btn-texto {
   text-align: center;
