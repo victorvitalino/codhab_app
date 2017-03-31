@@ -20,15 +20,30 @@
     "shelljs": "^0.7.5"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-console",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar",
+    {
+      "locator": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+      "id": "phonegap-plugin-barcodescanner"
+    },
+    "cordova-plugin-compat",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-camera",
     "ionic-plugin-keyboard",
-    "pushwoosh-cordova-plugin"
+    "cordova-plugin-statusbar",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-mauron85-background-geolocation",
+    "onesignal-cordova-plugin",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    }
   ]
 }

@@ -27,11 +27,16 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.cadastro',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
+'codhab.controllers.faq',
+'codhab.controllers.hab',
+'codhab.controllers.reg',
+'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
 'codhab.services.MessageService',
 'codhab.services.EntidadesService'
+
 ])
 
 app.run(function($ionicPlatform) {
@@ -59,8 +64,8 @@ app.run(function($ionicPlatform) {
 
     // Alert to debug
     var notificationOpenedCallback = function(jsonData) {
-      alert("Notification opened:\n" + JSON.stringify(jsonData));
-      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+      // alert("Notification opened:\n" + JSON.stringify(jsonData));
+      // console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
     };
 
     // TODO: Update with your OneSignal AppId before running.
@@ -70,13 +75,21 @@ app.run(function($ionicPlatform) {
       .endInit();
       /*END OneSignal*/
 
-
+      window.plugins.OneSignal.getIds(function(ids) {
+        window.localStorage['UserId'] = ids.userId;
+        console.log("UserId: " + ids.userId);
+        window.localStorage['PushToken'] = ids.pushToken;
+        console.log("oi"+ window.localStorage['PushToken']);
+        console.log("oi"+ window.localStorage['UserId']);
+        console.log('getIds: ' + JSON.stringify(ids));
+    });
   });
 });
 
 app.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 $ionicConfigProvider.tabs.position('bottom');
-$ionicConfigProvider.navBar.alignTitle('center')
+$ionicConfigProvider.navBar.alignTitle('center');
+$ionicConfigProvider.backButton.text('');
 	$stateProvider
     .state('signup',{
       url: "/signup",
@@ -156,7 +169,8 @@ $ionicConfigProvider.navBar.alignTitle('center')
       url: "/oque_habitacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/habitacao/oque_habitacao.html"
+          templateUrl: "views/app/habitacao/oque_habitacao.html",
+          controller: 'HabCtrl'
         }
       }
     })
@@ -189,7 +203,8 @@ $ionicConfigProvider.navBar.alignTitle('center')
       url: "/oque_regularizacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/regularizacao/oque_regularizacao.html"
+          templateUrl: "views/app/regularizacao/oque_regularizacao.html",
+          controller: 'RegCtrl'
         }
       }
     })
@@ -230,7 +245,8 @@ $ionicConfigProvider.navBar.alignTitle('center')
           url: "/terms",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/terms.html"
+              templateUrl: "views/app/terms.html",
+              controller: 'TermsCtrl'
             }
           }
         })
@@ -238,7 +254,8 @@ $ionicConfigProvider.navBar.alignTitle('center')
           url: "/faq",
           views:{
             'tabs-info':{
-              templateUrl: "views/app/faq.html"
+              templateUrl: "views/app/faq.html",
+              controller: 'FaqCtrl'
             }
           }
         })

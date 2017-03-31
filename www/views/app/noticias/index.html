@@ -1,6 +1,31 @@
+<!-- <ion-view view-title="Notícias">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content scroll="true" >
+        <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
+        <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 src="http://mobile.df.gov.br/portal/notices"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:0px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+
+      </ion-content>
+</ion-view> -->
 <ion-view>
   <ion-nav-buttons class="bar bar-header">
-    <div class="h1 title">Noticias CODHAB</div>
+    <div class="h1 title">Notícias CODHAB</div>
   </ion-nav-buttons>
   <ion-content>
       <a class="destaque" ng-repeat="result in results_sliders | limitTo : 1" href="#/app/noticia/{{result.id}}" style="display:block;background-color:{{result.color}}!important">
@@ -10,14 +35,14 @@
           </div>
           <div class="mymask" href="#/tab/noticia/{{result.id}}" style="background-color:#{{result.color}}!important">
             <h3 class="padding positive">{{result.title}}</h3>
-            <p>{{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
+            <p style="color:#fff">{{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
           </div>
         </div>
       </a>
     <ion-list class="list list-inset">
       <ion-item class="padding item item-thumbnail-left item-icon-right" ng-repeat="result in results | limitTo : 5" href="#/app/noticia/{{result.id}}">
         <img src="http://www.codhab.df.gov.br/{{result.thumbnail.url}}">
-        <p>Criado em: {{result.created_at | date:"EEEE d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
+        <p>{{result.created_at | date:"d 'de' MMMM 'de' y 'às' HH:mm"}}</p>
         {{result.title}}
         <p ng-bind-html="result.resume"></p>
         <i class="icon ion-chevron-right icon-accessory"></i>
