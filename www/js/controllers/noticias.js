@@ -7,8 +7,9 @@ var app = angular.module('codhab.controllers.noticias', []);
 app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $state, $ionicLoading, $cordovaGeolocation) {
   $ionicLoading.show({
     content: 'Loading',
+    template: '<img src="img/codhabgif0.1.gif" alt="" width=50" height="50" />',
     animation: 'fade-in',
-    showBackdrop: true,
+    showBackdrop: false ,
     maxWidth: 200,
     showDelay: 0
   });

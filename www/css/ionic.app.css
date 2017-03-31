@@ -20567,6 +20567,9 @@ p, .color_txt {
   margin-left: 15px;
   color: white; }
 
+.loading {
+  background-color: rgba(240, 50, 50, 0) !important; }
+
 /*custom tabs*/
 .tabs {
   background-color: #353535 !important;
