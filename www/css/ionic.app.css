@@ -20670,6 +20670,15 @@ p, .color_txt {
 .item-faq {
   border: none; }
 
+item-login {
+  height: 24px !important; }
+
+.keyboard-open .tabs {
+  display: none; }
+
+.keyboard-open .has-tabs {
+  bottom: 0; }
+
 /* DEMO */
 .tabs-striped .tabs {
   background-color: none; }
