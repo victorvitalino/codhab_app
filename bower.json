@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "ng-cpf-cnpj": "~0.0.5",
-    "angular-ui-utils": "~3.0.0"
+    "angular-ui-utils": "~3.0.0",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }

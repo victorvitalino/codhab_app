@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-nav-buttons class="bar bar-header">
+  <ion-nav-buttons class="bar bar-header homereader">
     <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
       <img src="img/login-1.png" class="logintop"/>
     </button>
@@ -17,22 +17,26 @@
     </button>
   </ion-nav-buttons>
   <ion-content scroll="true">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="row bloco-home bloco-inicial">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.habitacao">
-          <span class="btn-codhab-icon ion-ios-home-outline" style="margin: 5px 0 0 3px;"></span>
+          <!-- <span class="btn-codhab-icon ion-ios-home-outline" style="margin: 5px 0 0 3px;"></span> -->
+          <i class="fa fa-home" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">HABITAÇÃO</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.regularizacao">
-          <span class="btn-codhab-icon ion-ios-paper-outline" style="margin: 6px 0 0 2px;"></span>
+          <!-- <span class="btn-codhab-icon ion-ios-paper-outline" style="margin: 6px 0 0 2px;"></span> -->
+          <i class="fa fa-file-text-o" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">REGULARIZAÇÃO</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
-          <span class="btn-codhab-icon ion-ios-people-outline"></span>
+          <!-- <span class="btn-codhab-icon ion-ios-people-outline"></span> -->
+          <i class="fa fa-users" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">ENTIDADES</span>
       </div>
@@ -40,19 +44,22 @@
     <div class="row bloco-home">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.assistencia">
-          <span class="btn-codhab-icon ion-ios-location-outline" style="margin: 6px 0 0 2px;"></span>
+          <!-- <span class="btn-codhab-icon ion-ios-location-outline" style="margin: 6px 0 0 2px;"></span> -->
+          <i class="fa fa-compass" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">ASSISTÊNCIA TÉCNICA</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.portal">
-          <span class="btn-codhab-icon ion-ios-monitor-outline" style="margin-left: 3px; margin-top: 8px;"></span>
+          <!-- <span class="btn-codhab-icon ion-ios-monitor-outline" style="margin-left: 3px; margin-top: 8px;"></span> -->
+          <i class="fa fa-desktop" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">PORTAL</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentogeral">
-          <span class="btn-codhab-icon ion-ios-clock-outline "></span>
+          <!-- <span class="btn-codhab-icon ion-ios-clock-outline "></span> -->
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">AGENDAMENTO</span>
       </div>

@@ -56,6 +56,13 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
       StatusBar.overlaysWebView(false);
     }
+    window.addEventListener('native.keyboardshow', function(){
+      document.body.classList.add('keyboard-open');
+    });
+
+    if(angular.element(document.querySelector("body")).hasClass("keyboard-open")) {
+      angular.element(document.querySelector("div.tab-nav.tabs").remove());
+    }
 
     /*OneSignal*/
 

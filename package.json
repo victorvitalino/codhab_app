@@ -36,7 +36,8 @@
     "cordova-plugin-inappbrowser",
     "cordova-plugin-mauron85-background-geolocation",
     "onesignal-cordova-plugin",
-    "cordova-plugin-network-information"
+    "cordova-plugin-network-information",
+    "cordova-plugin-crosswalk-webview"
   ],
   "cordovaPlatforms": [
     "android",
