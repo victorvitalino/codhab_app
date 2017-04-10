@@ -1,5 +1,8 @@
 var app = angular.module('codhab.controllers.postos',[]);
 app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation, $ionicLoading, $http, PostosService) {
+  $scope.navegar = function(lat, lon){
+    launchnavigator.navigate([lat, lon])
+  }
   $scope.navegars = function ( destinos ) {
      v = destinos;
     console.log(v)

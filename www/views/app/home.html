@@ -4,7 +4,7 @@
       <img src="img/login-1.png" class="logintop"/>
     </button>
     <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
-      <img src="img/login-1.png" class="logintop"/>
+      <img src="img/login-1a.png" class="logintop"/>
     </button>
     <img src="img/logo-codhab.png" class="logobar" />
     <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
@@ -64,7 +64,15 @@
         <span class="btn-texto">AGENDAMENTO</span>
       </div>
     </div>
-
+    <div class="row bloco-home">
+      <div class="col col-33">
+        <button class="button btn-nav-codhab" ui-sref="tabs.requerimento">
+          <!-- <span class="btn-codhab-icon ion-ios-location-outline" style="margin: 6px 0 0 2px;"></span> -->
+          <i class="fa fa-files-o" aria-hidden="true"></i>
+        </button>
+        <span class="btn-texto">REQUERIMENTO</span>
+      </div>
+    </div>
 
   </ion-content>
 
