@@ -28,8 +28,8 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
           longitude: "-48.12946319580078"
         }, {
           id: 3,
-          nome: "QNR",
-          endereco: "SHPS, Qd 303 Conjunto A Loja 28 -B,Ceilândia/DF",
+          nome: " SOL NASCENTE Trecho 3 e QNR",
+          endereco: "Sol Nascente trecho III, Chácara 81, Condominio Gênesis, Ceilândia/DF",
           hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
           coordenador: "Fabiana Lemos",
           tel: "992264672",
@@ -59,10 +59,10 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
         }, {
           id: 6,
           nome: "Brazlândia",
-          endereco: "Entre Quadra 37/47, Área Especial, Vila São José – Brazlândia/DF",
-          hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
+          endereco: "Entre Quadra 37/47, Área Especial: Galpão da Feirinha, Vila São José – Brazlândia/DF",
+          hora: "Seg. à Sex. - 9:00 às 12:00 / 13:00 às 17:00",
           coordenador: "Erick Mendonça",
-          tel: "982792994",
+          tel: "985748840",
           email: "erick.welson@codhab.df.gov.br",
           latitude: "-15.6606957",
           longitude: "-48.1980764"
@@ -109,10 +109,10 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
         }, {
           id: 11,
           nome: "Por do Sol",
-          endereco: "SHPS, Qd 303 Conjunto A Loja 28 -B,Ceilândia/DF",
-          hora: "Seg. à Sex. - 8:00 às 12:00 / 13:00 às 17:00",
+          endereco: "SHPS, Qd 303 Conjunto A Loja 29 -B,Ceilândia/DF",
+          hora: "Seg. à Sex. - 9:00 às 13:00 / 14:00 às 19:00",
           coordenador: "Frederico Barboza",
-          tel: "992189330",
+          tel: "995449774",
           email: "frederico.barboza@codhab.df.gov.br",
           latitude: "-15.601094",
           longitude: "-47.8702421"
