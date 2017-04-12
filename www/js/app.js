@@ -131,7 +131,7 @@ $ionicConfigProvider.backButton.text('');
     .state('tabs.area_restrita',{
       url: "/area_restrita",
       views:{
-      'tabs-cadastro':{
+      'tabs-login':{
         templateUrl:"views/app/arearestrita/index.html",
         controller: 'AreaCtrl'
         }
@@ -333,7 +333,15 @@ $ionicConfigProvider.backButton.text('');
         }
       }
     })
-
+    .state('tabs.requerimento',{
+      url: "/requerimento",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/requerimento/index.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
     .state('tabs.portal',{
       url: "/portal",
       views:{

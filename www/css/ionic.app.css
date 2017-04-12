@@ -20615,6 +20615,14 @@ p, .color_txt {
   background-image: url("../img/login-2.png");
   background-size: contain; }
 
+.tabs .tab-item .icon.custom_login2 {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url("../img/login-2a.png");
+  background-size: contain; }
+
 .tabs .tab-item .icon.custom_qr {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -20898,7 +20906,7 @@ label.no_error-formz {
 .button-avatar {
   display: block;
   float: left;
-  width: 50%;
+  width: 33.33%;
   text-align: center;
   color: #fff;
   background-color: #387ef5;
@@ -20940,7 +20948,7 @@ label.no_error-formz {
   color: #fff !important; }
 
 .bloco-home {
-  margin-top: 25px !important; }
+  margin-top: 0px !important; }
 
 .bloco-inicial {
   margin-top: 7% !important; }
@@ -21014,3 +21022,6 @@ label.no_error-formz {
 
 .indication-energized {
   background-color: #ffc10e; }
+
+.btn-evidence :before {
+  color: #ffc10e !important; }
