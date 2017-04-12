@@ -1,17 +1,17 @@
 <ion-view>
   <ion-nav-buttons class="bar bar-header homereader">
-    <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
+    <button ng-if="check()" class="button button-icon" ui-sref="tabs.login">
       <img src="img/login-1.png" class="logintop"/>
     </button>
-    <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
+    <button ng-if="!check()" class="button button-icon" ui-sref="tabs.area_restrita">
       <img src="img/login-1a.png" class="logintop"/>
     </button>
     <img src="img/logo-codhab.png" class="logobar" />
-    <button ng-if="tabswitch==='1'" class="button button-icon" ui-sref="tabs.login">
+    <button ng-if="check()" class="button button-icon" ui-sref="tabs.login">
       <img src="img/notification.png" class="notificationtop"/>
       <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
-    <button ng-if="tabswitch==='2'" class="button button-icon" ui-sref="tabs.area_restrita">
+    <button ng-if="!check()" class="button button-icon" ui-sref="tabs.area_restrita">
       <img src="img/notification.png" class="notificationtop"/>
       <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
