@@ -20953,6 +20953,9 @@ label.no_error-formz {
 .bloco-inicial {
   margin-top: 7% !important; }
 
+.platform-ipad .bloco-inicial {
+  margin-top: 20% !important; }
+
 .btn-texto {
   text-align: center;
   width: 100%;
