@@ -25,7 +25,7 @@ var app = angular.module('codhab.controllers.login', []);
                        window.localStorage['cpf_logado'] = y.cpf;
                        $scope.cpf_logados = localStorage['cpf_logado'];
                        window.location.reload();
-                      $state.go('tabs.area_restrita');
+                       $state.go('tabs.home');
                     }else{
                       alert("CPF ou senha errados.")
                     }
