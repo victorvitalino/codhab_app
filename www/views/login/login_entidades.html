@@ -1,28 +1,23 @@
 <ion-view cache-view="false" >
          <ion-nav-buttons class="bar bar-header">
-           <div class="h1 title">Login do usuário</div>
+           <div class="h1 title">Login de Entidades</div>
          </ion-nav-buttons>
 <ion-content padding="true"
             scroll="false"
               ng-controller="LoginCtrl" class="margin30">
 <!-- Form with floating labels -->
-<a ui-sref="tabs.login_entidade">Logar como entidade?</a>
 <form ng-submit="getData()" novalidate="novalidate" name="loginForm">
 <ion-list>
-<label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.cpf.$invalid}">
+<label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.cnpj.$invalid}">
 <span class="input-label">CPF</span>
 <input type="text"
-      placeholder="CPF"
-      ng-model="formData.cpf"
+      placeholder="CNPJ"
+      ng-model="formData.cnpj"
                 ng-required="true"
-                name="cpf"
+                name="cnpj"
                 >
 </label>
-       	<div class="form-errors" ng-messages="loginForm.cpf.$error">
-                 <div ng-messages-include="views/errors/form-errors.html"></div>
-       	</div>
 
-      <br/>
 <label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.password.$invalid}">
 <span class="input-label">Senha</span>
 <input type="password"
@@ -32,9 +27,6 @@
                 name="password"
                 ng-minlength="6">
 </label>
-<div class="form-errors" ng-messages="loginForm.password.$error">
-       	<div ng-messages-include="views/errors/form-errors.html"></div>
-       	</div>
 </ion-list>
 
 <button class="button button-energized button-block"
