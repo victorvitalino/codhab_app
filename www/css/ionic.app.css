@@ -20712,6 +20712,19 @@ item-login {
 .bar-stable .bar {
   height: 70px !important; }
 
+.platform-ipad .bar-stable .bar {
+  height: 120px !important; }
+
+.platform-ipad .title {
+  font-size: 35px !important;
+  margin-top: 40px !important;
+  display: block !important; }
+
+.platform-ipad .custom-back {
+  font-size: 40px !important;
+  margin-top: 40px !important;
+  display: block !important; }
+
 .platform-ios .scroll-res {
   overflow-scroll: true; }
 
@@ -20954,7 +20967,7 @@ label.no_error-formz {
   margin-top: 7% !important; }
 
 .platform-ipad .bloco-inicial {
-  margin-top: 20% !important; }
+  margin-top: 15% !important; }
 
 .btn-texto {
   text-align: center;
