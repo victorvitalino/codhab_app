@@ -31,6 +31,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.hab',
 'codhab.controllers.reg',
 'codhab.controllers.terms',
+'codhab.controllers.login_entidade',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -116,6 +117,15 @@ $ionicConfigProvider.backButton.text('');
       'tabs-login':{
         templateUrl:"views/login/login.html",
         controller: 'LoginCtrl'
+        }
+      }
+    })
+    .state('tabs.login_entidades',{
+      url: "/login_entidades",
+      views:{
+      'tabs-login':{
+        templateUrl:"views/login/login_entidades.html",
+        controller: 'LoginEntidadeCtrl'
         }
       }
     })
