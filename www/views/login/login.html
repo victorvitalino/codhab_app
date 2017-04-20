@@ -8,7 +8,7 @@
 <!-- Form with floating labels -->
 <form ng-submit="getData()" novalidate="novalidate" name="loginForm">
 <ion-list>
-<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.cpf.$invalid}">
+<label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.cpf.$invalid}">
 <span class="input-label">CPF</span>
 <input type="text"
       placeholder="CPF"
@@ -22,7 +22,7 @@
        	</div>
 
       <br/>
-<label class="item item-input item-floating-label" ng-class="{'has-error':loginForm.password.$invalid}">
+<label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.password.$invalid}">
 <span class="input-label">Senha</span>
 <input type="password"
       placeholder="Senha"
@@ -40,6 +40,8 @@
        type="submit"style="color:#000; font-weight:bold;" >Realizar Acesso
 </button>
      <button class="button button-stable button-block" ui-sref="tabs.senha" type="submit" style="color:#000; font-weight:bold;">Recuperar senha
+     </button>
+     <button class="button button-stable button-block" ui-sref="tabs.senha" type="submit" style="color:#000; font-weight:bold;">Primeiro Acesso
      </button>
 </form>
 

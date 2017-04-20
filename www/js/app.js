@@ -28,6 +28,8 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
 'codhab.controllers.faq',
+'codhab.controllers.hab',
+'codhab.controllers.reg',
 'codhab.controllers.terms',
 'codhab.services.auth',
 'codhab.services.ReportService',
@@ -47,12 +49,19 @@ app.run(function($ionicPlatform) {
       // Don't remove this line unless you know what you are doing. It stops the viewport
       // from snapping when text inputs are focused. Ionic handles this internally for
       // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
+      cordova.plugins.Keyboard.disableScroll(false);
 
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
       StatusBar.overlaysWebView(false);
+    }
+    window.addEventListener('native.keyboardshow', function(){
+      document.body.classList.add('keyboard-open');
+    });
+
+    if(angular.element(document.querySelector("body")).hasClass("keyboard-open")) {
+      angular.element(document.querySelector("div.tab-nav.tabs").remove());
     }
 
     /*OneSignal*/
@@ -122,7 +131,7 @@ $ionicConfigProvider.backButton.text('');
     .state('tabs.area_restrita',{
       url: "/area_restrita",
       views:{
-      'tabs-cadastro':{
+      'tabs-login':{
         templateUrl:"views/app/arearestrita/index.html",
         controller: 'AreaCtrl'
         }
@@ -167,7 +176,8 @@ $ionicConfigProvider.backButton.text('');
       url: "/oque_habitacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/habitacao/oque_habitacao.html"
+          templateUrl: "views/app/habitacao/oque_habitacao.html",
+          controller: 'HabCtrl'
         }
       }
     })
@@ -200,7 +210,8 @@ $ionicConfigProvider.backButton.text('');
       url: "/oque_regularizacao",
       views:{
         'tabs-home':{
-          templateUrl: "views/app/regularizacao/oque_regularizacao.html"
+          templateUrl: "views/app/regularizacao/oque_regularizacao.html",
+          controller: 'RegCtrl'
         }
       }
     })
@@ -322,7 +333,15 @@ $ionicConfigProvider.backButton.text('');
         }
       }
     })
-
+    .state('tabs.requerimento',{
+      url: "/requerimento",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/requerimento/index.html",
+        controller: 'portalCtrl'
+        }
+      }
+    })
     .state('tabs.portal',{
       url: "/portal",
       views:{

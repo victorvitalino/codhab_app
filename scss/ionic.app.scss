@@ -83,6 +83,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "www/lib/ionic/scss/ionic";
+@import "www/lib/font-awesome/scss/font-awesome";
 @import "www/scss/form.scss";
 @import "www/scss/styles.scss";
 p,.color_txt {
@@ -98,6 +99,9 @@ p,.color_txt {
  color:white;
 
 }
+.loading{
+  background-color: rgba(240, 50, 50, 0) !important;
+}
 /*custom tabs*/
 .tabs{
   background-color: #353535!important;
@@ -105,7 +109,7 @@ p,.color_txt {
   color: #fff;
 }
 .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
-  border-top: 2px solid #f4b500;
+  border-top: 2px solid #ffc10e;
   margin-top:0px!important;
 }
 .tabs-striped .tabs{
@@ -143,6 +147,14 @@ p,.color_txt {
   background-image: url('../img/login-2.png');
   background-size:contain;
 }
+.tabs .tab-item .icon.custom_login2 {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-top: 6px;
+  height: 45px;
+  background-image: url('../img/login-2a.png');
+  background-size:contain;
+}
 .tabs .tab-item .icon.custom_qr {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -154,6 +166,7 @@ p,.color_txt {
 .bar.bar-stable .title {
   font-weight: bold;
   margin-top: 10px;
+
 }
 .custom-back{
   font-size: 30px!important;
@@ -172,6 +185,11 @@ p,.color_txt {
   transition: max-height 0.1s ease-out;
   overflow: hidden;
 
+}
+
+.title-image {
+    margin-top: 8px!important;
+    height: 27px!important;
 }
 
 .item-expand.inactive:after {
@@ -204,6 +222,11 @@ p,.color_txt {
   border:none;
 }
 
+item-login{
+  height: 24px!important;
+}
+.keyboard-open .tabs{ display:none; } .keyboard-open .has-tabs{ bottom:0; }
+
 
 
 /* DEMO */
@@ -213,7 +236,12 @@ p,.color_txt {
   background-color: none;
 }
 .tabs :nth-child(8) {
-  background-color:   #f4b500;
+  background-color:   #ffc10e;
+  opacity: 1;
+}
+.tabs>.tab-hidden>:nth-child(8) {
+  background-color:   #ffc10e;
+  opacity: 1;
 }
 .logintop,.notificationtop{
     height: 40px;
@@ -226,7 +254,13 @@ p,.color_txt {
   margin-top:5px;
 }
 .bar-stable .bar{
-  height: 70px;
+
+  height:70px!important;
+}
+.platform-ios{
+    .scroll-res{
+    overflow-scroll:true;
+    }
 }
 .logobar{
   width: 40%;
@@ -422,7 +456,7 @@ label.no_error-formz{
 .button-avatar{
 	display: block;
 	float: left;
-	width: 50%;
+  width: 33.33%;
 	text-align: center;
 	color: #fff;
 	background-color: #387ef5;
@@ -459,19 +493,21 @@ label.no_error-formz{
   -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
   box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
 }
+
 .btn-nav-codhab.activated{
-	background-color: #c2c2c2!important;
-	border: 2px solid #c2c2c2!important;
+	background-color: #353535!important;
+	border: 2px solid #353535!important;
 }
 .btn-nav-codhab.activated>:before{
 	color:#fff!important;
 }
 .bloco-home{
-	margin-top: 25px!important;
+	margin-top: 0px!important;
 }
 .bloco-inicial{
 	margin-top:7%!important;
 }
+
 .btn-texto{
 	text-align: center;
 	width: 100%;
@@ -486,8 +522,9 @@ label.no_error-formz{
 }
 .btn-nav-codhab :before {
     font-size: 60px !important;
-		color:#808080;
+		color:#4c4c4c;
 }
+
 .btn-nav-codhab:hover{
   color:#fff!important;
 }
@@ -542,4 +579,7 @@ label.no_error-formz{
 }
 .indication-energized{
   background-color: $energized;
+}
+.btn-evidence :before{
+  color:#ffc10e!important;
 }

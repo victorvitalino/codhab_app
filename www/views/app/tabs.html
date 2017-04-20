@@ -9,21 +9,19 @@
 			<ion-nav-view name="tabs-noticias" ></ion-nav-view >
 	</ion-tab>
 
-	<ion-tab title="QrCode" icon-on="custom_qr" icon-off="custom_qr" ui-sref="tabs.scan" style="background-color:#fff">
+	<ion-tab title="QrCode" icon-on="custom_qr" icon-off="custom_qr" class="tab-item-active" ui-sref="tabs.scan" style="background-color:#fff">
 			<ion-nav-view name="tabs-scan" ></ion-nav-view >
 
-	</ion-tab>
-
-	<ion-tab ng-if="tabswitch==='1'" title="Login" icon-on="custom_login" icon-off="custom_login" ui-sref="tabs.login">
-			<ion-nav-view name="tabs-login" ></ion-nav-view >
-	</ion-tab>
-
-	<ion-tab ng-if="tabswitch==='2'" title="Usuário" icon-on="custom_login" icon-off="custom_login" ui-sref="tabs.area_restrita">
-			<ion-nav-view name="tabs-cadastro" ></ion-nav-view >
 	</ion-tab>
 
 	<ion-tab title="Info" icon-on="custom_info" icon-off="custom_info" ui-sref="tabs.info">
 			<ion-nav-view name="tabs-info" ></ion-nav-view >
 	</ion-tab>
+	<ion-tab ng-if="check()" title="Login" icon-on="custom_login" icon-off="custom_login" ui-sref="tabs.login">
+			<ion-nav-view name="tabs-login" ></ion-nav-view >
+	</ion-tab>
 
+	<ion-tab ng-if="!check()" title="Usuário" icon-on="custom_login2" icon-off="custom_login2" ui-sref="tabs.area_restrita">
+			<ion-nav-view name="tabs-login" ></ion-nav-view >
+	</ion-tab>
 </ion-tabs>
