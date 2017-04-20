@@ -2,8 +2,7 @@
   "name": "HelloIonic",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.1",
-    "facebook-connect-plugin": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js"
+    "ionic": "driftyco/ionic-bower#1.1.1"
   },
   "dependencies": {
     "ng-cpf-cnpj": "~0.0.5",
