@@ -24,8 +24,8 @@ var app = angular.module('codhab.controllers.login_entidade', []);
                     if(y.message == 'success'){
                        window.localStorage['cnpj_logado'] = y.cnpj;
                        $scope.cnpj_logados = localStorage['cnpj_logado'];
-                      // window.location.reload();
-                       //$state.go('tabs.home');
+                       //window.location.reload();
+                       $state.go('tabs.entidades_area_restrita');
                     }else{
                       alert("CNPJ ou senha errados.")
                     }

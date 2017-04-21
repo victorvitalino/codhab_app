@@ -1,0 +1,32 @@
+<ion-view view-title="Área Restrita Entidades">
+  <ion-nav-bar class="bar-stable">
+  <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <!-- <a ng-click="logout()" class="button button-icon icon ion-android-exit" style="margin-top: 8px;"></a> -->
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content scroll="true" overflow-scroll="true">
+    <br/>
+
+  </br/>
+    <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;font-weight:bold">Aguardando conexão.</h2>
+    <img src="img/codhabgif0.1.gif" style="text-align:center; display:block; margin:0 auto;width:30%"/>
+        <iframe
+                 name="iframe_a"
+                 id="iframea"
+                 ng-src="{{url}}"
+                 frameborder="0"
+                 style=" overflow:hidden;
+                         overflow-x:hidden;
+                         overflow-y:hidden;
+                         height:100%;
+                         width:100%;
+                         position:absolute;
+                         top:14px;left:0px;right:0px;bottom:0px;
+                         -ms-touch-action: none;"
+                         height="100%" width="100%"
+        ></iframe>
+
+
+      </ion-content>
+</ion-view>

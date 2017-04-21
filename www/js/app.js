@@ -32,6 +32,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.reg',
 'codhab.controllers.terms',
 'codhab.controllers.login_entidade',
+'codhab.controllers.area_entidade',
 'codhab.services.auth',
 'codhab.services.ReportService',
 'codhab.services.PostosService',
@@ -120,15 +121,7 @@ $ionicConfigProvider.backButton.text('');
         }
       }
     })
-    .state('tabs.login_entidades',{
-      url: "/login_entidades",
-      views:{
-      'tabs-login':{
-        templateUrl:"views/login/login_entidades.html",
-        controller: 'LoginEntidadeCtrl'
-        }
-      }
-    })
+
     .state('tabs.senha',{
       url: "/cadastro",
       views:{
@@ -188,6 +181,24 @@ $ionicConfigProvider.backButton.text('');
         'tabs-home':{
           templateUrl: "views/app/habitacao/oque_habitacao.html",
           controller: 'HabCtrl'
+        }
+      }
+    })
+    .state('tabs.entidades_login',{
+      url: "/entidades_login",
+      views:{
+      'tabs-home':{
+        templateUrl:"views/app/entidade/login_entidades.html",
+        controller: 'LoginEntidadeCtrl'
+        }
+      }
+    })
+    .state('tabs.entidades_area_restrita',{
+      url: "/entidades_area_restrita",
+      views:{
+      'tabs-home':{
+        templateUrl:"views/app/entidade/area_entidades.html",
+        controller: 'AreaEntidadeCtrl'
         }
       }
     })
