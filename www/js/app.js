@@ -323,7 +323,8 @@ $ionicConfigProvider.backButton.text('');
       url: "/entidades",
       views:{
         'tabs-home':{
-        templateUrl: "views/app/entidade/index.html"
+        templateUrl: "views/app/entidade/index.html",
+        controller: 'EntidadeCtrl'
         }
       }
     })
