@@ -38,4 +38,14 @@ var app = angular.module('codhab.controllers.login_entidade', []);
              });
     }
 
+
+    $scope.check = function(){
+      // $scope.tabsz = window.localStorage['cpf_logado'];
+      if(window.localStorage['cpf_logado'] === undefined || window.localStorage['cpf_logado'] === null || window.localStorage['cpf_logado'] === '' || window.localStorage['cpf_logado'] === ' '){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
 });

@@ -6,7 +6,8 @@
             scroll="false"
               ng-controller="LoginCtrl" class="margin30">
 <!-- Form with floating labels -->
-<a ui-sref="tabs.entidades_login">Logar como entidade?</a>
+<a ng-if="check_entidade()" ui-sref="tabs.entidades_login">Logar como entidade?</a>
+<a ng-if="!check_entidade()" ui-sref="tabs.entidades_area_restrita">Área da entidade?</a>
 <form ng-submit="getData()" novalidate="novalidate" name="loginForm">
 <ion-list>
 <label class="item item-input item-floating-label item-login" ng-class="{'has-error':loginForm.cpf.$invalid}">

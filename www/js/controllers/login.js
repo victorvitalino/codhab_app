@@ -37,7 +37,14 @@ var app = angular.module('codhab.controllers.login', []);
              }).then(function(result){
              });
     }
-
+    $scope.cnpj_logados = localStorage['cnpj_logado']
+    $scope.check_entidade = function(){
+      if(window.localStorage['cnpj_logado'] === undefined || window.localStorage['cnpj_logado'] === null || window.localStorage['cnpj_logado'] === '' || window.localStorage['cnpj_logado'] === ' '){
+        return true;
+      }else{
+        return false;
+      }
+    }
 });
   /*********************************************************************
    * SignupCtrl
