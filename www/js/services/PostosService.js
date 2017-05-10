@@ -114,8 +114,8 @@ app.service("PostosService", function($q, $cordovaGeolocation) {
           coordenador: "Frederico Barboza",
           tel: "995449774",
           email: "frederico.barboza@codhab.df.gov.br",
-          latitude: "-15.601094",
-          longitude: "-47.8702421"
+          latitude: "-15.85698",
+          longitude: "-48.11779"
         }
 
       ];
