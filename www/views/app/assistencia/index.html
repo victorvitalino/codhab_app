@@ -1,28 +1,3 @@
-<!-- <ion-view view-title="Postos">
-  <ion-nav-bar class="bar-stable">
-    <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
-  </ion-nav-bar>
-  <ion-content scroll="true" >
-        <h2 style="text-align:center; margin-top:20px; padding:20px;color:#333;">Aguardando conexão.</h2>
-        <img src="img/radio.gif" style="text-align:center; display:block; margin:0 auto;"/>
-        <iframe
-                 name="iframe_a"
-                 id="iframea"
-                 src="http://www.mobile.df.gov.br/tecnhical-assistance"
-                 frameborder="0"
-                 style=" overflow:hidden;
-                         overflow-x:hidden;
-                         overflow-y:hidden;
-                         height:100%;
-                         width:100%;
-                         position:absolute;
-                         top:0px;left:0px;right:0px;bottom:0px;
-                         -ms-touch-action: none;"
-                         height="100%" width="100%"
-        ></iframe>
-
-      </ion-content>
-</ion-view> -->
 <ion-view view-title="Postos">
   <ion-nav-bar class="bar-stable">
     <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
@@ -31,10 +6,10 @@
   <ion-list>
     <ion-item class="item-avatar item-icon-right item-icon-left"
               ng-repeat="posto in postos"
-              can-swipe="true" ui-sref="tabs.postos({id:posto.id,nome:posto.nome,endereco:posto.endereco,hora:posto.hora,coordenador:posto.coordenador,tel:posto.tel,email:posto.email,latitude:posto.latitude,longitude:posto.longitude})">
+              can-swipe="true" ui-sref="tabs.postos({id:posto.id})">
       <i class="icon ion-ios-location cor-clara"></i>
-      <h2>{{posto.nome}}</h2>
-      <p>{{posto.endereco}}</p>
+      <h2>{{posto.name}}</h2>
+      <p>{{posto.city}}</p>
 
       <i class="icon ion-ios-arrow-right"></i>
       <ion-option-button class="button-royal" ng-click="chamar({{posto.tel}})"><span class="list_button ion-ios-telephone"></span></ion-option-button>

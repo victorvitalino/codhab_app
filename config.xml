@@ -17,6 +17,8 @@
   <allow-intent href="*"/>
   <allow-navigation href="*"/>
   <allow-navigation href="http://10.36.26.54:8100"/>
+  <allow-navigation href="http://www.codhab.df.gov.br/"/>
+  <allow-navigation href="http://www.codhab.df.gov.br/assistencia.json"/>
   <plugin name="cordova-plugin-whitelist" spec="~1.2.2"/>
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
   <plugin name="cordova-plugin-device" spec="~1.1.2"/>
@@ -34,7 +36,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
-  <preference name="loadUrlTimeoutValue" value="700000" />
+  <preference name="loadUrlTimeoutValue" value="700000"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>

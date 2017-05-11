@@ -1,29 +1,26 @@
 var app = angular.module('codhab.controllers.postos',[]);
-app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation, $ionicLoading, $http, PostosService) {
+app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation, $ionicLoading, $http) {
   $scope.navegar = function(lat, lon){
     launchnavigator.navigate([lat, lon])
   }
   $scope.navegars = function ( destinos ) {
      v = destinos;
     console.log(v)
-    // var email = "mailto:"+ end;
-    // document.location.href = email;
   }
-  $scope.posto = {};
-  var coordenada = $stateParams.coordenada;
-  PostosService.getPosto(
-     $stateParams.id,
-     $stateParams.nome,
-     $stateParams.endereco,
-     $stateParams.hora,
-     $stateParams.coordenador,
-     $stateParams.tel,
-     $stateParams.email,
-     $stateParams.latitude,
-     $stateParams.longitude
-   ).then(function(res){
-      $scope.posto = res;
-      console.log($scope.posto)
+
+  $http.get('http://www.codhab.df.gov.br/assistencia/'+ $stateParams.id + ".json")
+  .success(function(data, status, headers, config){
+    console.log(data);
+    $scope.posto = data;
+  })
+  .error(function(data, status, headers,config){
+    console.log('data error');
+     $scope.verify = true;
+      $ionicLoading.hide();
+  })
+  .then(function(results){
+    things = results.data;
+     $ionicLoading.hide();
   });
 
 
@@ -32,7 +29,7 @@ app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation,
 
     //Seta latitude e longitude do mapa (inicio)
     var localizacao = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    var destino = new google.maps.LatLng($stateParams.latitude, $stateParams.longitude);
+    var destino = new google.maps.LatLng($scope.posto.latitude, $scope.posto.longitude);
     //opções do mapa
     var mapOptions = {
       center: localizacao,
@@ -68,7 +65,7 @@ app.controller('PostosCtrl', function($scope, $stateParams, $cordovaGeolocation,
 
       });
       var infoWindow = new google.maps.InfoWindow({
-        content: "<strong>Posto de atendimento: </strong>" + $stateParams.nome
+        content: "<strong>Posto de atendimento: </strong>" + $scope.posto.name
       });
 
      google.maps.event.addListener(marker, 'click', function () {
