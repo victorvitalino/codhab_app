@@ -1,24 +1,26 @@
-  <ion-view view-title="{{posto.nome}}">
+  <ion-view view-title="{{posto.name}}">
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
     </ion-nav-bar>
   <ion-content scroll="true" class="fontsx" >
     <div class="">
       <img class="avatar-coord"src="img/codhabicons.png" />
-      <div class="avatar-nome avatar-info">{{posto.coordenador}}</div>
+      <div ng-repeat="pessoa in posto.pessoas"class="avatar-nome avatar-info">{{pessoa.name}}</div>
       <div class="avatar-cargo avatar-info">Coordenador(a)</div>
       <div class="bloco-avatar">
-        <div class="avatar-info avatar-data"><i class="ion-ios-location positive"></i>  {{posto.endereco}}</div>
-        <div class="avatar-info avatar-data"><i class="ion-ios-clock positive"></i>  {{posto.hora}}</div>
-        <div class="avatar-info avatar-data"><i class="ion-ios-email positive"></i>  {{posto.email}}</div>
-        <!-- <div class="avatar-info avatar-data"><i class="ion-ios-telephone positive"></i>  {{posto.tel}}</div> -->
+        <div class="avatar-info avatar-data"><i class="ion-ios-location positive"></i>  {{posto.city}}</div>
+        <div class="avatar-info avatar-data"><i class="ion-ios-clock positive"></i>  {{posto.schedule}}</div>
+        <div ng-repeat="pessoa in posto.pessoas" class="avatar-info avatar-data">
+          <i class="ion-ios-email positive"></i>
+          {{pessoa.email}}
+        </div>
       </div>
     </div>
-    <a class="button button-balanced button-avatar" href="tel:{{posto.tel}}">
+    <a class="button button-balanced button-avatar" ng-repeat="pessoa in posto.pessoas" href="tel:{{pessoa.contact}}">
       <i class="ion-ios-telephone"></i>
       Ligar
     </a>
-    <a class="button button-positive button-avatar" href="mailto:{{posto.email}}">
+    <a class="button button-positive button-avatar" ng-repeat="pessoa in posto.pessoas" href="mailto:{{pessoa.email}}">
       <i class="ion-ios-email"></i>
       Email
     </a>
