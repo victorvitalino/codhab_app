@@ -1,50 +1,70 @@
 {
-  "name": "appcodhab",
-  "version": "1.1.1",
-  "description": "appcodhab: An Ionic project",
-  "dependencies": {
-    "gulp": "^3.5.6",
-    "gulp-sass": "^2.0.4",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0"
-  },
-  "devDependencies": {
-    "bower": "^1.8.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-minify-css": "^0.3.13",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-util": "^3.0.7",
-    "shelljs": "^0.7.5"
-  },
-  "cordovaPlugins": [
-    {
-      "locator": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
-      "id": "phonegap-plugin-barcodescanner"
+    "name": "appcodhab",
+    "version": "1.1.1",
+    "description": "appcodhab: An Ionic project",
+    "dependencies": {
+        "gulp": "^3.5.6",
+        "gulp-sass": "^2.0.4",
+        "gulp-concat": "^2.2.0",
+        "gulp-minify-css": "^0.3.0",
+        "gulp-rename": "^1.2.0",
+        "cordova-plugin-console": "~1.0.4",
+        "cordova-plugin-device": "~1.1.2",
+        "cordova-plugin-mauron85-background-geolocation": "^2.2.0",
+        "cordova-plugin-splashscreen": "~3.2.2",
+        "cordova-plugin-statusbar": "~2.1.3",
+        "cordova-plugin-whitelist": "~1.2.2",
+        "ionic-plugin-keyboard": "~2.2.1"
     },
-    "cordova-plugin-compat",
-    "cordova-plugin-geolocation",
-    "cordova-plugin-camera",
-    "ionic-plugin-keyboard",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-console",
-    "cordova-plugin-device",
-    "cordova-plugin-inappbrowser",
-    "cordova-plugin-mauron85-background-geolocation",
-    "onesignal-cordova-plugin",
-    "cordova-plugin-network-information",
-    "cordova-plugin-crosswalk-webview"
-  ],
-  "cordovaPlatforms": [
-    "android",
-    {
-      "platform": "android",
-      "version": "",
-      "locator": "android"
+    "devDependencies": {
+        "bower": "^1.8.0",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-minify-css": "^0.3.13",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-util": "^3.0.7",
+        "shelljs": "^0.7.5"
+    },
+    "cordovaPlugins": [
+        {
+            "locator": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
+            "id": "phonegap-plugin-barcodescanner"
+        },
+        "cordova-plugin-compat",
+        "cordova-plugin-geolocation",
+        "cordova-plugin-camera",
+        "ionic-plugin-keyboard",
+        "cordova-plugin-statusbar",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-whitelist",
+        "cordova-plugin-console",
+        "cordova-plugin-device",
+        "cordova-plugin-inappbrowser",
+        "cordova-plugin-mauron85-background-geolocation",
+        "onesignal-cordova-plugin",
+        "cordova-plugin-network-information",
+        "cordova-plugin-crosswalk-webview"
+    ],
+    "cordovaPlatforms": [
+        "android",
+        {
+            "platform": "android",
+            "version": "",
+            "locator": "android"
+        }
+    ],
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-mauron85-background-geolocation": {
+                "ALWAYS_USAGE_DESCRIPTION": "Este aplicativo utiliza GPS, acione para uma melhor experiencia."
+            },
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-keyboard": {}
+        }
     }
-  ]
 }
