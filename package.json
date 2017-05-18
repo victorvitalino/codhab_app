@@ -3,20 +3,35 @@
     "version": "1.1.1",
     "description": "appcodhab: An Ionic project",
     "dependencies": {
+        "compat": "^1.0.4",
+        "console": "^0.5.2",
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-actionsheet": "^2.3.3",
+        "cordova-plugin-camera": "^2.4.1",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-console": "^1.0.7",
+        "cordova-plugin-crosswalk-webview": "^2.3.0",
+        "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-mauron85-background-geolocation": "^2.2.5",
+        "cordova-plugin-network-information": "^1.3.3",
+        "cordova-plugin-splashscreen": "^3.2.2",
+        "cordova-plugin-statusbar": "^2.1.3",
+        "cordova-plugin-whitelist": "^1.2.2",
         "gulp": "^3.5.6",
-        "gulp-sass": "^2.0.4",
         "gulp-concat": "^2.2.0",
         "gulp-minify-css": "^0.3.0",
         "gulp-rename": "^1.2.0",
-        "cordova-plugin-console": "~1.0.4",
-        "cordova-plugin-device": "~1.1.2",
-        "cordova-plugin-mauron85-background-geolocation": "^2.2.0",
-        "cordova-plugin-splashscreen": "~3.2.2",
-        "cordova-plugin-statusbar": "~2.1.3",
-        "cordova-plugin-whitelist": "~1.2.2",
-        "ionic-plugin-keyboard": "~2.2.1"
+        "gulp-sass": "^2.0.4",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "onesignal-cordova-plugin": "^2.1.1",
+        "phonegap-plugin-barcodescanner": "^6.0.6",
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2"
     },
     "devDependencies": {
+        "@ionic/cli-plugin-cordova": "1.1.2",
+        "@ionic/cli-plugin-ionic1": "1.1.2",
         "bower": "^1.8.0",
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.1",
@@ -59,12 +74,33 @@
             "cordova-plugin-console": {},
             "cordova-plugin-device": {},
             "cordova-plugin-mauron85-background-geolocation": {
-                "ALWAYS_USAGE_DESCRIPTION": "Este aplicativo utiliza GPS, acione para uma melhor experiencia."
+                "ALWAYS_USAGE_DESCRIPTION": "Este aplicativo utiliza GPS, acione para uma melhor experiencia.",
+                "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+                "CONTENT_AUTHORITY": "$PACKAGE_NAME"
             },
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {}
-        }
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-actionsheet": {},
+            "cordova-plugin-camera": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-crosswalk-webview": {
+                "XWALK_VERSION": "23+",
+                "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+                "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+                "XWALK_MODE": "embedded",
+                "XWALK_MULTIPLEAPK": "true"
+            },
+            "cordova-plugin-geolocation": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-network-information": {},
+            "onesignal-cordova-plugin": {},
+            "phonegap-plugin-barcodescanner": {},
+            "uk.co.workingedge.phonegap.plugin.launchnavigator": {}
+        },
+        "platforms": [
+            "android"
+        ]
     }
 }
