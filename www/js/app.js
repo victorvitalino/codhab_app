@@ -25,6 +25,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.portal',
 'codhab.controllers.scan',
 'codhab.controllers.cadastro',
+'codhab.controllers.recuperar',
 'codhab.controllers.area',
 'codhab.controllers.tabs',
 'codhab.controllers.faq',
@@ -128,6 +129,15 @@ $ionicConfigProvider.backButton.text('');
         'tabs-login':{
           templateUrl: "views/app/cadastro/index.html",
           controller: 'CadastroCtrl'
+        }
+      }
+    })
+    .state('tabs.recuperar',{
+      url: "/recuperar_entidade",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/entidade/recuperar.html",
+          controller: 'RecuperarCtrl'
         }
       }
     })
