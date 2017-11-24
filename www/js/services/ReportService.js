@@ -54,7 +54,7 @@ app.service("ReportService", function ($q, AuthService, $cordovaGeolocation, $io
 		'track': function (data) {
 			self.isSaving = true;
 			var d = $q.defer();
-			// Transformar lat e o lon em float senão fode tudo. Não funciona no emulador, não sei pq pergunta pra Deus.
+			// Transformar lat e o lon em float senão fode tudo. Não funciona no emulador, não sei pq, pergunte pra Deus.
 			lat = parseFloat(data.lat);
 			lon = parseFloat(data.lon);
 		  var point = new Parse.GeoPoint({latitude: lat, longitude: lon});
