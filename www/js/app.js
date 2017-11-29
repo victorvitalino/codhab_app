@@ -141,6 +141,14 @@ $ionicConfigProvider.backButton.text('');
         }
       }
     })
+    .state('tabs.entidades_sorteio',{
+      url: "/sorteios",
+      views:{
+        'tabs-home':{
+          templateUrl: "views/app/entidade/sorteio.html"
+        }
+      }
+    })
     .state('tabs.area_restrita',{
       url: "/area_restrita",
       views:{
