@@ -1,18 +1,18 @@
 <ion-view>
   <ion-nav-buttons class="bar bar-header homereader">
     <button ng-if="check()" class="button button-icon" ui-sref="tabs.login">
-      <img src="img/login-1.png" class="logintop"/>
+      <img src="img/login-1.png" class="logintop" />
     </button>
     <button ng-if="!check()" class="button button-icon" ui-sref="tabs.area_restrita">
-      <img src="img/login-1a.png" class="logintop"/>
+      <img src="img/login-1a.png" class="logintop" />
     </button>
     <img src="img/logo-codhab.png" class="logobar" />
     <button ng-if="check()" class="button button-icon" ui-sref="tabs.login">
-      <img src="img/notification.png" class="notificationtop"/>
+      <img src="img/notification.png" class="notificationtop" />
       <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
     <button ng-if="!check()" class="button button-icon" ui-sref="tabs.area_restrita">
-      <img src="img/notification.png" class="notificationtop"/>
+      <img src="img/notification.png" class="notificationtop" />
       <span ng-if="cpf_toogle" class="badge badge-energized icon-badge custom-badge">{{msg}}</span>
     </button>
   </ion-nav-buttons>
@@ -21,21 +21,18 @@
     <div class="row bloco-home bloco-inicial">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.habitacao">
-          <!-- <span class="btn-codhab-icon ion-ios-home-outline" style="margin: 5px 0 0 3px;"></span> -->
           <i class="fa fa-home" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">HABITAÇÃO</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.regularizacao">
-          <!-- <span class="btn-codhab-icon ion-ios-paper-outline" style="margin: 6px 0 0 2px;"></span> -->
           <i class="fa fa-file-text-o" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">REGULARIZAÇÃO</span>
       </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.entidades">
-          <!-- <span class="btn-codhab-icon ion-ios-people-outline"></span> -->
           <i class="fa fa-users" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">ENTIDADES</span>
@@ -44,21 +41,24 @@
     <div class="row bloco-home">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.assistencia">
-          <!-- <span class="btn-codhab-icon ion-ios-location-outline" style="margin: 6px 0 0 2px;"></span> -->
           <i class="fa fa-compass" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">ASSISTÊNCIA TÉCNICA</span>
       </div>
-      <div class="col col-33">
+      <div class="col col-33" ng-if="check()">
         <button class="button btn-nav-codhab" ui-sref="tabs.portal">
-          <!-- <span class="btn-codhab-icon ion-ios-monitor-outline" style="margin-left: 3px; margin-top: 8px;"></span> -->
           <i class="fa fa-desktop" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">PORTAL</span>
       </div>
+      <div class="col col-33" ng-if="!check()" ui-sref="tabs.area_restrita">
+        <button class="button btn-nav-codhab btn-especial" style="background-color:#ffc10e" ui-sref="tabs.requerimento">
+          <i class="fa fa-user" style="color:#fff!important" aria-hidden="true"></i>
+        </button>
+        <span class="btn-texto">MEU CADASTRO</span>
+      </div>
       <div class="col col-33">
         <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentogeral">
-          <!-- <span class="btn-codhab-icon ion-ios-clock-outline "></span> -->
           <i class="fa fa-clock-o" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">AGENDAMENTO</span>
@@ -67,10 +67,15 @@
     <div class="row bloco-home">
       <div class="col col-33">
         <button class="button btn-nav-codhab" ui-sref="tabs.requerimento">
-          <!-- <span class="btn-codhab-icon ion-ios-location-outline" style="margin: 6px 0 0 2px;"></span> -->
           <i class="fa fa-files-o" aria-hidden="true"></i>
         </button>
         <span class="btn-texto">REQUERIMENTO</span>
+      </div>
+      <div class="col col-33" ng-if="!check()">
+        <button class="button btn-nav-codhab" ui-sref="tabs.portal">
+          <i class="fa fa-desktop" aria-hidden="true"></i>
+        </button>
+        <span class="btn-texto">PORTAL</span>
       </div>
     </div>
 
