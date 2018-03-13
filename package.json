@@ -22,6 +22,7 @@
     "device": "^0.3.8",
     "gulp": "^3.5.6",
     "ionic-plugin-keyboard": "^2.2.1",
+    "moment": "^2.21.0",
     "onesignal-cordova-plugin": "^2.2.4",
     "phonegap-plugin-barcodescanner": "^6.0.8",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2"
