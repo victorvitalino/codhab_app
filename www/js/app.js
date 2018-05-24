@@ -329,6 +329,30 @@ $ionicConfigProvider.backButton.text('');
         }
       }
     })
+    .state('tabs.assistencia-home',{
+      url: "/assistencia-home",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/assistencia/home.html"
+        }
+      }
+    })
+    .state('tabs.assistencia-melhorias',{
+      url: "/assistencia-melhorias",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/assistencia/melhorias.html"
+        }
+      }
+    })
+    .state('tabs.assistencia-etapas',{
+      url: "/assistencia-etapas",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/assistencia/etapas.html"
+        }
+      }
+    })
     .state('tabs.entidades',{
       url: "/entidades",
       views:{

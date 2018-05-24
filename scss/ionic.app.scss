@@ -155,6 +155,74 @@ p,.color_txt {
   background-image: url('../img/login-2a.png');
   background-size:contain;
 }
+.assistencia-icon{
+  background-image:url('../img/icone-assitencia-tecnica.png');
+  background-repeat: no-repeat;
+  width:100%;
+  height:80px;
+  background-size:contain;
+}
+.btn-nav-codhab.activated .assistencia-icon{
+  background-image:url('../img/icone-assitencia-tecnica-white.png');
+  background-repeat: no-repeat;
+}
+.postos-icon{
+  background-image:url('../img/icone-postos.png');
+  background-repeat: no-repeat;
+  width:100%;
+  height:80px;
+  background-size:contain;
+}
+.btn-nav-codhab.activated .postos-icon{
+  background-image:url('../img/icone-postos-white.png');
+  background-repeat: no-repeat;
+}
+.acoes-urbanas-icon{
+  background-image:url('../img/icone-acoes-urbanas.png');
+  background-repeat: no-repeat;
+  width:100%;
+  height:80px;
+  background-size:contain;
+}
+.btn-nav-codhab.activated .acoes-urbanas-icon{
+  background-image:url('../img/icone-acoes-urbanas-white.png');
+  background-repeat: no-repeat;
+}
+.melhorias-icon{
+  background-image:url('../img/icone-melhorias-habitacionais.png');
+  background-repeat: no-repeat;
+  width:100%;
+  height:80px;
+  background-size:contain;
+}
+.btn-nav-codhab.activated .melhorias-icon{
+  background-image:url('../img/icone-melhorias-habitacionais-white.png');
+  background-repeat: no-repeat;
+}
+.title_melhorias{
+  margin: 0 auto!important;
+}
+.melhorias_title{
+  color:#fff;
+  padding: 17px 0;
+  text-align: center;
+  font-weight: bold;
+}
+.red_title{
+  background-color:#c51f1b;
+}
+.orange_title{
+  background-color:#e74a34;
+}
+.yellow_title{
+  background-color:#fbbe4a;
+}
+.blue_title{
+  background-color:#4d89a0;
+}
+.green_title{
+  background-color:#469f5b;
+}
 .tabs .tab-item .icon.custom_qr {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -226,11 +294,6 @@ item-login{
   height: 24px!important;
 }
 .keyboard-open .tabs{ display:none; } .keyboard-open .has-tabs{ bottom:0; }
-
-
-
-/* DEMO */
-
 
 .tabs-striped .tabs{
   background-color: none;
@@ -480,10 +543,8 @@ label.no_error-formz{
 .btn-nav-codhab{
 	height: 100px;
 	width: 100px;
-	// border-radius: 300px;
 	margin: 0 auto;
 	display: block;
-	// border: 2px solid #808080;
 	background-color: #fff;
   border:none;
   -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.13);
