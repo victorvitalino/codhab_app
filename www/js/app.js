@@ -31,6 +31,7 @@ var app = angular.module('codhab', ['ionic',
 'codhab.controllers.faq',
 'codhab.controllers.hab',
 'codhab.controllers.reg',
+'codhab.controllers.assistencia_form',
 'codhab.controllers.terms',
 'codhab.controllers.login_entidade',
 'codhab.controllers.area_entidade',
@@ -358,6 +359,15 @@ $ionicConfigProvider.backButton.text('');
       views:{
         'tabs-home':{
         templateUrl: "views/app/assistencia/etapas.html"
+        }
+      }
+    })
+    .state('tabs.assistencia-form',{
+      url: "/assistencia-form",
+      views:{
+        'tabs-home':{
+        templateUrl: "views/app/assistencia/form.html",
+        controller: "AssistenciaFormCtrl"
         }
       }
     })

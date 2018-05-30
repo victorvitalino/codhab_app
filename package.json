@@ -24,7 +24,6 @@
     "ionic-plugin-keyboard": "^2.2.1",
     "moment": "^2.21.0",
     "onesignal-cordova-plugin": "^2.2.4",
-    "phonegap-plugin-barcodescanner": "^6.0.8",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2"
   },
   "devDependencies": {
@@ -93,7 +92,6 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-network-information": {},
       "onesignal-cordova-plugin": {},
-      "phonegap-plugin-barcodescanner": {},
       "uk.co.workingedge.phonegap.plugin.launchnavigator": {},
       "cordova-plugin-crosswalk-webview": {
         "XWALK_VERSION": "23+",

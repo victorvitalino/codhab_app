@@ -1,8 +1,8 @@
-<ion-view>
-  <ion-nav-buttons class="bar bar-header homereader">
-    <div class="h1 title">Assistência Técnica</div>
-  </ion-nav-buttons>
-  <ion-content scroll="true">
+<ion-view view-title="Assistência Técnica">
+  <ion-nav-bar class="bar-stable">
+  <ion-nav-back-button class="button-clear ion-ios-arrow-thin-left custom-back"></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content scroll="true" overflow-scroll="true">
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="row bloco-home bloco-inicial">
       <div class="col col-33">
@@ -18,7 +18,7 @@
         <span class="btn-texto">MELHORIAS HABITACIONAIS</span>
       </div>
       <div class="col col-33">
-        <button class="button btn-nav-codhab energized" ui-sref="tabs.agendamentogeral">
+        <button class="button btn-nav-codhab energized" onclick="cordova.InAppBrowser.open('http://www.codhab.df.gov.br/acoesurbanas', '_system');">
           <span class="acoes-urbanas-icon"></span>
         </button>
         <span class="btn-texto">AÇÕES URBANAS COMUNITÁRIAS</span>
