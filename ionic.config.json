@@ -1,6 +1,9 @@
 {
   "name": "appcodhab",
-  "app_id": "89baea28",
+  "integrations": {
+    "gulp": {},
+    "cordova": {}
+  },
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -11,8 +14,5 @@
     "scss/**/*"
   ],
   "type": "ionic1",
-  "integrations": {
-    "gulp": {},
-    "cordova": {}
-  }
+  "pro_id": "89baea28"
 }

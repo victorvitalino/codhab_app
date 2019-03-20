@@ -13,7 +13,7 @@ app.controller('NoticiasCtrl', function ($scope,$stateParams,$http, $sce, $state
     maxWidth: 200,
     showDelay: 0
   });
-  $http.get('http://www.codhab.df.gov.br/noticias.json')
+  $http.get('http://www.codhab.df.gov.br/noticias_mobile.json')
         .success(function(data, status, headers,config){
           console.log(data);
           $scope.results = data[0].posts;
